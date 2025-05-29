@@ -4701,6 +4701,11 @@ void CBasePlayer::PostThink()
 		}
 	}
 
+	if (IsObserver())
+	{
+		ShowViewPortPanel("specmenu", false);
+	}
+
 	m_vecSmoothedVelocity = m_vecSmoothedVelocity * SMOOTHING_FACTOR + GetAbsVelocity() * ( 1 - SMOOTHING_FACTOR );
 
 	if ( !g_fGameOver && !m_iPlayerLocked )
