@@ -23,6 +23,7 @@
 extern ConVar sk_auto_reload_time;
 extern ConVar sk_plr_num_shotgun_pellets;
 ConVar sv_shotgun_pump("sv_shotgun_pump","1",0,	"Defines the shotgun pump when deploying the shotgun. \	1: Default, 2: No pump, 3: Always pump");
+ConVar sv_shotgun_cone("sv_shotgun_cone","1",0,	"Defines the shotgun pellets spread cone. \	1: Default 10 degrees, 0: Wide 15 degrees");
 class CWeaponShotgun : public CBaseHL2MPCombatWeapon
 {
 public:
@@ -40,8 +41,17 @@ private:
 public:
 	virtual const Vector& GetBulletSpread( void )
 	{
-		static Vector cone = VECTOR_CONE_10DEGREES;
-		return cone;
+		int iCone = sv_shotgun_cone.GetInt();
+		if (iCone > 0)
+		{
+            static Vector cone = VECTOR_CONE_10DEGREES;
+			return cone;
+		}
+		else
+		{
+            static Vector cone = VECTOR_CONE_15DEGREES;
+		    return cone;
+		}	
 	}
 
 	virtual int				GetMinBurst() { return 1; }
