@@ -3323,6 +3323,7 @@ void CHL2_Player::InputForceDropPhysObjects( inputdata_t &data )
 	ForceDropOfCarriedPhysObjects( data.pActivator );
 }
 
+static ConVar sv_cl_redscreen_disable("sv_cl_redscreen_disable", "0", FCVAR_ARCHIVE, "Disable client's redscreen");
 
 //-----------------------------------------------------------------------------
 // Purpose: 
@@ -3356,18 +3357,19 @@ void CHL2_Player::UpdateClientData( void )
 				visibleDamageBits &= ~DMG_POISON;
 			}
 		}
-
-		CSingleUserRecipientFilter user( this );
-		user.MakeReliable();
-		UserMessageBegin( user, "Damage" );
-			WRITE_BYTE( m_DmgSave );
-			WRITE_BYTE( m_DmgTake );
-			WRITE_LONG( visibleDamageBits );
-			WRITE_FLOAT( damageOrigin.x );	//BUG: Should be fixed point (to hud) not floats
-			WRITE_FLOAT( damageOrigin.y );	//BUG: However, the HUD does _not_ implement bitfield messages (yet)
-			WRITE_FLOAT( damageOrigin.z );	//BUG: We use WRITE_VEC3COORD for everything else
-		MessageEnd();
-	
+		if (!sv_cl_redscreen_disable.GetBool() || GetHealth() > 0)
+		{
+			CSingleUserRecipientFilter user(this);
+			user.MakeReliable();
+			UserMessageBegin(user, "Damage");
+			WRITE_BYTE(m_DmgSave);
+			WRITE_BYTE(!sv_cl_redscreen_disable.GetBool() ? m_DmgTake : fmin( 25.0f, m_DmgTake ) );
+			WRITE_LONG(visibleDamageBits);
+			WRITE_FLOAT(damageOrigin.x);	//BUG: Should be fixed point (to hud) not floats
+			WRITE_FLOAT(damageOrigin.y);	//BUG: However, the HUD does _not_ implement bitfield messages (yet)
+			WRITE_FLOAT(damageOrigin.z);	//BUG: We use WRITE_VEC3COORD for everything else
+			MessageEnd();
+		}
 		m_DmgTake = 0;
 		m_DmgSave = 0;
 		m_bitsHUDDamage = m_bitsDamageType;
