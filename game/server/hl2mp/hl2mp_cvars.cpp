@@ -29,3 +29,10 @@ ConVar mp_ear_ringing(
 	"0",
 	FCVAR_GAMEDLL | FCVAR_REPLICATED,
 	"If non-zero, produce ringing sound caused by explosion/blast damage");
+
+// red screen
+ConVar mp_redscreen(
+	"mp_redscreen",
+	"0",
+	FCVAR_GAMEDLL | FCVAR_REPLICATED,
+	"If non-zero, draws redscreen caused by high damage");

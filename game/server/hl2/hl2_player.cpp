@@ -81,6 +81,8 @@ extern ConVar autoaim_max_dist;
 
 extern int gEvilImpulse101;
 
+extern ConVar mp_redscreen;
+
 ConVar sv_autojump( "sv_autojump", "0" );
 
 ConVar hl2_walkspeed( "hl2_walkspeed", "150", FCVAR_REPLICATED );
@@ -107,6 +109,7 @@ ConVar sv_stickysprint("sv_stickysprint", "0", FCVAR_ARCHIVE | FCVAR_ARCHIVE_XBO
 
 #define	FLASH_DRAIN_TIME	 1.1111	// 100 units / 90 secs
 #define	FLASH_CHARGE_TIME	 50.0f	// 100 units / 2 secs
+
 
 
 //==============================================================================================
@@ -3323,7 +3326,6 @@ void CHL2_Player::InputForceDropPhysObjects( inputdata_t &data )
 	ForceDropOfCarriedPhysObjects( data.pActivator );
 }
 
-static ConVar sv_cl_redscreen_disable("sv_cl_redscreen_disable", "0", FCVAR_ARCHIVE, "Disable client's redscreen");
 
 //-----------------------------------------------------------------------------
 // Purpose: 
@@ -3357,13 +3359,13 @@ void CHL2_Player::UpdateClientData( void )
 				visibleDamageBits &= ~DMG_POISON;
 			}
 		}
-		if (!sv_cl_redscreen_disable.GetBool() || GetHealth() > 0)
+		if (mp_redscreen.GetBool() || GetHealth() > 0)
 		{
 			CSingleUserRecipientFilter user(this);
 			user.MakeReliable();
 			UserMessageBegin(user, "Damage");
 			WRITE_BYTE(m_DmgSave);
-			WRITE_BYTE(!sv_cl_redscreen_disable.GetBool() ? m_DmgTake : fmin( 25.0f, m_DmgTake ) );
+			WRITE_BYTE(mp_redscreen.GetBool() ? m_DmgTake : fmin( 25.0f, m_DmgTake ) );
 			WRITE_LONG(visibleDamageBits);
 			WRITE_FLOAT(damageOrigin.x);	//BUG: Should be fixed point (to hud) not floats
 			WRITE_FLOAT(damageOrigin.y);	//BUG: However, the HUD does _not_ implement bitfield messages (yet)
