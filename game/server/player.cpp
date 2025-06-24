@@ -125,6 +125,7 @@ ConVar cl_backspeed( "cl_backspeed", "450", FCVAR_REPLICATED | FCVAR_CHEAT );
 // This is declared in the engine, too
 ConVar	sv_noclipduringpause( "sv_noclipduringpause", "0", FCVAR_REPLICATED | FCVAR_CHEAT, "If cheats are enabled, then you can noclip with the game paused (for doing screenshots, etc.)." );
 
+extern ConVar mp_ear_ringing;
 extern ConVar sv_maxunlag;
 extern ConVar sv_turbophysics;
 extern ConVar *sv_maxreplay;
@@ -1447,6 +1448,7 @@ int CBasePlayer::OnTakeDamage( const CTakeDamageInfo &inputInfo )
 // Purpose: 
 // Input  : &info - 
 //-----------------------------------------------------------------------------
+
 void CBasePlayer::OnDamagedByExplosion( const CTakeDamageInfo &info )
 {
 	float lastDamage = info.GetDamage();
@@ -1471,7 +1473,10 @@ void CBasePlayer::OnDamagedByExplosion( const CTakeDamageInfo &info )
 		random->RandomInt( 32, 34 );
 
 	CSingleUserRecipientFilter user( this );
-	enginesound->SetPlayerDSP( user, effect, false );
+	if (mp_ear_ringing.GetBool())
+	{
+		enginesound->SetPlayerDSP(user, effect, false);
+	}
 	iDamageTime = gpGlobals->curtime;
 }
 
