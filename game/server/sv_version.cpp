@@ -269,7 +269,7 @@ int GetBuildNumber()
 	baseDate.tm_mday = BASE_DAY;
 
 	struct tm currentDate = {};
-	const char *compileDate = __DATE__;
+	const char* compileDate = __DATE__;
 	char monthStr[ 4 ] = {};
 	int day, year;
 
@@ -303,8 +303,8 @@ CON_COMMAND( sv_version, "Binaries version" )
 		// must not forget to update the version for the client below as well
 		Msg( "Server Binaries - Community Edition Build Info:\n" );
 
-		Msg( "  Binaries version: %s.%d\n", VERSION, GetBuildNumber() ); // May 19 2024
-		Msg( "  Compiled on: %s %s\n", __DATE__, __TIME__ );
+		Msg("  Binaries version: %s.%d\n", "1.0", GetBuildNumber()); // May 19 2024
+		Msg("  Compiled on: %s %s\n", __DATE__, __TIME__);
 #ifdef _WIN32
 		Msg( "  Binaries running on: Windows\n  %s\n\n", GetWindowsVersion() );
 		Msg( "Server System Information:\n  CPU: %s\n  %s\n\n", GetCPUName().c_str(), GetWindowsSystemInfo().c_str() );
@@ -330,9 +330,30 @@ CON_COMMAND( sv_version, "Binaries version" )
 	if ( !pPlayer )
 		return;
 	// Use ClientPrint to send information to the client
-	ClientPrint( pPlayer, HUD_PRINTCONSOLE, "\n" );
-	ClientPrint( pPlayer, HUD_PRINTCONSOLE, "Server Binaries - Community Edition Build Info:\n" );
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "       _   __ _____ ___________\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      | | / /|  ___|  ___| ___ \\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      | |/ / | |__ | |__ | |_/ /\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      |    \ |  __||  __||  __/\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      | |\  \| |___| |___| |\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      \_| \_/\____/\____/\_|\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "    _   _  _      _____ _________  ___\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "   | | | || |    / __  \|  _  \  \/  |\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "   | |_| || |    `' / /'| | | | .  . |\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "   |  _  || |      / /  | | | | |\/| |\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "   | | | || |____./ /___| |/ /| |  | |\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "   \_| |_/\_____/\_____/|___/ \_|  |_/\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      ___   _     _____ _   _ _____ \n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "     / _ \ | |   |_   _| | | |  ___|\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "    / /_\ \| |     | | | | | | |__  \n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "    |  _  || |     | | | | | |  __| \n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "    | | | || |_____| |_\ \_/ / |___ \n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "    \_| |_/\_____/\___/ \___/\____/\n");
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "\n");
 
+	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "Server Binaries - Community Edition Build Info:\n");
 	ClientPrint( pPlayer, HUD_PRINTCONSOLE, UTIL_VarArgs( "  Binaries version: %s.%d\n", VERSION, GetBuildNumber() ) );
 	ClientPrint( pPlayer, HUD_PRINTCONSOLE, UTIL_VarArgs( "  Compiled on: %s %s\n", __DATE__, __TIME__ ) );
 
