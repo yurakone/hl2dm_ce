@@ -39,7 +39,7 @@
 extern void respawn(CBaseEntity *pEdict, bool fCopyCorpse);
 
 extern bool FindInList( const char **pStrings, const char *pToFind );
-
+extern ConVar sv_showplayermodel;
 ConVar sv_hl2mp_weapon_respawn_time( "sv_hl2mp_weapon_respawn_time", "20", FCVAR_GAMEDLL | FCVAR_NOTIFY );
 ConVar sv_hl2mp_item_respawn_time( "sv_hl2mp_item_respawn_time", "30", FCVAR_GAMEDLL | FCVAR_NOTIFY );
 ConVar sv_report_client_settings("sv_report_client_settings", "0", FCVAR_GAMEDLL | FCVAR_NOTIFY );
@@ -1499,17 +1499,20 @@ void CHL2MPRules::ClientSettingsChanged( CBasePlayer *pPlayer )
 			return;
 		}
 
-		if ( HL2MPRules()->IsTeamplay() == false )
+		if (HL2MPRules()->IsTeamplay() == false && !sv_equalizer.GetBool())
 		{
 			pHL2Player->SetPlayerModel();
 
-			const char *pszCurrentModelName = modelinfo->GetModelName( pHL2Player->GetModel() );
-
+			const char* pszCurrentModelName = modelinfo->GetModelName(pHL2Player->GetModel());
 			char szReturnString[128];
-			Q_snprintf( szReturnString, sizeof( szReturnString ), "Your player model is: %s\n", pszCurrentModelName );
 
-			ClientPrint( pHL2Player, HUD_PRINTTALK, szReturnString );
+			if (sv_showplayermodel.GetBool())
+			{
+			Q_snprintf(szReturnString, sizeof(szReturnString), "Your choosen player model is: %s\n", pszCurrentModelName);
+			ClientPrint(pHL2Player, HUD_PRINTTALK, szReturnString);
+		    }
 		}
+
 		else
 		{
 			if (!sv_equalizer.GetBool()) {

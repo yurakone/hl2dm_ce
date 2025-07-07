@@ -36,3 +36,10 @@ ConVar mp_redscreen(
 	"0",
 	FCVAR_GAMEDLL,
 	"If non-zero, draws redscreen caused by high damage");
+
+// playermodel message
+ConVar sv_showplayermodel(
+	"sv_showplayermodel",
+	"1", 
+	FCVAR_GAMEDLL,
+	"If non-zero, shows the updated player model name to the player");
