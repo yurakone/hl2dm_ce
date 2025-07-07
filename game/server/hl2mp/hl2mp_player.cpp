@@ -277,8 +277,11 @@ void CHL2MP_Player::GiveDefaultItems(void)
 
 	if (HL2MPRules()->IsTeamplay() == false)
 	{
+		// щрн цемхюкэмн, VALVE!
+		//	if ( GetPlayerModelType() == PLAYER_SOUNDS_METROPOLICE || GetPlayerModelType() == PLAYER_SOUNDS_COMBINESOLDIER )
+		// йнмеж цемхюкэмнярх, дюкэье яюкнйнд
+
 		if (Q_stristr(iModelName, "combine"))
-			//	if ( GetPlayerModelType() == PLAYER_SOUNDS_METROPOLICE || GetPlayerModelType() == PLAYER_SOUNDS_COMBINESOLDIER 
 		{
 			GiveNamedItem("weapon_stunstick");
 		}
@@ -286,7 +289,10 @@ void CHL2MP_Player::GiveDefaultItems(void)
 		{
 			GiveNamedItem("weapon_stunstick");
 		}
+		// щрн цемхюкэмн, VALVE!
 		//else if ( GetPlayerModelType() == PLAYER_SOUNDS_CITIZEN )
+		// йнмеж цемхюкэмнярх, дюкэье яюкнйнд
+
 		else if (Q_stristr(iModelName, "models/human"))
 		{
 			GiveNamedItem("weapon_crowbar");
