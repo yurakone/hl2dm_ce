@@ -68,11 +68,13 @@ public:
 	virtual bool UsesFilter( void ){ return ( m_hFilter.Get() != NULL ); }
 	virtual bool PassesTriggerFilters(CBaseEntity *pOther);
 	virtual void StartTouch(CBaseEntity *pOther);
+	virtual void OnStartTouch(CBaseEntity* pOther) {}
+	virtual void OnEndTouch(CBaseEntity* pOther) {}
 	virtual void EndTouch(CBaseEntity *pOther);
-	virtual void StartTouchAll() {}
+	bool IsTouching(const CBaseEntity* pOther) const;
+    virtual void StartTouchAll() {}
 	virtual void EndTouchAll() {}
-	virtual bool IsTouching( const CBaseEntity *pOther ) const;
-
+    
 	CBaseEntity *GetTouchedEntityOfType( const char *sClassName );
 
 	int	 DrawDebugTextOverlays(void);
