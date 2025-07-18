@@ -43,3 +43,9 @@ ConVar sv_showplayermodel(
 	"1", 
 	FCVAR_GAMEDLL,
 	"If non-zero, shows the updated player model name to the player");
+
+ConVar mp_noblock(
+	"mp_noblock",
+	"0",
+	FCVAR_GAMEDLL | FCVAR_NOTIFY,
+	"If non-zero, disable collisions between players");
