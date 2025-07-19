@@ -40,7 +40,6 @@ extern void respawn(CBaseEntity *pEdict, bool fCopyCorpse);
 
 extern bool FindInList( const char **pStrings, const char *pToFind );
 extern ConVar sv_showplayermodel;
-extern ConVar mp_noblock;
 ConVar sv_hl2mp_weapon_respawn_time( "sv_hl2mp_weapon_respawn_time", "20", FCVAR_GAMEDLL | FCVAR_NOTIFY );
 ConVar sv_hl2mp_item_respawn_time( "sv_hl2mp_item_respawn_time", "30", FCVAR_GAMEDLL | FCVAR_NOTIFY );
 ConVar sv_report_client_settings("sv_report_client_settings", "0", FCVAR_GAMEDLL | FCVAR_NOTIFY );
@@ -376,41 +375,6 @@ void CHL2MPRules::Think( void )
 #ifndef CLIENT_DLL
 	
 	CGameRules::Think();
-	/*
-		NO BLOCK
-	*/
-	/*
-	for (int i = 1; i <= gpGlobals->maxClients; i++)
-	{
-		CBasePlayer* pPlayer = UTIL_PlayerByIndex(i);
-		if (pPlayer)
-		{
-			if (mp_noblock.GetBool())
-			{
-				pPlayer->SetCollisionGroup(COLLISION_GROUP_DEBRIS_TRIGGER);
-			}
-			else
-				pPlayer->SetCollisionGroup(COLLISION_GROUP_PLAYER);
-		}
-	}*/
-	
-	for (int i = 1; i <= gpGlobals->maxClients; i++)
-	{
-		CBasePlayer* pPlayer = UTIL_PlayerByIndex(i);
-
-		if (!pPlayer || !pPlayer->IsAlive())
-			continue;
-
-		int collisionGroup = COLLISION_GROUP_PLAYER;
-
-		if (mp_noblock.GetBool())
-		{
-			// Всегда noblock
-			collisionGroup = COLLISION_GROUP_DEBRIS_TRIGGER;
-		}
-		
-		pPlayer->SetCollisionGroup(collisionGroup);
-	}
 
 	/*
 		EQUALIZER
@@ -1670,6 +1634,7 @@ bool CHL2MPRules::ShouldCollide( int collisionGroup0, int collisionGroup1 )
 	}
 
 	return BaseClass::ShouldCollide( collisionGroup0, collisionGroup1 ); 
+
 }
 
 bool CHL2MPRules::ClientCommand( CBaseEntity *pEdict, const CCommand &args )
