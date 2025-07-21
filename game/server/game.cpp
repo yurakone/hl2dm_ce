@@ -26,7 +26,7 @@ void MapCycleFileChangedCallback( IConVar *var, const char *pOldString, float fl
 		}
 	}
 }
-
+/*
 extern void ReloadGameRules();
 static void mp_teamplay_changed(IConVar* pConVar, const char* pOldString, float flOldValue)
 {
@@ -45,7 +45,7 @@ static void mp_teamplay_changed(IConVar* pConVar, const char* pOldString, float 
 		}
 	}
 }
-
+*/
 void flashlight_changed( IConVar *pConVar, const char *pOldString, float flOldValue )
 {
 	ConVarRef var( pConVar );
@@ -73,7 +73,7 @@ ConVar  mapcyclefile( "mapcyclefile", "mapcycle.txt", FCVAR_NONE, "Name of the .
 ConVar  servercfgfile( "servercfgfile","server.cfg" );
 ConVar  lservercfgfile( "lservercfgfile","listenserver.cfg" );
 // multiplayer server rules
-ConVar	teamplay("mp_teamplay", "0", FCVAR_NOTIFY, "Should teamplay settings be on or off", mp_teamplay_changed);
+ConVar	teamplay("mp_teamplay", "0", FCVAR_NOTIFY, "Should teamplay settings be on or off");
 ConVar	falldamage( "mp_falldamage","0", FCVAR_NOTIFY );
 ConVar	weaponstay( "mp_weaponstay","0", FCVAR_NOTIFY );
 ConVar	forcerespawn( "mp_forcerespawn","1", FCVAR_NOTIFY );
