@@ -377,6 +377,20 @@ void CHL2MPRules::Think( void )
 	CGameRules::Think();
 
 	/*
+	GameDescriptionUpdate
+	*/
+	static auto pSteamClient = SteamClient();
+
+	if (pSteamClient)
+	{
+		static auto srv = pSteamClient->GetISteamGameServer(1, 1, STEAMGAMESERVER_INTERFACE_VERSION);
+		if (srv)
+		{
+			srv->SetGameDescription(GetGameDescription());
+			return;
+		}
+	}
+	/*
 		EQUALIZER
 	*/
 	if (sv_equalizer.GetBool())
@@ -1556,10 +1570,12 @@ int CHL2MPRules::PlayerRelationship( CBaseEntity *pPlayer, CBaseEntity *pTarget 
 
 const char *CHL2MPRules::GetGameDescription( void )
 { 
+
 	if ( IsTeamplay() )
 		return "Team Deathmatch"; 
 
 	return "Deathmatch"; 
+
 } 
 
 bool CHL2MPRules::IsConnectedUserInfoChangeAllowed( CBasePlayer *pPlayer )
