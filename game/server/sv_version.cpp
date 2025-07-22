@@ -330,30 +330,9 @@ CON_COMMAND( sv_version, "Binaries version" )
 	if ( !pPlayer )
 		return;
 	// Use ClientPrint to send information to the client
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "\n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "       _   __ _____ ___________  \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      | | / /|  ___|  ___| ___ \ \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      | |/ / | |__ | |__ | |_/ / \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      |    \ |  __||  __||  __/  \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      | |\  \| |___| |___| |     \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      \_| \_/\____/\____/\_|     \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "\n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "    _   _  _      _____ _________  ___  \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "   | | | || |    / __  \|  _  \  \/  |  \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "   | |_| || |    `' / /'| | | | .  . |  \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "   |  _  || |      / /  | | | | |\/| |  \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "   | | | || |____./ /___| |/ /| |  | |  \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "   \_| |_/\_____/\_____/|___/ \_|  |_/  \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "\n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "      ___   _     _____ _   _ _____   \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "     / _ \ | |   |_   _| | | |  ___|  \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "    / /_\ \| |     | | | | | | |__    \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "    |  _  || |     | | | | | |  __|   \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "    | | | || |_____| |_\ \_/ / |___   \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "    \_| |_/\_____/\___/ \___/\____/   \n");
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "\n");
-
-	ClientPrint(pPlayer, HUD_PRINTCONSOLE, "Server Binaries - Community Edition Build Info:\n");
+	ClientPrint( pPlayer, HUD_PRINTCONSOLE, "\n");
+	ClientPrint( pPlayer, HUD_PRINTCONSOLE, "KEEP Half-Life 2 Deathmatch ALIVE \n");
+	ClientPrint( pPlayer, HUD_PRINTCONSOLE, "Server Binaries - Community Edition Build Info:\n");
 	ClientPrint( pPlayer, HUD_PRINTCONSOLE, UTIL_VarArgs( "  Binaries version: %s.%d\n", VERSION, GetBuildNumber() ) );
 	ClientPrint( pPlayer, HUD_PRINTCONSOLE, UTIL_VarArgs( "  Compiled on: %s %s\n", __DATE__, __TIME__ ) );
 
