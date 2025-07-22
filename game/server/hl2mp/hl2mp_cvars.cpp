@@ -47,14 +47,20 @@ ConVar sv_showplayermodel(
 //Game Description
 ConVar sv_gamedesc(
 	"sv_gamedesc",
-	"0",
+	"",
 	FCVAR_GAMEDLL,
 	"Shows custom game description");
 
-//Game Description
+//Allow teamplay live change
 ConVar sv_instant_teamplay(
 	"sv_instant_teamplay",
 	"0",
 	FCVAR_GAMEDLL,
 	"If non-zero, allow live change of teamplay");
 
+//noblock
+ConVar mp_noblock(
+	"mp_noblock",
+	"0",
+	FCVAR_GAMEDLL | FCVAR_NOTIFY,
+	"If non-zero, disable collisions between players");

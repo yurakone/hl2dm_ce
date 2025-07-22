@@ -40,6 +40,8 @@ extern void respawn(CBaseEntity *pEdict, bool fCopyCorpse);
 
 extern bool FindInList( const char **pStrings, const char *pToFind );
 extern ConVar sv_showplayermodel;
+extern ConVar sv_gamedesc;
+extern ConVar mp_noblock;
 ConVar sv_hl2mp_weapon_respawn_time( "sv_hl2mp_weapon_respawn_time", "20", FCVAR_GAMEDLL | FCVAR_NOTIFY );
 ConVar sv_hl2mp_item_respawn_time( "sv_hl2mp_item_respawn_time", "30", FCVAR_GAMEDLL | FCVAR_NOTIFY );
 ConVar sv_report_client_settings("sv_report_client_settings", "0", FCVAR_GAMEDLL | FCVAR_NOTIFY );
@@ -370,6 +372,7 @@ CBaseEntity* FindEntityByName(const char* name)
 }
 #endif
 
+
 void CHL2MPRules::Think( void )
 {
 #ifndef CLIENT_DLL
@@ -377,19 +380,27 @@ void CHL2MPRules::Think( void )
 	CGameRules::Think();
 
 	/*
-	GameDescriptionUpdate
-	*/
-	static auto pSteamClient = SteamClient();
+	NO BLOCK
+    */
 
-	if (pSteamClient)
+	for (int i = 1; i <= gpGlobals->maxClients; i++)
 	{
-		static auto srv = pSteamClient->GetISteamGameServer(1, 1, STEAMGAMESERVER_INTERFACE_VERSION);
-		if (srv)
+		CBasePlayer* pPlayer = UTIL_PlayerByIndex(i);
+
+		if (!pPlayer || !pPlayer->IsAlive())
+			continue;
+
+		int collisionGroup = COLLISION_GROUP_PLAYER;
+
+		if (mp_noblock.GetBool())
 		{
-			srv->SetGameDescription(GetGameDescription());
-			return;
+			// Всегда noblock
+			collisionGroup = COLLISION_GROUP_DEBRIS_TRIGGER;
 		}
+
+		pPlayer->SetCollisionGroup(collisionGroup);
 	}
+
 	/*
 		EQUALIZER
 	*/
@@ -593,6 +604,19 @@ void CHL2MPRules::Think( void )
 	RemoveAllPlayersEquipment();
 
 #endif
+	/*GameDescriptionUpdate*/
+
+	static auto pSteamClient = SteamClient();
+
+	if (pSteamClient)
+	{
+		static auto srv = pSteamClient->GetISteamGameServer(1, 1, STEAMGAMESERVER_INTERFACE_VERSION);
+		if (srv)
+		{
+			srv->SetGameDescription(GetGameDescription());
+			return;
+		}
+	}
 }
 
 #ifndef CLIENT_DLL
@@ -1570,12 +1594,40 @@ int CHL2MPRules::PlayerRelationship( CBaseEntity *pPlayer, CBaseEntity *pTarget 
 
 const char *CHL2MPRules::GetGameDescription( void )
 { 
+	// Custom gamedesc
+	if (sv_gamedesc.GetString()[0] != '\0')
+		return sv_gamedesc.GetString();
 
-	if ( IsTeamplay() )
-		return "Team Deathmatch"; 
+    // Desc by map prefix
+	const char* mapName = STRING(gpGlobals->mapname);
+	if (!mapName)
+		mapName = "";
 
-	return "Deathmatch"; 
+	static const struct
+	{
+		const char* prefix;
+		const char* description;
+	}
 
+	gameModes[] = {
+		{ "jctf_", "Capture The Flag" },
+		{ "jm_",   "Jumping" },
+		{ "fb_",   "Football" },
+		{ "surf_", "Surfing" },
+	};
+
+	for (int i = 0; i < ARRAYSIZE(gameModes); ++i)
+	{
+		if (Q_strnicmp(mapName, gameModes[i].prefix, Q_strlen(gameModes[i].prefix)) == 0)
+			return gameModes[i].description;
+	}
+
+	// TDM
+	if (IsTeamplay())
+		return "Team Deathmatch";
+
+	// DM
+	return "Deathmatch";
 } 
 
 bool CHL2MPRules::IsConnectedUserInfoChangeAllowed( CBasePlayer *pPlayer )
@@ -2024,3 +2076,4 @@ const char *CHL2MPRules::GetChatFormat( bool bTeamOnly, CBasePlayer *pPlayer )
 }
 
 #endif
+
