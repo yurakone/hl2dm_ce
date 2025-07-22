@@ -11,7 +11,7 @@
 #ifdef HL2MP
 #include "hl2mp_player.h"
 #endif
-
+extern ConVar sv_instant_teamplay;
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
@@ -26,26 +26,29 @@ void MapCycleFileChangedCallback( IConVar *var, const char *pOldString, float fl
 		}
 	}
 }
-/*
+
 extern void ReloadGameRules();
 static void mp_teamplay_changed(IConVar* pConVar, const char* pOldString, float flOldValue)
 {
-
-	ReloadGameRules();
-	HL2MPRules()->RestartGame();
-
-	for (int i = 0; i <= gpGlobals->maxClients; ++i)
+	if (sv_instant_teamplay.GetBool())
 	{
-		CBasePlayer* pPlayer = UTIL_PlayerByIndex(i);
+		ReloadGameRules();
+		HL2MPRules()->RestartGame();
 
-		if (pPlayer && !HL2MPRules()->IsTeamplay())
+		for (int i = 0; i <= gpGlobals->maxClients; ++i)
 		{
-			if (!pPlayer->IsHLTV() && !pPlayer->IsObserver() && !g_pGameRules->IsTeamplay() && pPlayer->GetTeamNumber() != TEAM_UNASSIGNED)
-				pPlayer->ChangeTeam(TEAM_UNASSIGNED);
+			CBasePlayer* pPlayer = UTIL_PlayerByIndex(i);
+
+			if (pPlayer && !HL2MPRules()->IsTeamplay())
+			{
+				if (!pPlayer->IsHLTV() && !pPlayer->IsObserver() && !g_pGameRules->IsTeamplay() && pPlayer->GetTeamNumber() != TEAM_UNASSIGNED)
+					pPlayer->ChangeTeam(TEAM_UNASSIGNED);
+			}
 		}
 	}
+	return;
 }
-*/
+
 void flashlight_changed( IConVar *pConVar, const char *pOldString, float flOldValue )
 {
 	ConVarRef var( pConVar );
@@ -73,7 +76,7 @@ ConVar  mapcyclefile( "mapcyclefile", "mapcycle.txt", FCVAR_NONE, "Name of the .
 ConVar  servercfgfile( "servercfgfile","server.cfg" );
 ConVar  lservercfgfile( "lservercfgfile","listenserver.cfg" );
 // multiplayer server rules
-ConVar	teamplay("mp_teamplay", "0", FCVAR_NOTIFY, "Should teamplay settings be on or off");
+ConVar	teamplay("mp_teamplay", "0", FCVAR_NOTIFY, "Should teamplay settings be on or off", mp_teamplay_changed);
 ConVar	falldamage( "mp_falldamage","0", FCVAR_NOTIFY );
 ConVar	weaponstay( "mp_weaponstay","0", FCVAR_NOTIFY );
 ConVar	forcerespawn( "mp_forcerespawn","1", FCVAR_NOTIFY );

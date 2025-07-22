@@ -43,3 +43,18 @@ ConVar sv_showplayermodel(
 	"1", 
 	FCVAR_GAMEDLL,
 	"If non-zero, shows the updated player model name to the player");
+
+//Game Description
+ConVar sv_gamedesc(
+	"sv_gamedesc",
+	"0",
+	FCVAR_GAMEDLL,
+	"Shows custom game description");
+
+//Game Description
+ConVar sv_instant_teamplay(
+	"sv_instant_teamplay",
+	"0",
+	FCVAR_GAMEDLL,
+	"If non-zero, allow live change of teamplay");
+
