@@ -15,6 +15,7 @@
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
+#include <hl2mp_gamerules.h>
 
 #define TRIPMINE_POWERUP_DELAY 2.0f
 
@@ -184,11 +185,30 @@ void CTripmineGrenade::MakeBeam( void )
 
 	m_pBeam = CBeam::BeamCreate( g_pModelNameLaser, 0.35 );
 	m_pBeam->PointEntInit( tr.endpos, this );
-	m_pBeam->SetColor( 255, 55, 52 );
-	m_pBeam->SetScrollRate( 25.6 );
-	m_pBeam->SetBrightness( 64 );
+	m_pBeam->SetScrollRate(25.6);
 
-	m_pBeam->SetEndAttachment( beamAttach );
+	if (HL2MPRules()->IsTeamplay())
+	{
+		if (m_hOwner.Get()->GetTeamNumber() == 2)
+		{
+			m_pBeam->SetBrightness(164);
+			m_pBeam->SetColor(10, 52, 255);
+			m_pBeam->SetEndAttachment(beamAttach);
+		}
+		else
+		{
+			m_pBeam->SetBrightness(64);
+			m_pBeam->SetColor(255, 25, 25);
+			m_pBeam->SetEndAttachment(beamAttach);
+		}
+	}
+	else
+	{
+		m_pBeam->SetBrightness(64);
+		m_pBeam->SetColor(255, 52, 52);
+		m_pBeam->SetEndAttachment(beamAttach);
+	}
+
 }
 
 void CTripmineGrenade::AttachToEntity( const CBaseEntity *entity )

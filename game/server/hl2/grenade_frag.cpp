@@ -14,6 +14,7 @@
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
+#include <hl2mp_gamerules.h>
 
 #define FRAG_GRENADE_BLIP_FREQUENCY			1.0f
 #define FRAG_GRENADE_BLIP_FAST_FREQUENCY	0.3f
@@ -154,7 +155,22 @@ void CGrenadeFrag::CreateEffects( void )
 	// Start up the eye glow
 	if ( !m_pMainGlow.Get() )
 	{
-		m_pMainGlow = CSprite::SpriteCreate("sprites/redglow1.vmt", GetLocalOrigin(), false);
+				if (HL2MPRules()->IsTeamplay())
+				{
+					if (GetOwnerEntity()->GetTeamNumber() == 3)
+					{
+						m_pMainGlow = CSprite::SpriteCreate("sprites/redglow1.vmt", GetLocalOrigin(), false);
+					}
+					else
+					{
+						m_pMainGlow = CSprite::SpriteCreate("sprites/blueglow1.vmt", GetLocalOrigin(), false);
+					}
+	
+				}
+				else
+				{
+					m_pMainGlow = CSprite::SpriteCreate("sprites/redglow1.vmt", GetLocalOrigin(), false);
+				}
 	}
 
 	Vector attachmentpos( 0, 0, 8.5 );
@@ -179,7 +195,23 @@ void CGrenadeFrag::CreateEffects( void )
 
 	if ( m_pGlowTrail != NULL )
 	{
-		m_pGlowTrail->SetTransparency( kRenderTransAdd, 255, 0, 0, 255, kRenderFxNone );
+
+		if (HL2MPRules()->IsTeamplay())
+		{
+			if (GetOwnerEntity()->GetTeamNumber() == 3)
+			{
+				m_pGlowTrail->SetTransparency(kRenderTransAdd, 255, 0, 0, 255, kRenderFxNone);
+			}
+			else
+			{
+				m_pGlowTrail->SetTransparency(kRenderTransAdd, 0, 0, 255, 200, kRenderFxNone);
+			}
+		}
+		else
+		{
+			m_pGlowTrail->SetTransparency(kRenderTransAdd, 255, 0, 0, 255, kRenderFxNone);
+		}
+
 		m_pGlowTrail->SetStartWidth( 8.0f );
 		m_pGlowTrail->SetEndWidth( 1.0f );
 		m_pGlowTrail->SetLifeTime( 0.5f );
