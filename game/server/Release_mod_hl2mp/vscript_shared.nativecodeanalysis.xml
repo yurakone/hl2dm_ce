@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>filesystem.h</FILENAME>
+      <LINE>394</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'FileHash_t::m_md5contents' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>FileHash_t::{ctor}</FUNCTION>
+    <DECORATED>??0FileHash_t@@QEAA@XZ</DECORATED>
+    <FUNCLINE>394</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>FileHash_t::m_md5contents</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>filesystem.h</FILENAME>
+      <LINE>394</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'FileHash_t::m_crcIOSequence' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>FileHash_t::{ctor}</FUNCTION>
+    <DECORATED>??0FileHash_t@@QEAA@XZ</DECORATED>
+    <FUNCLINE>394</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>FileHash_t::m_crcIOSequence</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>env_effectsscript.cpp</FILENAME>
+      <LINE>483</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'sscanf'.</DESCRIPTION>
+    <FUNCTION>CEnvEffectsScript::ParseNewEffect</FUNCTION>
+    <DECORATED>?ParseNewEffect@CEnvEffectsScript@@QEAAXXZ</DECORATED>
+    <FUNCLINE>423</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>env_effectsscript.cpp</FILENAME>
+      <LINE>138</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CEnvEffectsScript::m_iszScriptName' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CEnvEffectsScript::{ctor}</FUNCTION>
+    <DECORATED>??0CEnvEffectsScript@@QEAA@XZ</DECORATED>
+    <FUNCLINE>138</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CEnvEffectsScript::m_iszScriptName</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;CEffectScriptElement,int&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@VCEffectScriptElement@@H@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

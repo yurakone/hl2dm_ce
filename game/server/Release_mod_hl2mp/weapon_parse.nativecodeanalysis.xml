@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>filesystem.h</FILENAME>
+      <LINE>394</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'FileHash_t::m_md5contents' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>FileHash_t::{ctor}</FUNCTION>
+    <DECORATED>??0FileHash_t@@QEAA@XZ</DECORATED>
+    <FUNCLINE>394</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>FileHash_t::m_md5contents</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>filesystem.h</FILENAME>
+      <LINE>394</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'FileHash_t::m_crcIOSequence' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>FileHash_t::{ctor}</FUNCTION>
+    <DECORATED>??0FileHash_t@@QEAA@XZ</DECORATED>
+    <FUNCLINE>394</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>FileHash_t::m_crcIOSequence</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>weapon_parse.cpp</FILENAME>
+      <LINE>311</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'FileWeaponInfo_t::iconSmall' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>FileWeaponInfo_t::{ctor}</FUNCTION>
+    <DECORATED>??0FileWeaponInfo_t@@QEAA@XZ</DECORATED>
+    <FUNCLINE>311</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>FileWeaponInfo_t::iconSmall</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;char const *,FileWeaponInfo_t *,unsigned short,bool (__cdecl*)(char const * const &amp;,char const * const &amp;)&gt;::Node_t::elem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;char const *,FileWeaponInfo_t *,unsigned short,bool (__cdecl*)(char const * const &amp;,char const * const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@PEBDPEAVFileWeaponInfo_t@@GP6A_NAEBQEBD0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;char const *,FileWeaponInfo_t *,unsigned short,bool (__cdecl*)(char const * const &amp;,char const * const &amp;)&gt;::Node_t::elem</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;char const *,FileWeaponInfo_t *,unsigned short,bool (__cdecl*)(char const * const &amp;,char const * const &amp;)&gt;::Node_t::key' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;char const *,FileWeaponInfo_t *,unsigned short,bool (__cdecl*)(char const * const &amp;,char const * const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@PEBDPEAVFileWeaponInfo_t@@GP6A_NAEBQEBD0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;char const *,FileWeaponInfo_t *,unsigned short,bool (__cdecl*)(char const * const &amp;,char const * const &amp;)&gt;::Node_t::key</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;UtlRBTreeNode_t&lt;CUtlMap&lt;char const *,FileWeaponInfo_t *,unsigned short,bool (__cdecl*)(char const * const &amp;,char const * const &amp;)&gt;::Node_t,unsigned short&gt;,unsigned short&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@U?$UtlRBTreeNode_t@UNode_t@?$CUtlMap@PEBDPEAVFileWeaponInfo_t@@GP6A_NAEBQEBD0@Z@@G@@G@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

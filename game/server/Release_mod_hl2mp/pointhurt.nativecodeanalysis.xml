@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>pointhurt.h</FILENAME>
+      <LINE>30</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPointHurt::m_nDamage' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPointHurt::{ctor}</FUNCTION>
+    <DECORATED>??0CPointHurt@@QEAA@XZ</DECORATED>
+    <FUNCLINE>30</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPointHurt::m_nDamage</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>pointhurt.h</FILENAME>
+      <LINE>30</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPointHurt::m_bitsDamageType' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPointHurt::{ctor}</FUNCTION>
+    <DECORATED>??0CPointHurt@@QEAA@XZ</DECORATED>
+    <FUNCLINE>30</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPointHurt::m_bitsDamageType</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>pointhurt.h</FILENAME>
+      <LINE>30</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPointHurt::m_flRadius' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPointHurt::{ctor}</FUNCTION>
+    <DECORATED>??0CPointHurt@@QEAA@XZ</DECORATED>
+    <FUNCLINE>30</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPointHurt::m_flRadius</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>pointhurt.h</FILENAME>
+      <LINE>30</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPointHurt::m_flDelay' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPointHurt::{ctor}</FUNCTION>
+    <DECORATED>??0CPointHurt@@QEAA@XZ</DECORATED>
+    <FUNCLINE>30</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPointHurt::m_flDelay</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>pointhurt.h</FILENAME>
+      <LINE>30</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPointHurt::m_strTarget' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPointHurt::{ctor}</FUNCTION>
+    <DECORATED>??0CPointHurt@@QEAA@XZ</DECORATED>
+    <FUNCLINE>30</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPointHurt::m_strTarget</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

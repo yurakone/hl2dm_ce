@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>baseviewmodel_shared.cpp</FILENAME>
+      <LINE>39</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBaseViewModel::m_vecLastFacing' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBaseViewModel::{ctor}</FUNCTION>
+    <DECORATED>??0CBaseViewModel@@QEAA@XZ</DECORATED>
+    <FUNCLINE>39</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CBaseViewModel::m_vecLastFacing</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>baseviewmodel_shared.cpp</FILENAME>
+      <LINE>39</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBaseViewModel::m_flTimeWeaponIdle' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBaseViewModel::{ctor}</FUNCTION>
+    <DECORATED>??0CBaseViewModel@@QEAA@XZ</DECORATED>
+    <FUNCLINE>39</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CBaseViewModel::m_flTimeWeaponIdle</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>baseviewmodel_shared.cpp</FILENAME>
+      <LINE>39</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBaseViewModel::m_Activity' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBaseViewModel::{ctor}</FUNCTION>
+    <DECORATED>??0CBaseViewModel@@QEAA@XZ</DECORATED>
+    <FUNCLINE>39</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CBaseViewModel::m_Activity</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

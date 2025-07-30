@@ -137,6 +137,8 @@ public:
 	void    CheckChatForReadySignal( CHL2MP_Player *pPlayer, const char *chatmsg );
 	const char *GetChatFormat( bool bTeamOnly, CBasePlayer *pPlayer );
 
+	void CreateTeams();
+
 #endif
 
 	bool IsOfficialMap( void );
@@ -202,3 +204,5 @@ inline CHL2MPRules* HL2MPRules()
 }
 
 #endif //HL2MP_GAMERULES_H
+
+

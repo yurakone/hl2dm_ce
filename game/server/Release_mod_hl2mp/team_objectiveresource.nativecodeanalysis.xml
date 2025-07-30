@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>team_objectiveresource.cpp</FILENAME>
+      <LINE>117</LINE>
+      <COLUMN>28</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBaseTeamObjectiveResource::m_flCapPercentages' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBaseTeamObjectiveResource::{ctor}</FUNCTION>
+    <DECORATED>??0CBaseTeamObjectiveResource@@QEAA@XZ</DECORATED>
+    <FUNCLINE>117</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CBaseTeamObjectiveResource::m_flCapPercentages</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

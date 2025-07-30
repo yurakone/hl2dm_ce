@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>sv_version.cpp</FILENAME>
+      <LINE>276</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'sscanf'.</DESCRIPTION>
+    <FUNCTION>GetBuildNumber</FUNCTION>
+    <DECORATED>?GetBuildNumber@@YAHXZ</DECORATED>
+    <FUNCLINE>263</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>sv_version.cpp</FILENAME>
+      <LINE>309</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>6284</DEFECTCODE>
+    <DESCRIPTION>Object passed as _Param_(2) when a string is required in call to 'Msg' Actual type: 'class std::basic_string&lt;char,struct std::char_traits&lt;char&gt;,class std::allocator&lt;char&gt; &gt;'.</DESCRIPTION>
+    <FUNCTION>sv_version</FUNCTION>
+    <DECORATED>?sv_version@@YAXAEBVCCommand@@@Z</DECORATED>
+    <FUNCLINE>298</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>sv_version.cpp</FILENAME>
+      <LINE>340</LINE>
+      <COLUMN>53</COLUMN>
+    </SFA>
+    <DEFECTCODE>6284</DEFECTCODE>
+    <DESCRIPTION>Object passed as _Param_(2) when a string is required in call to 'UTIL_VarArgs' Actual type: 'class std::basic_string&lt;char,struct std::char_traits&lt;char&gt;,class std::allocator&lt;char&gt; &gt;'.</DESCRIPTION>
+    <FUNCTION>sv_version</FUNCTION>
+    <DECORATED>?sv_version@@YAXAEBVCCommand@@@Z</DECORATED>
+    <FUNCLINE>298</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

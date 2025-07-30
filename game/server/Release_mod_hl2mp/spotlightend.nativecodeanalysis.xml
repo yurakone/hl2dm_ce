@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>spotlightend.h</FILENAME>
+      <LINE>43</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSpotlightEnd::m_vSpotlightDir' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSpotlightEnd::{ctor}</FUNCTION>
+    <DECORATED>??0CSpotlightEnd@@QEAA@XZ</DECORATED>
+    <FUNCLINE>43</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CSpotlightEnd::m_vSpotlightDir</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>spotlightend.h</FILENAME>
+      <LINE>43</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSpotlightEnd::m_vSpotlightOrg' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSpotlightEnd::{ctor}</FUNCTION>
+    <DECORATED>??0CSpotlightEnd@@QEAA@XZ</DECORATED>
+    <FUNCLINE>43</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CSpotlightEnd::m_vSpotlightOrg</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

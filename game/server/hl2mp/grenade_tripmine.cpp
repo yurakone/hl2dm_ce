@@ -191,7 +191,7 @@ void CTripmineGrenade::MakeBeam( void )
 	{
 		if (m_hOwner.Get()->GetTeamNumber() == 2)
 		{
-			m_pBeam->SetBrightness(164);
+			m_pBeam->SetBrightness(100);
 			m_pBeam->SetColor(10, 52, 255);
 			m_pBeam->SetEndAttachment(beamAttach);
 		}

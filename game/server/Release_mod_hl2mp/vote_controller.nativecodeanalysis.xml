@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>vote_controller.cpp</FILENAME>
+      <LINE>343</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CVoteController::m_iEntityHoldingVote' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CVoteController::{ctor}</FUNCTION>
+    <DECORATED>??0CVoteController@@QEAA@XZ</DECORATED>
+    <FUNCLINE>343</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CVoteController::m_iEntityHoldingVote</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>vote_controller.cpp</FILENAME>
+      <LINE>1178</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBaseIssue::m_szDetailsString' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBaseIssue::{ctor}</FUNCTION>
+    <DECORATED>??0CBaseIssue@@QEAA@PEBDPEAVCVoteController@@@Z</DECORATED>
+    <FUNCLINE>1178</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CBaseIssue::m_szDetailsString</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;CSteamID,float,unsigned short,bool (__cdecl*)(CSteamID const &amp;,CSteamID const &amp;)&gt;::Node_t::elem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;CSteamID,float,unsigned short,bool (__cdecl*)(CSteamID const &amp;,CSteamID const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@VCSteamID@@MGP6A_NAEBV1@0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;CSteamID,float,unsigned short,bool (__cdecl*)(CSteamID const &amp;,CSteamID const &amp;)&gt;::Node_t::elem</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;unsigned __int64,float,unsigned short,bool (__cdecl*)(unsigned __int64 const &amp;,unsigned __int64 const &amp;)&gt;::Node_t::elem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;unsigned __int64,float,unsigned short,bool (__cdecl*)(unsigned __int64 const &amp;,unsigned __int64 const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@_KMGP6A_NAEB_K0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;unsigned __int64,float,unsigned short,bool (__cdecl*)(unsigned __int64 const &amp;,unsigned __int64 const &amp;)&gt;::Node_t::elem</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;unsigned __int64,float,unsigned short,bool (__cdecl*)(unsigned __int64 const &amp;,unsigned __int64 const &amp;)&gt;::Node_t::key' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;unsigned __int64,float,unsigned short,bool (__cdecl*)(unsigned __int64 const &amp;,unsigned __int64 const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@_KMGP6A_NAEB_K0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;unsigned __int64,float,unsigned short,bool (__cdecl*)(unsigned __int64 const &amp;,unsigned __int64 const &amp;)&gt;::Node_t::key</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;CSteamID,int,unsigned short,bool (__cdecl*)(CSteamID const &amp;,CSteamID const &amp;)&gt;::Node_t::elem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;CSteamID,int,unsigned short,bool (__cdecl*)(CSteamID const &amp;,CSteamID const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@VCSteamID@@HGP6A_NAEBV1@0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;CSteamID,int,unsigned short,bool (__cdecl*)(CSteamID const &amp;,CSteamID const &amp;)&gt;::Node_t::elem</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;char const *,int&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@PEBDH@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;CBaseIssue::FailedVote *,int&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@PEAUFailedVote@CBaseIssue@@H@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;CBaseIssue *,int&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@PEAVCBaseIssue@@H@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;UtlLinkedListElem_t&lt;CMapEntityRef,unsigned short&gt;,unsigned short&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@U?$UtlLinkedListElem_t@VCMapEntityRef@@G@@G@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;UtlRBTreeNode_t&lt;CUtlMap&lt;unsigned __int64,float,unsigned short,bool (__cdecl*)(unsigned __int64 const &amp;,unsigned __int64 const &amp;)&gt;::Node_t,unsigned short&gt;,unsigned short&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@U?$UtlRBTreeNode_t@UNode_t@?$CUtlMap@_KMGP6A_NAEB_K0@Z@@G@@G@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;UtlRBTreeNode_t&lt;CUtlMap&lt;CSteamID,float,unsigned short,bool (__cdecl*)(CSteamID const &amp;,CSteamID const &amp;)&gt;::Node_t,unsigned short&gt;,unsigned short&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@U?$UtlRBTreeNode_t@UNode_t@?$CUtlMap@VCSteamID@@MGP6A_NAEBV1@0@Z@@G@@G@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;UtlRBTreeNode_t&lt;CUtlMap&lt;CSteamID,int,unsigned short,bool (__cdecl*)(CSteamID const &amp;,CSteamID const &amp;)&gt;::Node_t,unsigned short&gt;,unsigned short&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@U?$UtlRBTreeNode_t@UNode_t@?$CUtlMap@VCSteamID@@HGP6A_NAEBV1@0@Z@@G@@G@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

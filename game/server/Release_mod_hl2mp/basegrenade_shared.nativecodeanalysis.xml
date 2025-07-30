@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>basegrenade_shared.cpp</FILENAME>
+      <LINE>534</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBaseGrenade::m_flWarnAITime' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBaseGrenade::{ctor}</FUNCTION>
+    <DECORATED>??0CBaseGrenade@@QEAA@XZ</DECORATED>
+    <FUNCLINE>534</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CBaseGrenade::m_flWarnAITime</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>basegrenade_shared.cpp</FILENAME>
+      <LINE>534</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBaseGrenade::m_iszBounceSound' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBaseGrenade::{ctor}</FUNCTION>
+    <DECORATED>??0CBaseGrenade@@QEAA@XZ</DECORATED>
+    <FUNCLINE>534</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CBaseGrenade::m_iszBounceSound</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;IBaseProjectileAutoList *,int&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@PEAVIBaseProjectileAutoList@@H@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

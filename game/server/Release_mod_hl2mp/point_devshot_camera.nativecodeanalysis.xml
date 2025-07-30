@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>filesystem.h</FILENAME>
+      <LINE>394</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'FileHash_t::m_md5contents' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>FileHash_t::{ctor}</FUNCTION>
+    <DECORATED>??0FileHash_t@@QEAA@XZ</DECORATED>
+    <FUNCLINE>394</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>FileHash_t::m_md5contents</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>filesystem.h</FILENAME>
+      <LINE>394</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'FileHash_t::m_crcIOSequence' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>FileHash_t::{ctor}</FUNCTION>
+    <DECORATED>??0FileHash_t@@QEAA@XZ</DECORATED>
+    <FUNCLINE>394</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>FileHash_t::m_crcIOSequence</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>point_devshot_camera.cpp</FILENAME>
+      <LINE>166</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CDevShotSystem::m_bIssuedNextMapCommand' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CDevShotSystem::{ctor}</FUNCTION>
+    <DECORATED>??0CDevShotSystem@@QEAA@PEBD@Z</DECORATED>
+    <FUNCLINE>166</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CDevShotSystem::m_bIssuedNextMapCommand</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>point_devshot_camera.cpp</FILENAME>
+      <LINE>166</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CDevShotSystem::m_bParsedMapFile' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CDevShotSystem::{ctor}</FUNCTION>
+    <DECORATED>??0CDevShotSystem@@QEAA@PEBD@Z</DECORATED>
+    <FUNCLINE>166</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CDevShotSystem::m_bParsedMapFile</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>point_devshot_camera.cpp</FILENAME>
+      <LINE>43</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPointDevShotCamera::m_iszCameraName' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPointDevShotCamera::{ctor}</FUNCTION>
+    <DECORATED>??0CPointDevShotCamera@@QEAA@XZ</DECORATED>
+    <FUNCLINE>43</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPointDevShotCamera::m_iszCameraName</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>point_devshot_camera.cpp</FILENAME>
+      <LINE>43</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPointDevShotCamera::m_iFOV' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPointDevShotCamera::{ctor}</FUNCTION>
+    <DECORATED>??0CPointDevShotCamera@@QEAA@XZ</DECORATED>
+    <FUNCLINE>43</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPointDevShotCamera::m_iFOV</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

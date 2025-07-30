@@ -1,0 +1,2261 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CPhysicsProp::m_bFirstCollisionAfterLaunch' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/props.h"
+                },
+                "region": {
+                  "startLine": 339,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CPhysicsProp::{ctor}",
+                  "decoratedName": "??0CPhysicsProp@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CPhysicsProp::m_bFirstCollisionAfterLaunch"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CPhysicsProp::m_bThrownByPlayer' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/props.h"
+                },
+                "region": {
+                  "startLine": 339,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CPhysicsProp::{ctor}",
+                  "decoratedName": "??0CPhysicsProp@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CPhysicsProp::m_bThrownByPlayer"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CPhysicsProp::m_flForceToEnableMotion' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/props.h"
+                },
+                "region": {
+                  "startLine": 339,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CPhysicsProp::{ctor}",
+                  "decoratedName": "??0CPhysicsProp@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CPhysicsProp::m_flForceToEnableMotion"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CPhysicsProp::m_damageToEnableMotion' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/props.h"
+                },
+                "region": {
+                  "startLine": 339,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CPhysicsProp::{ctor}",
+                  "decoratedName": "??0CPhysicsProp@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CPhysicsProp::m_damageToEnableMotion"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CPhysicsProp::m_iszOverrideScript' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/props.h"
+                },
+                "region": {
+                  "startLine": 339,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CPhysicsProp::{ctor}",
+                  "decoratedName": "??0CPhysicsProp@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CPhysicsProp::m_iszOverrideScript"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CPhysicsProp::m_damageType' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/props.h"
+                },
+                "region": {
+                  "startLine": 339,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CPhysicsProp::{ctor}",
+                  "decoratedName": "??0CPhysicsProp@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CPhysicsProp::m_damageType"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CPhysicsProp::m_inertiaScale' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/props.h"
+                },
+                "region": {
+                  "startLine": 339,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CPhysicsProp::{ctor}",
+                  "decoratedName": "??0CPhysicsProp@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CPhysicsProp::m_inertiaScale"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CPhysicsProp::m_massScale' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/props.h"
+                },
+                "region": {
+                  "startLine": 339,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CPhysicsProp::{ctor}",
+                  "decoratedName": "??0CPhysicsProp@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CPhysicsProp::m_massScale"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'constraint_limitedhingeparams_t::attachedPerpAxisDirection' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vphysics/constraints.h"
+                },
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "constraint_limitedhingeparams_t::{ctor}",
+                  "decoratedName": "??0constraint_limitedhingeparams_t@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "constraint_limitedhingeparams_t::attachedPerpAxisDirection"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'constraint_limitedhingeparams_t::referencePerpAxisDirection' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vphysics/constraints.h"
+                },
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "constraint_limitedhingeparams_t::{ctor}",
+                  "decoratedName": "??0constraint_limitedhingeparams_t@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "constraint_limitedhingeparams_t::referencePerpAxisDirection"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CItem_DynamicResupply::m_bIsMaster' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+                },
+                "region": {
+                  "startLine": 166,
+                  "startColumn": 24
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CItem_DynamicResupply::{ctor}",
+                  "decoratedName": "??0CItem_DynamicResupply@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CItem_DynamicResupply::m_bIsMaster"
+          }
+        },
+        {
+          "ruleId": "C6308",
+          "message": {
+            "text": "'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlmemory.h"
+                },
+                "region": {
+                  "startLine": 763,
+                  "startColumn": 19,
+                  "endLine": 763,
+                  "endColumn": 60
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CUtlMemory<IPhysicsPropAutoList *,int>::Grow",
+                  "decoratedName": "?Grow@?$CUtlMemory@PEAVIPhysicsPropAutoList@@H@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "MSVC Code Analysis",
+          "version": "14.44.35207.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "d13dd93f071c46532128cb19a0fef446bb466232644fac2a42e9e52508c060a3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/props.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "e8f5c37cc21c1a3542f80ac3c1dd3a46eee6a6e636242c9ea0875d5dc2842b26"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vphysics/constraints.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "8e552a0591cea6b2542d40c25a57c5be31461bb7bc325c303de4368f8f141a60"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlmemory.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "410548f0d190fb248c6fe8e45ad1cf9a8146de02ce4540e7acdba7c119d3d2d8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/cbase.h"
+          },
+          "hashes": {
+            "sha-256": "5cdbad37851dc6d9e2e1e1cfcbd28737ddbf734490bbe27f30cf426685365255"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/dbg.h"
+          },
+          "hashes": {
+            "sha-256": "ee41db02c154b2740c4ff907abed22795b7f9e4e89e360541eefb781cdb10968"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/basetypes.h"
+          },
+          "hashes": {
+            "sha-256": "fe269021f4246463ac736566828ef761724b13cddf08bf963668741391976818"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/commonmacros.h"
+          },
+          "hashes": {
+            "sha-256": "85ac99b6508bc4252a954911ce34cec158612223af5b92414e6946691e958e12"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/platform.h"
+          },
+          "hashes": {
+            "sha-256": "216a4fdd74b12d207cf4e66ee1c7ebe95ab47d8f085cefad5b51ab54f4ecbb97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/wchartypes.h"
+          },
+          "hashes": {
+            "sha-256": "583b8b24ae0ffc8b78bfed00ba8e994540a96a753055f779298c37b776c4b993"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_off.h"
+          },
+          "hashes": {
+            "sha-256": "3d61910bc9860d0239b4e4b112bf8cba2121d3830491e6eebe4e572fc53a03a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_on.h"
+          },
+          "hashes": {
+            "sha-256": "65e186ed82fcee5effc33266c95fbd277cc218c461fa8c43ff88b53083541e97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_minmax_on.h"
+          },
+          "hashes": {
+            "sha-256": "fb450f3f15a15d1058bf2289688dd995285c69c8c2f04d94ac9d39419d22e740"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/annotations.h"
+          },
+          "hashes": {
+            "sha-256": "3a0a94401af5aec47ddc775419b0851d761ef1fff336896114dfe9cdebc7503f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/fasttimer.h"
+          },
+          "hashes": {
+            "sha-256": "71a29533a668038ca7f7bb0f828608c1af35e6ace1fc7be1388aceae3df410cf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/protected_things.h"
+          },
+          "hashes": {
+            "sha-256": "59d6c726f9f6c4499b497ec098d4388e8dba9b5e20ac52d69ac8833d6062c42e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/xbox_codeline_defines.h"
+          },
+          "hashes": {
+            "sha-256": "0e7522820f894fe046c5c42e19f02f03365790479fd3b923dbd0854ad9c93f3b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/dbgflag.h"
+          },
+          "hashes": {
+            "sha-256": "1bbb5eb7eefd8e2f1d8c5680d79cc7003c3ebcd1e0e5e7ab796d09f1bb3bd3e6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/strtools.h"
+          },
+          "hashes": {
+            "sha-256": "67b109cf7e03cd43518cb1228e8f02cccb59a46010ee480d46f5dd1219dc12db"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlvector.h"
+          },
+          "hashes": {
+            "sha-256": "6cf720fa527793def501a808f4ca16b83f17f3abfc7caf56a52d620bc2f90d3f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/threadtools.h"
+          },
+          "hashes": {
+            "sha-256": "0eaba07e2a1e8241122f3a95db872b5c518007d0da178ce1b673ca870aa318dd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/type_traits.h"
+          },
+          "hashes": {
+            "sha-256": "279842657d131a6c585e255c1653cd60447ffa2f57e44eb0897acdc9c326e1fe"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/vcrmode.h"
+          },
+          "hashes": {
+            "sha-256": "f90b2a6fbf079971a6dd0253320e18f249aee8ba4d8fac641c4ec27e8738f2ca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/vcr_shared.h"
+          },
+          "hashes": {
+            "sha-256": "fea9514bc70fb016720fe50ecb2640c8ec8d86c1eb98c86b3e97f3d3fe3e6500"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/vprof_telemetry.h"
+          },
+          "hashes": {
+            "sha-256": "5956b027eeb0749312f365c637fcd316e1ca86bb789e39f9df9b262ea8904d4b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/tmapi_dummy.h"
+          },
+          "hashes": {
+            "sha-256": "92cc69bbaec321c670f98972153b7ebf077e4e8ad50c00ab6b09af891b7a309c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/mathlib.h"
+          },
+          "hashes": {
+            "sha-256": "0199cf33335b7ee5132d0d7ebe664593fb16e44ce2396e5a72bdd0f22edb96c0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/minmax.h"
+          },
+          "hashes": {
+            "sha-256": "98030dbdb128745649f18ee7395fd22355e97df1a6bf46f49ea779832967f9f0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+          },
+          "hashes": {
+            "sha-256": "9d7c10c7dabd16f14522b1f79dbf5c9658eb11e419a11e189b076feaf790e29a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector2d.h"
+          },
+          "hashes": {
+            "sha-256": "60815e8c87cd3dcb98fb0c129f4c44db2ed325f15ecfd2a4504ed1723cba32b2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/math_pfns.h"
+          },
+          "hashes": {
+            "sha-256": "28b381d07bc9388963aae989cc82bfdb56e31db6aae615b23b0985810b286fe5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memalloc.h"
+          },
+          "hashes": {
+            "sha-256": "599c07a92d6ca66c1d71705a6df4b4dcf4f7187aba895f44a3455b7bcf895570"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/mem.h"
+          },
+          "hashes": {
+            "sha-256": "68dfe8a5f1fc493eef6ef206801ea749841fe973e06852b62495b35a9fffaf8c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memdbgon.h"
+          },
+          "hashes": {
+            "sha-256": "4d350e1ec5045fb3dbe586ab2f9fbffa3b2042c7a402742978a2e4054a4757fb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memdbgoff.h"
+          },
+          "hashes": {
+            "sha-256": "75325a022f28cc3c18a7b2e5730b9db1f1f20d431b4f5837ebcb179271d4a842"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlblockmemory.h"
+          },
+          "hashes": {
+            "sha-256": "e171f448b0f423f9fa52f318c4e087a4ae3f01872640f149a3c85102e5bf98fa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vstdlib/random.h"
+          },
+          "hashes": {
+            "sha-256": "4b82b78005566eebc9e92683d238350b7ad988e4101f26dd8d620282313aa294"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vstdlib/vstdlib.h"
+          },
+          "hashes": {
+            "sha-256": "0d063a4c39c67eeaea0856bc22f4d0b8e630928bec1461e2565527c874d99eba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/interface.h"
+          },
+          "hashes": {
+            "sha-256": "2eb45db6d646aac3927e35741c4c5269d4b92c373969ea3042fac8c21979aa79"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vmatrix.h"
+          },
+          "hashes": {
+            "sha-256": "56bed7855b765106c1be531d91540628de17fb8b7ced3343af053ed474bbe9b3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vplane.h"
+          },
+          "hashes": {
+            "sha-256": "2ea07b2c0e2346e8a7fc3d2372b8cfbc3c806066d2dfe8993b520ebd5bb11440"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector4d.h"
+          },
+          "hashes": {
+            "sha-256": "7a4c9542841fed1fd8e0de9bc11a32d0b4143de1c6aa97d545c744a910745f98"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/string_t.h"
+          },
+          "hashes": {
+            "sha-256": "6592ecd9818deee7263c85ba93f19b43bc6c67868634c969d412fd69d7118860"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vphysics_interface.h"
+          },
+          "hashes": {
+            "sha-256": "5e81d7a6a5a1786d98759012bf7c662a889c8279bfe6a458deddcfcf9b45eb72"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/appframework/iappsystem.h"
+          },
+          "hashes": {
+            "sha-256": "739d142c3d054152b4e4af0e8dbfc22f13323b58ab6c711fb0f4798f08ff2dbb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vcollide.h"
+          },
+          "hashes": {
+            "sha-256": "5754878b83b66c1d48b60fedd671e2d5f6c5be254dd082ad4f45c640489188cb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/const.h"
+          },
+          "hashes": {
+            "sha-256": "b2d4b74de9f05e7a16ef18c8b94031ea0af5e338945b87c4f20f631d1eb31664"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+          },
+          "hashes": {
+            "sha-256": "b508d1830a2febb8a9bc7be6dd02d5493aa538d937e7dbbb38ee2730e38a2c2f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/cmodel.h"
+          },
+          "hashes": {
+            "sha-256": "c166c3ead6ac4f30b5efe3296416ebf0bda981b206a9fc13d1d59efaaa73a244"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/trace.h"
+          },
+          "hashes": {
+            "sha-256": "713a33c994b2398de054bb0ec3d341d66bba6f9c2928d0bea208a3482ff3ff40"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/basehandle.h"
+          },
+          "hashes": {
+            "sha-256": "ce4990df3023f9006b9af57e9506a61a0b717aa90a4e0e69e081df8cca938516"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/ihandleentity.h"
+          },
+          "hashes": {
+            "sha-256": "e17c7b1463c457c8f156ea9fff86cbe6797069d656bcb07b30a9ae71a13e2517"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/bspflags.h"
+          },
+          "hashes": {
+            "sha-256": "1d40dc6c8bf53d98f7a742d87a01c0cf22992ba20a1fcc5e63a3f7cc296abf18"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/gametrace.h"
+          },
+          "hashes": {
+            "sha-256": "a05127cecf73c20489990819c2319ad90b50ce24dceb8f849a2e5d4a628f06af"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/ispatialpartition.h"
+          },
+          "hashes": {
+            "sha-256": "0ce0275155928f37add0176424cfc829eac988caf57cfb4a05e1e32eb8881ac0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/iserverentity.h"
+          },
+          "hashes": {
+            "sha-256": "08996b873e250524f93ea5e599761ca6a43e09f2bf67cff97c11276c9fc64f4b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/iserverunknown.h"
+          },
+          "hashes": {
+            "sha-256": "1030a9b34bf130953c6ee991fee6f1e79a52caba7dafeda088504e1453cf8100"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+          },
+          "hashes": {
+            "sha-256": "1ca7b5747d460ab2c6272917226253a4b0c5fd71c334caf98f112fc7dea42d98"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/engine/icollideable.h"
+          },
+          "hashes": {
+            "sha-256": "f1920f9db568f23d9bcb194c076e87032d767581231438a5306f84612c7e1c00"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/iservernetworkable.h"
+          },
+          "hashes": {
+            "sha-256": "f727b6cfdf549dc76b658868ddab3c179700adbbafeb140ddf817806dbaba48e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/bitvec.h"
+          },
+          "hashes": {
+            "sha-256": "133819e9229e519b3b5978fb866fe8603682d9dd1790bf77dc68a20228759f59"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/bspfile.h"
+          },
+          "hashes": {
+            "sha-256": "e574fca6d20253b1fac39fcbf9d7d002d684757205f2ba5c6001b8b3e76cfe95"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/datamap.h"
+          },
+          "hashes": {
+            "sha-256": "485bfbc6f6caec31bb14ac278f506a5e23781879f1d15f22df98aaa0a177c87a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/bumpvects.h"
+          },
+          "hashes": {
+            "sha-256": "4fe080e1bf9ef541b111919f649fbb92959e05d3c8a3f7ef28e451307187c23d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/compressed_light_cube.h"
+          },
+          "hashes": {
+            "sha-256": "400b8033545343072deb16f86f2a996748dd62a99f02768171d0eb631dc09d56"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/zip_uncompressed.h"
+          },
+          "hashes": {
+            "sha-256": "81e9ff8f0d66dc20055775b789eb4b5d91e44f3cd09ef6a1906e4cd1a7e056b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/eiface.h"
+          },
+          "hashes": {
+            "sha-256": "841f360dc1cc022ea5d1bd3b2179dd6448c60e03badc66139f16a0affd962843"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/convar.h"
+          },
+          "hashes": {
+            "sha-256": "7f9436eb07fd3923acca491726568e22fc445ff6aef2838a7f038fad39668697"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/iconvar.h"
+          },
+          "hashes": {
+            "sha-256": "fc02babd2eda64e75d958f7720033ac91c5321fd4f311b4e201966907980fcd3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlstring.h"
+          },
+          "hashes": {
+            "sha-256": "efec0e2a01c24725927e9eefb66aebe950128f9cebb967af1cade5b7a99c9fad"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/icvar.h"
+          },
+          "hashes": {
+            "sha-256": "cfde54c9e37c2df9f2d5faac3df48fd9ce6b7b4097c53ccd56d825e2d1c0f4a7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/engine/ivmodelinfo.h"
+          },
+          "hashes": {
+            "sha-256": "f54ee0a26e7b8482c6edadca631fa88ec5fec9cc119e46d882f0fc8ed638cd44"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/soundflags.h"
+          },
+          "hashes": {
+            "sha-256": "98063d68beb6db174de7d5fa32e703718a5ef5252d607d24e52a9905208754bd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/engine/iserverplugin.h"
+          },
+          "hashes": {
+            "sha-256": "f0507bbfaeadfdbc369c0aa69014ca6247d320de3e165cb9e6c9cdb6a6afedba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/keyvalues.h"
+          },
+          "hashes": {
+            "sha-256": "760f3794a728bc1265977cc706312af94218d696e0090317d4c9c082d4becfde"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/color.h"
+          },
+          "hashes": {
+            "sha-256": "e4907383ed4c89526dac086abc2261df68a14ed14408776ac01654793c0bcc94"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/bitbuf.h"
+          },
+          "hashes": {
+            "sha-256": "42636b697cc6bac0bf0f8399810fc112c2133f8d351c3a384e8d07ed7d6dab51"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/dt_send.h"
+          },
+          "hashes": {
+            "sha-256": "f25d7151104b510cd22c287f7f6dcf8e23cf46d5c91732bb87947143d8f78a4c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/dt_common.h"
+          },
+          "hashes": {
+            "sha-256": "576e8c85bdb4d534f98db8653a57f4267fc8d20d8ad811e0f98a1ffd1f8a3011"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/shareddefs.h"
+          },
+          "hashes": {
+            "sha-256": "2583cefa171efe134e011c14efd68a9104d925b591bf14fddf09c3283c6c5248"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/ehandle.h"
+          },
+          "hashes": {
+            "sha-256": "521a41f3f1939dd6108b0a9c8d52d1c535e8c8793c13a1b093e9b18c668842e8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/entitylist_base.h"
+          },
+          "hashes": {
+            "sha-256": "81ae93a1481caf4253fd463a6f7695b553d489f761c7218061c75de500ef5792"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utllinkedlist.h"
+          },
+          "hashes": {
+            "sha-256": "e0002181d91ce841d3f9d0c7641969ffad4688b61de74a5723531c0f08f56956"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlfixedmemory.h"
+          },
+          "hashes": {
+            "sha-256": "bcd68e57c60c2ebdb621cc7454010936dcea5b173ffefa9ebdda4042e3716449"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/util.h"
+          },
+          "hashes": {
+            "sha-256": "c0ecebb79ef5bc3ee16b76233447a49025b2cc24ab9bf092d510affbb6c9656e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/ai_activity.h"
+          },
+          "hashes": {
+            "sha-256": "bfd3b157ad4d5f0115e677a7d30fe34c6b5e682bc7e6fe557db2ea77fabb6d76"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/steam_gameserver.h"
+          },
+          "hashes": {
+            "sha-256": "db84a12eda6d9a024b8c9b18e70986a11a8a107f604254d7f9a816a20cd00b05"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/steam_api.h"
+          },
+          "hashes": {
+            "sha-256": "9d2f7c898c0698eff8852f8826f0f44424e57a93faea714276c41d38b50e3e4c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/steam_api_common.h"
+          },
+          "hashes": {
+            "sha-256": "e86071c231a5209cabfeb43767f9b99b0a3289eb670241ca07d1d51a4950d634"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/steamtypes.h"
+          },
+          "hashes": {
+            "sha-256": "2099a0d3d3af99af274836d929c19ce4939ce5e336e9b7c084fe54a75724d337"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/steamclientpublic.h"
+          },
+          "hashes": {
+            "sha-256": "993095eaf5838bdc1110de564f504f2bd31fa156b89f9e5b1a08150793dfe90c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/steamuniverse.h"
+          },
+          "hashes": {
+            "sha-256": "2b9c0834ae5a71eac07e6d415ded853c0d0ce3bd91f3e6991597973ed3dee394"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/common/steamcommon.h"
+          },
+          "hashes": {
+            "sha-256": "7c82f85bb6c3db6e50fdb90a6d5a5e4dd8c7632a97aaeaded802aa682bbd2517"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/steam_api_internal.h"
+          },
+          "hashes": {
+            "sha-256": "51affef4de43205127baf245c2e9e45df4dc105fbc3e168ca2d500e76d779bb4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamclient.h"
+          },
+          "hashes": {
+            "sha-256": "742d42ae3d482ac3a136f6f9f205a6741c16fbf8985f4ec578a0324bd5c0063c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamuser.h"
+          },
+          "hashes": {
+            "sha-256": "2d93e98fdfd50551a2c53f0c3fcb3e90bbe4f135683db7005fc018f8074c36c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamfriends.h"
+          },
+          "hashes": {
+            "sha-256": "398f302865cea5978e4ce5a4e16b32b5f2308f18dcaeccab79b3f13ccc4714b4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamutils.h"
+          },
+          "hashes": {
+            "sha-256": "c3f72686cec30b94fb2d5971e6e8bf0b7a3f7592e4e02856781b30e1ebe7798d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteammatchmaking.h"
+          },
+          "hashes": {
+            "sha-256": "c48961fd70ec3dcfa9ff27db2b6f510ff1517d3547fa89b2dcf1742a686ab9e1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/matchmakingtypes.h"
+          },
+          "hashes": {
+            "sha-256": "6ee55eafcf3d6e833c7544d1204c0e25294fdbb5798ea8a71c345c8cebb428fa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamuserstats.h"
+          },
+          "hashes": {
+            "sha-256": "b7762bee0b9b6ecdd3ac709cf5a0bbefc769acf258353acbb2cf74f0b1e9ee76"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamremotestorage.h"
+          },
+          "hashes": {
+            "sha-256": "b31ceedc3000429277d3de2226d85484b1c8eee6973ef033fd29b8cbde7ac9c4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamapps.h"
+          },
+          "hashes": {
+            "sha-256": "01255fb5cc5c7e4164ea1f3c0ac65ab6f4ee71b091cb52d39cbdf79951162106"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamnetworking.h"
+          },
+          "hashes": {
+            "sha-256": "afa6bfdce47c868782e76f8a61acd1097fa991ac019a7a2a5b4a1237c5be5e2d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamscreenshots.h"
+          },
+          "hashes": {
+            "sha-256": "295d32128360cdcea67bf797d81906a4d0809d246da5c27b53b8c9c0f4ee054b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteammusic.h"
+          },
+          "hashes": {
+            "sha-256": "1211b437fdfd8d90035643ce2c2974cde9deb382fac2cacb6db71237d6c89b1c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteammusicremote.h"
+          },
+          "hashes": {
+            "sha-256": "1f414960ec474aacc13690bd7125b481acb16b4ecb9bca1e745af059db3c97c1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamhttp.h"
+          },
+          "hashes": {
+            "sha-256": "fe15463941c45b0afa5970f1a85b1d9099663f5b48793bf4a4da565f60bb238f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/steamhttpenums.h"
+          },
+          "hashes": {
+            "sha-256": "c8d6da554b15bdfa0ce1d453f57442fd41b47581865a697e8c71d42f571b986b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamcontroller.h"
+          },
+          "hashes": {
+            "sha-256": "708d703057e135fb1767f45cb6c19534e8e6d98724a708431178a3d75f01c261"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteaminput.h"
+          },
+          "hashes": {
+            "sha-256": "64ae1ccff53f85e4a59a3e82dbd22f116c92da71ed26d7fefb860385f4d7ebbf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamugc.h"
+          },
+          "hashes": {
+            "sha-256": "87f68402b444b7e2483341eb30005989717302db49f4bce9202a4f8bbb9b1eae"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamapplist.h"
+          },
+          "hashes": {
+            "sha-256": "3cfbd3ba151be2f70f654af712e0aa3c40beb52d631caf07c4a8f2165331268f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamhtmlsurface.h"
+          },
+          "hashes": {
+            "sha-256": "b9184cb833269ebfb6979a8d8e6da860e2cf437c067d079f681d0691aa26af88"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteaminventory.h"
+          },
+          "hashes": {
+            "sha-256": "3228d8cd6a281bd5149fade2ac57aebfd1c2e6126364220f0ae88aae69f0e290"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamvideo.h"
+          },
+          "hashes": {
+            "sha-256": "a8b08a3b9680e3da404396fa353ac491748a80324d64734bdabcd619fddbefdc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamparentalsettings.h"
+          },
+          "hashes": {
+            "sha-256": "cef533203a0d1e5f0177662993a72550b6a387ca42b6d62cd41f5cbbd153e646"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamremoteplay.h"
+          },
+          "hashes": {
+            "sha-256": "8b203408b5f98a5c1b0efe91723d082f5ba875c0f238719677574f59636b0bce"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamnetworkingmessages.h"
+          },
+          "hashes": {
+            "sha-256": "f19e926bb23d668ba277adac46d33f91581e14b260d7bac3f0c8b6cebaedcfb6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/steamnetworkingtypes.h"
+          },
+          "hashes": {
+            "sha-256": "1a945b6fb063460458793b7f37db937f97f3f32196d931b949066ef830b14778"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamnetworkingsockets.h"
+          },
+          "hashes": {
+            "sha-256": "fc90944ca06cb0ad010547526e29525edae9967c77608941e6c820a03818a518"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamnetworkingutils.h"
+          },
+          "hashes": {
+            "sha-256": "6fde03f59febe3d74b30282bc496ba90aff7cbccbff6b0db875b4df012d1bcde"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamgameserver.h"
+          },
+          "hashes": {
+            "sha-256": "cbd30d4dbb044b1d3c40f5f2082d4422f9a572300bdf76d06cebd87e3433737d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/steam/isteamgameserverstats.h"
+          },
+          "hashes": {
+            "sha-256": "5d46add4d07ab48e905f04f9d7455745cdd33927eafd2d5be143dd6e36e1e44d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/enginecallback.h"
+          },
+          "hashes": {
+            "sha-256": "c7d074b9bfe542d45edd0fffc2123be5947af80bdef296bcabcf6215a23f2013"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/tempentity.h"
+          },
+          "hashes": {
+            "sha-256": "2f5098833ba60f4d4439cda88ab7724d63ddc94576c674f235dd8f7c3e16aae7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/gamestringpool.h"
+          },
+          "hashes": {
+            "sha-256": "618eee777947e3fa502d332665fedfb638acda3f89b4d786e75ef7de2d25cfb6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/engine/ienginetrace.h"
+          },
+          "hashes": {
+            "sha-256": "c9c6c1a3ff22fc263d84484d9a92586e14d78b79be6ea42801bb4f7124276f3f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/worldsize.h"
+          },
+          "hashes": {
+            "sha-256": "b9a7efbae3e5f398bab485873e7b8de4d67374c413600f6944a35b8fd6aa914a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/server_class.h"
+          },
+          "hashes": {
+            "sha-256": "906b9f146add33a76c5330b52c84f8ea9229bcd8b209673f91b6651ccbb7c2ce"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/networkstringtabledefs.h"
+          },
+          "hashes": {
+            "sha-256": "e28936e60a1d41e462674f95b34d58a0f83e2d6458924f5766e4775d1856edc9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/shake.h"
+          },
+          "hashes": {
+            "sha-256": "bd3c86c370bf68f14728e71c5c06e0fa02f25d1fd364d01faec092d66c02b639"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/util_shared.h"
+          },
+          "hashes": {
+            "sha-256": "4e45147047deb0e819dd01200cc4ac87e9ff26a1893a0e52f128ae182ee0e293"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/networkvar.h"
+          },
+          "hashes": {
+            "sha-256": "203ccbcb6bba92a6dd8b94b401a64768f179379a44d7374f31f4d8ea1d1a9cbf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/engine/istaticpropmgr.h"
+          },
+          "hashes": {
+            "sha-256": "0cda339ba35df06b55813d3efccbf0e7232bc72de8c897fc93030327110a54eb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/shared_classnames.h"
+          },
+          "hashes": {
+            "sha-256": "679183270b6bb5005fa9540344aaeef0e7b31161e4cf1bf096bddf239a6dc7a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/globals.h"
+          },
+          "hashes": {
+            "sha-256": "12901ff1527f8d44db3c77298ca227b899a5ffc8d05fe85f28d07cd26c04df08"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/predictable_entity.h"
+          },
+          "hashes": {
+            "sha-256": "10c44e1f372a8d72cb180d60491d05beac785a7dd94f5b423ebfad85610e6a4e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/predictioncopy.h"
+          },
+          "hashes": {
+            "sha-256": "18ffb1d500f041d8880636419fd9d21fe454875fe298f4e9fc72a43e7f1e4b3f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/sendproxy.h"
+          },
+          "hashes": {
+            "sha-256": "b82a404299d00bd273b06d71118b22eb11d650a57592c4a25c3c681e727423f4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/predictableid.h"
+          },
+          "hashes": {
+            "sha-256": "e131d9e94c50442358089fcd5dc3e17bb88cf318aa5313af1ea43920e02f2e2e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/variant_t.h"
+          },
+          "hashes": {
+            "sha-256": "0b5dc88386a9d767c2999583aad5d7ace4baf7c2883e70ef28701b735b8ad0c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/takedamageinfo.h"
+          },
+          "hashes": {
+            "sha-256": "dbfe65b65123cee6e070fe14772ccc4487898b04642b1c3ee7617d2a2bd91928"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/touchlink.h"
+          },
+          "hashes": {
+            "sha-256": "38707236cc14b0d526049e044c2151c982e383f88dfbabbd75c7018ae31e99c4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/groundlink.h"
+          },
+          "hashes": {
+            "sha-256": "78307069bf27c417bde3cb901143fa4f7d3c82f2d3ef1740f5f0560672faf698"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/base_transmit_proxy.h"
+          },
+          "hashes": {
+            "sha-256": "0a44200ddd4d6bc718c5373173a7faf302a6f0b9e0759c36ecd4942a2488ebdf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/baseentity_shared.h"
+          },
+          "hashes": {
+            "sha-256": "57cfca5a8034d6028053d9de2b7969f601149f481e063e973484748f434388f5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/baseentity.h"
+          },
+          "hashes": {
+            "sha-256": "a301389c81c80b87ee7648f7c8f518ea90d34b90afdf28e0bcc61361e1986ea9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/entitylist.h"
+          },
+          "hashes": {
+            "sha-256": "2be7cd9a6112f63b2f883637f9589b2e884384e9db4a834c813773c93c965652"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/entityoutput.h"
+          },
+          "hashes": {
+            "sha-256": "bb6ab825f4edaef1087eb90c51e5d59cffe864e547586644845cb67d460ae43a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/collisionproperty.h"
+          },
+          "hashes": {
+            "sha-256": "0f37adf2d00c5f3b586aa03cc542b9faa46263c2e11d77a842d1eefdadc88e28"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/servernetworkproperty.h"
+          },
+          "hashes": {
+            "sha-256": "e4e974260b8df31ff269f8a1b82c70d077664d77af4d95877d26ee8590d9da5d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/timedeventmgr.h"
+          },
+          "hashes": {
+            "sha-256": "6b3b324619fa6e49335d3ef72e569ae6553f1876bf71c91d50f2a92bb7c93448"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlpriorityqueue.h"
+          },
+          "hashes": {
+            "sha-256": "b7c14b6dbdc86db86e720714e30fcd0b74ddc5756d52061b368f57871e0c8133"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vscript/ivscript.h"
+          },
+          "hashes": {
+            "sha-256": "b5f8c61173af4f53edae3afd941428bb8277e4e23066af3fec43c0979752f084"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/functors.h"
+          },
+          "hashes": {
+            "sha-256": "2a125b5c0e0aef64888282a3350c953d2d37add9c781ba97333e29ff532c9aa8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/refcount.h"
+          },
+          "hashes": {
+            "sha-256": "e2812df440bac0f49067d5e911b0ebf9998c5e0d6e412bc024853aa8f9c806ab"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlenvelope.h"
+          },
+          "hashes": {
+            "sha-256": "0be6b617454e55c3ed41022cf105a2267b3a8716c0c466336d73230d01c9b564"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vscript/variant.h"
+          },
+          "hashes": {
+            "sha-256": "8f9868e8dd2114da860634f349a393b21751b4700d9b7a16d67076f387572d7d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/fmtstr.h"
+          },
+          "hashes": {
+            "sha-256": "4011bea1f61a3e838a3f8e7f6c399548acc30559a2b3c2f38f7478b6c6773e0e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vscript/vscript_templates.h"
+          },
+          "hashes": {
+            "sha-256": "e0a187ebac25646c9a7f6d5608d05507b0e598e068dba5208943f8089a0fc82e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/vscript_server.h"
+          },
+          "hashes": {
+            "sha-256": "7d991a5fcfb1bd0ed0fd85b7d3ee9b61d79401a52f6be74c8b3d5b88e3c4378d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/vscript_shared.h"
+          },
+          "hashes": {
+            "sha-256": "594387a153ec6f43cac2f73e786a95df88e8c4cf093ec7099cd5a99362d945c9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlsymbol.h"
+          },
+          "hashes": {
+            "sha-256": "0ce190164c9b124674cbab814d7c4367ed587ce953b9b965405fe7b7fc7420b7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlrbtree.h"
+          },
+          "hashes": {
+            "sha-256": "5a75475b74edc4e17ab6ee529cbb9f3503415722121cf6e9b5f67606fab2fccc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/gameeventlistener.h"
+          },
+          "hashes": {
+            "sha-256": "c930eabbc14f6be15e721e4479f96da64b936e75615902d9c2ee304d9285d82a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/igameevents.h"
+          },
+          "hashes": {
+            "sha-256": "869e2eeba834f784c8d5781fe2d95f38829069035afb3eb5a0bd677a88e80db7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/basetoggle.h"
+          },
+          "hashes": {
+            "sha-256": "48c3f289a82d65f1be61b1790bd2c9e8742d3566d9d0dd84bd944f88abbc52a2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/precache_register.h"
+          },
+          "hashes": {
+            "sha-256": "d7dd36c13f19526ebd5e45052d649379c48dd9428d4f6daafea33e7ed38c4cdd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/baseanimating.h"
+          },
+          "hashes": {
+            "sha-256": "89bc2b479db19f06d87931cc9ab028f3f46246700d904a379d912b65a9e63ea3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/studio.h"
+          },
+          "hashes": {
+            "sha-256": "cf5ac8bb6bfe4c7dab15024e8424afaab02ff781965d48077c55341b3914fff2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/compressed_vector.h"
+          },
+          "hashes": {
+            "sha-256": "bf379a04af2c2dea055e9f54fb945096021655840dfc4b295d1cd7d24e1ec1a0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlhash.h"
+          },
+          "hashes": {
+            "sha-256": "167576e660b0e2f3d1dae71d65db7c60ff3c104f0d042b595edf1c0358fa731b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/generichash.h"
+          },
+          "hashes": {
+            "sha-256": "6bb98fada3d991d35ba21bfa856e98643a91fe1459f6fd70eb72314cf91e0b45"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/localflexcontroller.h"
+          },
+          "hashes": {
+            "sha-256": "246521ab407d2b64cf0d971cfb297a837b0bb228d9e0120f7a33df4f01cb40d2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/datacache/idatacache.h"
+          },
+          "hashes": {
+            "sha-256": "2120fb8a820e0fb89eb128b1eef9f5026ba9ce0a297850359bf20c446b6a863c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/basecombatweapon.h"
+          },
+          "hashes": {
+            "sha-256": "ebaa18355b496b9586a32ddcddcbcf074c4256fb3fa6fadb58cbad903af0b6c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/basecombatweapon_shared.h"
+          },
+          "hashes": {
+            "sha-256": "2ba378950bfab55c8098b6c98eace001c0dc76c8e1c6792c8e9595d25ef8aebc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sharedinterface.h"
+          },
+          "hashes": {
+            "sha-256": "049b881d0612971db7d70ffa25e1bdd6195e6525639577392be389cb800acd9e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/weapon_parse.h"
+          },
+          "hashes": {
+            "sha-256": "1f989e7b8e48d3e029ae84b624e85f97d9a7aae417dd912cb6c32268cc725aee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/baseviewmodel_shared.h"
+          },
+          "hashes": {
+            "sha-256": "025b499d6e6b8caa2fc184f4c469f8fdf39fa49e71854c01461692856af55122"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/baseplayer_shared.h"
+          },
+          "hashes": {
+            "sha-256": "087f680d298474ab6e11942a5975a496e17c76ad05861f7ff71262150345dc8c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/player.h"
+          },
+          "hashes": {
+            "sha-256": "71d7103b7eeb29e3d78451972233940ed57e330847dade8790d6ae4a2a8f5b6e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/basecombatcharacter.h"
+          },
+          "hashes": {
+            "sha-256": "acbee7d39c491c146e224ccbd2f8058baa00d260b934ef0282c011b96416d322"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/weapon_proficiency.h"
+          },
+          "hashes": {
+            "sha-256": "b961829fc474db7360b4012a5bf5cc9e299d0908442ffc628bedfe6a425c4100"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/baseflex.h"
+          },
+          "hashes": {
+            "sha-256": "11243d6d14d31804cacd294e9d443779091e925d95026744cd44048dad443a81"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/baseanimatingoverlay.h"
+          },
+          "hashes": {
+            "sha-256": "84b6ae0c55b5d0a0fb5f57be6f2bcc1f3d1f836b09f7b897a6177954b2c948b6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sceneentity_shared.h"
+          },
+          "hashes": {
+            "sha-256": "9e5a5c44d472411e8196321d8ed071e58f02a46495bb6711a65dd7ea381881a0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/iscenetokenprocessor.h"
+          },
+          "hashes": {
+            "sha-256": "183f3ce1194abb559182aafed0109792d46d9ede9e6f1a55cd85976a0fcf1734"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/damagemodifier.h"
+          },
+          "hashes": {
+            "sha-256": "cf2059aa09bb105ad202a4a5b1a477cf5d494a64cbbbc8e9f7ab5106e2946d46"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/ai_hull.h"
+          },
+          "hashes": {
+            "sha-256": "b4feab455a40c5f4170ad873788888ea2374c025179cc380289ed6192320bae3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/ai_utils.h"
+          },
+          "hashes": {
+            "sha-256": "5d411293108a8491e0d456252bee667314f6b5cc50e8f9f4b1233194dee5046e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/simtimer.h"
+          },
+          "hashes": {
+            "sha-256": "100c7a0a06c02792bfb927979e96bce2807e88da9e6699ccc9101135615bce04"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/ai_component.h"
+          },
+          "hashes": {
+            "sha-256": "8a3a75d0104715a09567601dbbe6c90276fdf0e8195d3f53554f5264ac4ced8e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/physics_impact_damage.h"
+          },
+          "hashes": {
+            "sha-256": "08bfb1c8e2f04ad87fd79fa18df6f052deb0447b392342196ed4646855141074"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/usercmd.h"
+          },
+          "hashes": {
+            "sha-256": "25056dae031fc4fcc23aa7db0c85530b96b27ae6160a54a15c5ae31c2fdba7de"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/imovehelper.h"
+          },
+          "hashes": {
+            "sha-256": "5b5d006a442737707ab6aa5067ff0d801154fa10fac84e16319f2e7d722d7b76"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/checksum_crc.h"
+          },
+          "hashes": {
+            "sha-256": "a24fe7eca5d6f7fe4b1dae135d02f287ab8d4d3c48c9e1e5bde416ec4671ab25"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/playerlocaldata.h"
+          },
+          "hashes": {
+            "sha-256": "4cd7a97c1638393913916bd5c03e3cee852402c908daedaa25cc3b9608c7125c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/playernet_vars.h"
+          },
+          "hashes": {
+            "sha-256": "f0515bb05b1c88f79625dc2f8a7a92cbfce5c63e6e12805da65930bd55089183"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/fogcontroller.h"
+          },
+          "hashes": {
+            "sha-256": "a733eb965ceae411b64530b84bb06fcc8e37ce4ce3cd017ffef9d1bddf585a1e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/igamesystem.h"
+          },
+          "hashes": {
+            "sha-256": "11b6a2bd240747e2aac90e2ee73704b8d75146dcc8ef58338602e6e5e29cdba6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/playerstate.h"
+          },
+          "hashes": {
+            "sha-256": "57e7e7bc045684d04d51c25631d22c38bce42e80341761827dde883299b3ba36"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/game/server/iplayerinfo.h"
+          },
+          "hashes": {
+            "sha-256": "0e50e7e74421c1adf0bade058e195a657c3004c1351a18d2cf89985b684257db"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/hintsystem.h"
+          },
+          "hashes": {
+            "sha-256": "d3cbd6cbee22aba0456ed8661c6b98077c2feb7dc70fdac0059385ee6f5467a9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/soundemittersystem/isoundemittersystembase.h"
+          },
+          "hashes": {
+            "sha-256": "b67031847664742aa38442579844829e12f51a02eb0f18cddd332b9ccccbf7b3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utldict.h"
+          },
+          "hashes": {
+            "sha-256": "313b2e0e5af25b59ed1116100766b4d548d331f14c38d160119cb5794825be0b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlmap.h"
+          },
+          "hashes": {
+            "sha-256": "a11f978c4885f5afb58e43a5dd3b5e8354a980a02c4504160073bae94a9faaab"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/econ/ihasowner.h"
+          },
+          "hashes": {
+            "sha-256": "ae3cd759c6e74dee597211cfdf054726d68b87487890cb11fef984c0e344f35c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/gamerules.h"
+          },
+          "hashes": {
+            "sha-256": "597130b15a27e6b720185f22f86462c13a469cb29a700d1f5182d45eecf545e7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/recipientfilter.h"
+          },
+          "hashes": {
+            "sha-256": "30147e81de7c2b87efe241645a3fa5ac3f6971bf990889d8a07bc1feb91d5772"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/irecipientfilter.h"
+          },
+          "hashes": {
+            "sha-256": "464669dba7b807ada04ce2ecdf321f5c76f8828f4321186671e68bf255c86e24"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/gamerules_register.h"
+          },
+          "hashes": {
+            "sha-256": "80e5f423e86686edabe3b326b879c52e0b44e07e6d507fd9c185870f8daac4ad"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/basetempentity.h"
+          },
+          "hashes": {
+            "sha-256": "89eb687b020c0d8401fba2cbdcb0b5482243bcf1c38b7c8d12ae935b64c95e3d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/te.h"
+          },
+          "hashes": {
+            "sha-256": "4fc99967cbb8993d5e00fbf6073963ddd7b64ab67b0609e0eb723e04804d42fa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/itempents.h"
+          },
+          "hashes": {
+            "sha-256": "c38ab06a329f1764e8f683248b9a61e65887b6400d40639ef72c3d28e03828ed"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/ipredictionsystem.h"
+          },
+          "hashes": {
+            "sha-256": "d53367b24bbd444e9ef7a7eacf4d8b0e89bebdeb3bb882f5de7322568385d838"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/shattersurfacetypes.h"
+          },
+          "hashes": {
+            "sha-256": "4eb16c8547e7e04b396bce08aec6963da15b7d06b894677c251144c8c9f4118f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/physics.h"
+          },
+          "hashes": {
+            "sha-256": "ced3f1095409ca4b4acef08e183965f13a4cdd2e9677b90f9dd366a59b95bb4b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/physics_shared.h"
+          },
+          "hashes": {
+            "sha-256": "620b90784063df198dc98c4c256fae4dbfc1c10b0eca9f2fcda03997f0eb86e3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/ndebugoverlay.h"
+          },
+          "hashes": {
+            "sha-256": "a292417b097be4d42a82e697d0ad33e8e8c9f36bff2e080d2683a2b8af97812d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/debugoverlay_shared.h"
+          },
+          "hashes": {
+            "sha-256": "32436f5dee730e0bc0d96179f319b6ce5c859699696d419c84151ec3e038d074"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/engine/ivdebugoverlay.h"
+          },
+          "hashes": {
+            "sha-256": "3f45d4b185d5606ad894cda9c6254accd6100978d5deba2d6d71607735b537da"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/hl2/item_dynamic_resupply.h"
+          },
+          "hashes": {
+            "sha-256": "dffe86311e0a771a5d0d6551e4d60fb521fc2dd48b856d319940e0fe9492a4cb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/props_shared.h"
+          },
+          "hashes": {
+            "sha-256": "b9ce949b825816bdcbbc5d9231497315d84d5d0e6ab96654337772a7be1b8614"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/physics_bone_follower.h"
+          },
+          "hashes": {
+            "sha-256": "715ddee9ff5618d531b8ed6369f73e6d6e2b044b0d847a025ac5bb041a3f613d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/player_pickup.h"
+          },
+          "hashes": {
+            "sha-256": "b751609579d5b1ffa5155f6e37b29e54418c73896ad0773d918a93fce088ee3c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/positionwatcher.h"
+          },
+          "hashes": {
+            "sha-256": "8f4da83021f6ce4a11e964af90b74eae43346497babc3582483c562a91d8ac03"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/items.h"
+          },
+          "hashes": {
+            "sha-256": "d3bee8ceb963ca6c4e5f8bd6de609150c25a5c3e68ec4abb6f98ade78b110528"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/ammodef.h"
+          },
+          "hashes": {
+            "sha-256": "83c8f7794137e23b51b6b0d2724091d07535192919c3b97e9b23d9e7802a22eb"
+          }
+        }
+      ]
+    }
+  ]
+}

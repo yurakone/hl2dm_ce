@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>dynamiclight.cpp</FILENAME>
+      <LINE>47</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CDynamicLight::m_ActualFlags' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CDynamicLight::{ctor}</FUNCTION>
+    <DECORATED>??0CDynamicLight@@QEAA@XZ</DECORATED>
+    <FUNCLINE>47</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CDynamicLight::m_ActualFlags</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>dynamiclight.cpp</FILENAME>
+      <LINE>47</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CDynamicLight::m_On' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CDynamicLight::{ctor}</FUNCTION>
+    <DECORATED>??0CDynamicLight@@QEAA@XZ</DECORATED>
+    <FUNCLINE>47</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CDynamicLight::m_On</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

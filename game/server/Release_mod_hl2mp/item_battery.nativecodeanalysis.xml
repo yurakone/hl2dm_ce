@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\vphysics\</FILEPATH>
+      <FILENAME>constraints.h</FILENAME>
+      <LINE>151</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'constraint_limitedhingeparams_t::attachedPerpAxisDirection' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>constraint_limitedhingeparams_t::{ctor}</FUNCTION>
+    <DECORATED>??0constraint_limitedhingeparams_t@@QEAA@XZ</DECORATED>
+    <FUNCLINE>151</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>constraint_limitedhingeparams_t::attachedPerpAxisDirection</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\vphysics\</FILEPATH>
+      <FILENAME>constraints.h</FILENAME>
+      <LINE>151</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'constraint_limitedhingeparams_t::referencePerpAxisDirection' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>constraint_limitedhingeparams_t::{ctor}</FUNCTION>
+    <DECORATED>??0constraint_limitedhingeparams_t@@QEAA@XZ</DECORATED>
+    <FUNCLINE>151</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>constraint_limitedhingeparams_t::referencePerpAxisDirection</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

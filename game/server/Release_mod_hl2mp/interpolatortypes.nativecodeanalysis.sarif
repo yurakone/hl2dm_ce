@@ -1,0 +1,514 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CAlignedThreadFastMutex::pad' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/interpolatortypes.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/threadtools.h"
+                },
+                "region": {
+                  "startLine": 1155,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CAlignedThreadFastMutex::{ctor}",
+                  "decoratedName": "??0CAlignedThreadFastMutex@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CAlignedThreadFastMutex::pad"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Quaternion::w' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/interpolatortypes.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1717,
+                  "startColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Quaternion::{ctor}",
+                  "decoratedName": "??0Quaternion@@QEAA@AEBVRadianEuler@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Quaternion::w"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Quaternion::z' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/interpolatortypes.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1717,
+                  "startColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Quaternion::{ctor}",
+                  "decoratedName": "??0Quaternion@@QEAA@AEBVRadianEuler@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Quaternion::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Quaternion::y' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/interpolatortypes.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1717,
+                  "startColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Quaternion::{ctor}",
+                  "decoratedName": "??0Quaternion@@QEAA@AEBVRadianEuler@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Quaternion::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Quaternion::x' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/interpolatortypes.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1717,
+                  "startColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Quaternion::{ctor}",
+                  "decoratedName": "??0Quaternion@@QEAA@AEBVRadianEuler@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Quaternion::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'RadianEuler::x' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/interpolatortypes.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1736,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RadianEuler::{ctor}",
+                  "decoratedName": "??0RadianEuler@@QEAA@AEBVQuaternion@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "RadianEuler::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'RadianEuler::y' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/interpolatortypes.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1736,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RadianEuler::{ctor}",
+                  "decoratedName": "??0RadianEuler@@QEAA@AEBVQuaternion@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "RadianEuler::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'RadianEuler::z' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/interpolatortypes.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1736,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RadianEuler::{ctor}",
+                  "decoratedName": "??0RadianEuler@@QEAA@AEBVQuaternion@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "RadianEuler::z"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "MSVC Code Analysis",
+          "version": "14.44.35207.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/interpolatortypes.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "05c629586e19d2b5b06f9980aa5c6fb1eca911d97aa6869c5475b00fed67d31c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/threadtools.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "0eaba07e2a1e8241122f3a95db872b5c518007d0da178ce1b673ca870aa318dd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "9d7c10c7dabd16f14522b1f79dbf5c9658eb11e419a11e189b076feaf790e29a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/basetypes.h"
+          },
+          "hashes": {
+            "sha-256": "fe269021f4246463ac736566828ef761724b13cddf08bf963668741391976818"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/commonmacros.h"
+          },
+          "hashes": {
+            "sha-256": "85ac99b6508bc4252a954911ce34cec158612223af5b92414e6946691e958e12"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/platform.h"
+          },
+          "hashes": {
+            "sha-256": "216a4fdd74b12d207cf4e66ee1c7ebe95ab47d8f085cefad5b51ab54f4ecbb97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/wchartypes.h"
+          },
+          "hashes": {
+            "sha-256": "583b8b24ae0ffc8b78bfed00ba8e994540a96a753055f779298c37b776c4b993"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_off.h"
+          },
+          "hashes": {
+            "sha-256": "3d61910bc9860d0239b4e4b112bf8cba2121d3830491e6eebe4e572fc53a03a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_on.h"
+          },
+          "hashes": {
+            "sha-256": "65e186ed82fcee5effc33266c95fbd277cc218c461fa8c43ff88b53083541e97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_minmax_on.h"
+          },
+          "hashes": {
+            "sha-256": "fb450f3f15a15d1058bf2289688dd995285c69c8c2f04d94ac9d39419d22e740"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/annotations.h"
+          },
+          "hashes": {
+            "sha-256": "3a0a94401af5aec47ddc775419b0851d761ef1fff336896114dfe9cdebc7503f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/fasttimer.h"
+          },
+          "hashes": {
+            "sha-256": "71a29533a668038ca7f7bb0f828608c1af35e6ace1fc7be1388aceae3df410cf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/protected_things.h"
+          },
+          "hashes": {
+            "sha-256": "59d6c726f9f6c4499b497ec098d4388e8dba9b5e20ac52d69ac8833d6062c42e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/xbox_codeline_defines.h"
+          },
+          "hashes": {
+            "sha-256": "0e7522820f894fe046c5c42e19f02f03365790479fd3b923dbd0854ad9c93f3b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/strtools.h"
+          },
+          "hashes": {
+            "sha-256": "67b109cf7e03cd43518cb1228e8f02cccb59a46010ee480d46f5dd1219dc12db"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/interpolatortypes.h"
+          },
+          "hashes": {
+            "sha-256": "eb9ec506367b31806bcaa366952c36719f51d504d1e73d5a4213e5a6a941de33"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/dbg.h"
+          },
+          "hashes": {
+            "sha-256": "ee41db02c154b2740c4ff907abed22795b7f9e4e89e360541eefb781cdb10968"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/dbgflag.h"
+          },
+          "hashes": {
+            "sha-256": "1bbb5eb7eefd8e2f1d8c5680d79cc7003c3ebcd1e0e5e7ab796d09f1bb3bd3e6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/mathlib.h"
+          },
+          "hashes": {
+            "sha-256": "0199cf33335b7ee5132d0d7ebe664593fb16e44ce2396e5a72bdd0f22edb96c0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/minmax.h"
+          },
+          "hashes": {
+            "sha-256": "98030dbdb128745649f18ee7395fd22355e97df1a6bf46f49ea779832967f9f0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/type_traits.h"
+          },
+          "hashes": {
+            "sha-256": "279842657d131a6c585e255c1653cd60447ffa2f57e44eb0897acdc9c326e1fe"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/vcrmode.h"
+          },
+          "hashes": {
+            "sha-256": "f90b2a6fbf079971a6dd0253320e18f249aee8ba4d8fac641c4ec27e8738f2ca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/vcr_shared.h"
+          },
+          "hashes": {
+            "sha-256": "fea9514bc70fb016720fe50ecb2640c8ec8d86c1eb98c86b3e97f3d3fe3e6500"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/vprof_telemetry.h"
+          },
+          "hashes": {
+            "sha-256": "5956b027eeb0749312f365c637fcd316e1ca86bb789e39f9df9b262ea8904d4b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/tmapi_dummy.h"
+          },
+          "hashes": {
+            "sha-256": "92cc69bbaec321c670f98972153b7ebf077e4e8ad50c00ab6b09af891b7a309c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector2d.h"
+          },
+          "hashes": {
+            "sha-256": "60815e8c87cd3dcb98fb0c129f4c44db2ed325f15ecfd2a4504ed1723cba32b2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/math_pfns.h"
+          },
+          "hashes": {
+            "sha-256": "28b381d07bc9388963aae989cc82bfdb56e31db6aae615b23b0985810b286fe5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memdbgon.h"
+          },
+          "hashes": {
+            "sha-256": "4d350e1ec5045fb3dbe586ab2f9fbffa3b2042c7a402742978a2e4054a4757fb"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>func_dust.cpp</FILENAME>
+      <LINE>142</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CFunc_Dust::m_iAlpha' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CFunc_Dust::{ctor}</FUNCTION>
+    <DECORATED>??0CFunc_Dust@@QEAA@XZ</DECORATED>
+    <FUNCLINE>142</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CFunc_Dust::m_iAlpha</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>func_dust.cpp</FILENAME>
+      <LINE>305</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CEnvDustPuff::m_flScale' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CEnvDustPuff::{ctor}</FUNCTION>
+    <DECORATED>??0CEnvDustPuff@@QEAA@XZ</DECORATED>
+    <FUNCLINE>305</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CEnvDustPuff::m_flScale</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>func_dust.cpp</FILENAME>
+      <LINE>305</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CEnvDustPuff::m_rgbaColor' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CEnvDustPuff::{ctor}</FUNCTION>
+    <DECORATED>??0CEnvDustPuff@@QEAA@XZ</DECORATED>
+    <FUNCLINE>305</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CEnvDustPuff::m_rgbaColor</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

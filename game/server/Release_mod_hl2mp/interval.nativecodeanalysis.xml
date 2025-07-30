@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier0\</FILEPATH>
+      <FILENAME>threadtools.h</FILENAME>
+      <LINE>1155</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CAlignedThreadFastMutex::pad' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CAlignedThreadFastMutex::{ctor}</FUNCTION>
+    <DECORATED>??0CAlignedThreadFastMutex@@QEAA@XZ</DECORATED>
+    <FUNCLINE>1155</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CAlignedThreadFastMutex::pad</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

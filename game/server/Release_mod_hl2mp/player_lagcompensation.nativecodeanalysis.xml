@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>player_lagcompensation.cpp</FILENAME>
+      <LINE>185</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CLagCompensationManager::m_pCurrentPlayer' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CLagCompensationManager::{ctor}</FUNCTION>
+    <DECORATED>??0CLagCompensationManager@@QEAA@PEBD@Z</DECORATED>
+    <FUNCLINE>185</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CLagCompensationManager::m_pCurrentPlayer</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>player_lagcompensation.cpp</FILENAME>
+      <LINE>185</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CLagCompensationManager::m_bNeedToRestore' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CLagCompensationManager::{ctor}</FUNCTION>
+    <DECORATED>??0CLagCompensationManager@@QEAA@PEBD@Z</DECORATED>
+    <FUNCLINE>185</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CLagCompensationManager::m_bNeedToRestore</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>bitvec.h</FILENAME>
+      <LINE>376</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CFixedBitVecBase&lt;101&gt;::m_Ints' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CFixedBitVecBase&lt;101&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$CFixedBitVecBase@$0GF@@@IEAA@XZ</DECORATED>
+    <FUNCLINE>376</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CFixedBitVecBase&lt;101&gt;::m_Ints</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

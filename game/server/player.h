@@ -738,7 +738,7 @@ public:
 
 	void	AllowImmediateDecalPainting();
 
-	// Suicide...
+	// Suicide...float	GetFOVDistanceAdjustFactorForNetworking();
 	virtual void CommitSuicide( bool bExplode = false, bool bForce = false );
 	virtual void CommitSuicide( const Vector &vecForce, bool bExplode = false, bool bForce = false );
 
@@ -781,6 +781,10 @@ public:
 	void IsUsingGameUI( bool enabled ) { m_bIsUsingGameUI = enabled; }
 
 	int		GetImpulse( void ) const { return m_nImpulse; }
+
+	// trigger_catapult air control
+	void SetAirControlSuppression(float flDuration);
+	bool IsAirControlSuppressed() const;
 
 	// Movement constraints
 	void	ActivateMovementConstraint( CBaseEntity *pEntity, const Vector &vecCenter, float flRadius, float flConstraintWidth, float flSpeedFactor );
@@ -880,6 +884,10 @@ private:
 	bool m_bIsGagged;
 	bool m_bIsMuted;
 	bool m_bHasPlayerRTV;
+
+	// trigger_catapult air control
+	float m_flAirControlSuppressionTime;  // How long air control is suppressed
+	bool m_bAirControlSuppressed;         // Is air control currently suppressed?
 
 public:
 	

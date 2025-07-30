@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>EnvHudHint.cpp</FILENAME>
+      <LINE>37</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CEnvHudHint::m_iszMessage' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CEnvHudHint::{ctor}</FUNCTION>
+    <DECORATED>??0CEnvHudHint@@QEAA@XZ</DECORATED>
+    <FUNCLINE>37</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CEnvHudHint::m_iszMessage</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

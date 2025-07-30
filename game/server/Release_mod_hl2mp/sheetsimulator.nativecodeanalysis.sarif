@@ -1,0 +1,3114 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CAlignedThreadFastMutex::pad' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/threadtools.h"
+                },
+                "region": {
+                  "startLine": 1155,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CAlignedThreadFastMutex::{ctor}",
+                  "decoratedName": "??0CAlignedThreadFastMutex@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CAlignedThreadFastMutex::pad"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Quaternion::x' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1717,
+                  "startColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Quaternion::{ctor}",
+                  "decoratedName": "??0Quaternion@@QEAA@AEBVRadianEuler@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Quaternion::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Quaternion::y' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1717,
+                  "startColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Quaternion::{ctor}",
+                  "decoratedName": "??0Quaternion@@QEAA@AEBVRadianEuler@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Quaternion::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Quaternion::w' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1717,
+                  "startColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Quaternion::{ctor}",
+                  "decoratedName": "??0Quaternion@@QEAA@AEBVRadianEuler@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Quaternion::w"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Quaternion::z' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1717,
+                  "startColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Quaternion::{ctor}",
+                  "decoratedName": "??0Quaternion@@QEAA@AEBVRadianEuler@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Quaternion::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'RadianEuler::z' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1736,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RadianEuler::{ctor}",
+                  "decoratedName": "??0RadianEuler@@QEAA@AEBVQuaternion@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "RadianEuler::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'RadianEuler::x' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1736,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RadianEuler::{ctor}",
+                  "decoratedName": "??0RadianEuler@@QEAA@AEBVQuaternion@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "RadianEuler::x"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'RadianEuler::y' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1736,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RadianEuler::{ctor}",
+                  "decoratedName": "??0RadianEuler@@QEAA@AEBVQuaternion@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "RadianEuler::y"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::framecount' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::framecount"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::curtime' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::curtime"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::frametime' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::frametime"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::interval_per_tick' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::interval_per_tick"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::absoluteframetime' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::absoluteframetime"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::realtime' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::realtime"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::simTicksThisFrame' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::simTicksThisFrame"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::network_protocol' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::network_protocol"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::pSaveData' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::pSaveData"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::maxClients' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::maxClients"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::tickcount' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::tickcount"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::interpolation_amount' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::interpolation_amount"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::startspot' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVars::{ctor}",
+                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVars::startspot"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::mapname' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVars::{ctor}",
+                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVars::mapname"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::mapversion' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVars::{ctor}",
+                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVars::mapversion"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::coop' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVars::{ctor}",
+                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVars::coop"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::teamplay' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVars::{ctor}",
+                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVars::teamplay"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::maxEntities' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVars::{ctor}",
+                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVars::maxEntities"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::eLoadType' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVars::{ctor}",
+                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVars::eLoadType"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::bMapLoadFailed' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVars::{ctor}",
+                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVars::bMapLoadFailed"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::deathmatch' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVars::{ctor}",
+                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVars::deathmatch"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSharedEdictChangeInfo::m_ChangeInfos' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSharedEdictChangeInfo::{ctor}",
+                  "decoratedName": "??0CSharedEdictChangeInfo@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSharedEdictChangeInfo::m_ChangeInfos"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSharedEdictChangeInfo::m_nChangeInfos' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSharedEdictChangeInfo::{ctor}",
+                  "decoratedName": "??0CSharedEdictChangeInfo@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSharedEdictChangeInfo::m_nChangeInfos"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_HorizontalCount' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_HorizontalCount"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_FixedSpringConstant' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_FixedSpringConstant"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_FixedPointCount' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_FixedPointCount"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_OutputPosition' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_OutputPosition"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_GravityConstant' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_GravityConstant"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_Origin' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_Origin"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_Particle' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_Particle"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_FrustumBoxMin' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_FrustumBoxMin"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_CollisionGroup' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_CollisionGroup"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_FrustumBoxMax' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_FrustumBoxMax"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_pValidCollisionPlane' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_pValidCollisionPlane"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_Angles' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_Angles"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_DampConstant' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_DampConstant"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_PointSpringConstant' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_PointSpringConstant"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_pCollisionPlanes' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_pCollisionPlanes"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_VerticalCount' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_VerticalCount"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_ControlPointOffset' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_ControlPointOffset"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CSheetSimulator::m_ViscousDrag' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::{ctor}",
+                  "decoratedName": "??0CSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CSheetSimulator::m_ViscousDrag"
+          }
+        },
+        {
+          "ruleId": "C6386",
+          "message": {
+            "text": "Buffer overrun while writing to 'm_Particle':  the writable size is 'w*h*52' bytes, but '104' bytes might be written."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 3,
+                  "endLine": 69,
+                  "endColumn": 26
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::Init",
+                  "decoratedName": "?Init@CSheetSimulator@@QEAAXHHH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 52,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 55,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 56,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 57,
+                            "startColumn": 6
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume 'fixedPointCount' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 66,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 67,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 67,
+                            "startColumn": 21
+                          }
+                        },
+                        "message": {
+                          "text": "Enter this loop, (assume 'i<this->NumParticles()')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 69,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 70,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 71,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 72,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 67,
+                            "startColumn": 39
+                          }
+                        },
+                        "message": {
+                          "text": "'i' may equal 1"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 67,
+                            "startColumn": 21
+                          }
+                        },
+                        "message": {
+                          "text": "Continue this loop, (assume 'i<this->NumParticles()')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 69,
+                            "startColumn": 24
+                          }
+                        },
+                        "message": {
+                          "text": "Invalid write to 'm_Particle[1]', (writable range is 0 to 0)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6385",
+          "message": {
+            "text": "Reading invalid data from 'm_Particle':  the readable size is 'w*h*52' bytes, but '104' bytes may be read."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 71,
+                  "startColumn": 3,
+                  "endLine": 71,
+                  "endColumn": 41
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CSheetSimulator::Init",
+                  "decoratedName": "?Init@CSheetSimulator@@QEAAXHHH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 52,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 55,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 56,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 57,
+                            "startColumn": 6
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume 'fixedPointCount' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 66,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 67,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 67,
+                            "startColumn": 21
+                          }
+                        },
+                        "message": {
+                          "text": "Enter this loop, (assume 'i<this->NumParticles()')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 69,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 70,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 71,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 72,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 67,
+                            "startColumn": 39
+                          }
+                        },
+                        "message": {
+                          "text": "'i' may equal 1"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 67,
+                            "startColumn": 21
+                          }
+                        },
+                        "message": {
+                          "text": "Continue this loop, (assume 'i<this->NumParticles()')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 69,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 70,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 71,
+                            "startColumn": 28
+                          }
+                        },
+                        "message": {
+                          "text": "'i' is an Output from 'Vector::=' (declared at d:\\speedvoltage\\hl2mp-essential-fixes-latest\\src\\public\\mathlib\\vector.h:176)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                          },
+                          "region": {
+                            "startLine": 71,
+                            "startColumn": 28
+                          }
+                        },
+                        "message": {
+                          "text": "Invalid read from 'm_Particle[1]', (readable range is 0 to 0)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Ray_t::m_IsSwept' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/cmodel.h"
+                },
+                "region": {
+                  "startLine": 120,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Ray_t::{ctor}",
+                  "decoratedName": "??0Ray_t@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Ray_t::m_IsSwept"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Ray_t::m_IsRay' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/cmodel.h"
+                },
+                "region": {
+                  "startLine": 120,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Ray_t::{ctor}",
+                  "decoratedName": "??0Ray_t@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Ray_t::m_IsRay"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CIterativeSheetSimulator::m_TotalSteps' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 608,
+                  "startColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CIterativeSheetSimulator::{ctor}",
+                  "decoratedName": "??0CIterativeSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CIterativeSheetSimulator::m_TotalSteps"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CIterativeSheetSimulator::m_SubSteps' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 608,
+                  "startColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CIterativeSheetSimulator::{ctor}",
+                  "decoratedName": "??0CIterativeSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CIterativeSheetSimulator::m_SubSteps"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CIterativeSheetSimulator::m_InitialPass' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 608,
+                  "startColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CIterativeSheetSimulator::{ctor}",
+                  "decoratedName": "??0CIterativeSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CIterativeSheetSimulator::m_InitialPass"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CIterativeSheetSimulator::m_CurrentCollisionPt' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 608,
+                  "startColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CIterativeSheetSimulator::{ctor}",
+                  "decoratedName": "??0CIterativeSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CIterativeSheetSimulator::m_CurrentCollisionPt"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CIterativeSheetSimulator::m_CollisionCount' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 608,
+                  "startColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CIterativeSheetSimulator::{ctor}",
+                  "decoratedName": "??0CIterativeSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CIterativeSheetSimulator::m_CollisionCount"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CIterativeSheetSimulator::m_TimeStep' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+                },
+                "region": {
+                  "startLine": 608,
+                  "startColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CIterativeSheetSimulator::{ctor}",
+                  "decoratedName": "??0CIterativeSheetSimulator@@QEAA@P6AXAEBVVector@@0IHPEAVCGameTrace@@@ZP6AX0000IH1@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CIterativeSheetSimulator::m_TimeStep"
+          }
+        },
+        {
+          "ruleId": "C6308",
+          "message": {
+            "text": "'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlmemory.h"
+                },
+                "region": {
+                  "startLine": 763,
+                  "startColumn": 19,
+                  "endLine": 763,
+                  "endColumn": 60
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CUtlMemory<char *,int>::Grow",
+                  "decoratedName": "?Grow@?$CUtlMemory@PEADH@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6308",
+          "message": {
+            "text": "'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlmemory.h"
+                },
+                "region": {
+                  "startLine": 763,
+                  "startColumn": 19,
+                  "endLine": 763,
+                  "endColumn": 60
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CUtlMemory<CSheetSimulator::Spring_t,int>::Grow",
+                  "decoratedName": "?Grow@?$CUtlMemory@USpring_t@CSheetSimulator@@H@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6308",
+          "message": {
+            "text": "'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlmemory.h"
+                },
+                "region": {
+                  "startLine": 763,
+                  "startColumn": 19,
+                  "endLine": 763,
+                  "endColumn": 60
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CUtlMemory<int,int>::Grow",
+                  "decoratedName": "?Grow@?$CUtlMemory@HH@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6308",
+          "message": {
+            "text": "'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlmemory.h"
+                },
+                "region": {
+                  "startLine": 763,
+                  "startColumn": 19,
+                  "endLine": 763,
+                  "endColumn": 60
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CUtlMemory<IHandleEntity *,int>::Grow",
+                  "decoratedName": "?Grow@?$CUtlMemory@PEAVIHandleEntity@@H@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "MSVC Code Analysis",
+          "version": "14.44.35207.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "5e1ae5580c20e0a25d8db7ef05ad69eab51e65eb165434d00e496b03bc61cd13"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/threadtools.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "0eaba07e2a1e8241122f3a95db872b5c518007d0da178ce1b673ca870aa318dd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "9d7c10c7dabd16f14522b1f79dbf5c9658eb11e419a11e189b076feaf790e29a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "1ca7b5747d460ab2c6272917226253a4b0c5fd71c334caf98f112fc7dea42d98"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "b508d1830a2febb8a9bc7be6dd02d5493aa538d937e7dbbb38ee2730e38a2c2f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/cmodel.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c166c3ead6ac4f30b5efe3296416ebf0bda981b206a9fc13d1d59efaaa73a244"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlmemory.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "410548f0d190fb248c6fe8e45ad1cf9a8146de02ce4540e7acdba7c119d3d2d8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/sheetsimulator.h"
+          },
+          "hashes": {
+            "sha-256": "42a8aa36379098dcec2b300311df64ed77fd7d351efd082aa63670b15e9ed43a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/mathlib.h"
+          },
+          "hashes": {
+            "sha-256": "0199cf33335b7ee5132d0d7ebe664593fb16e44ce2396e5a72bdd0f22edb96c0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/minmax.h"
+          },
+          "hashes": {
+            "sha-256": "98030dbdb128745649f18ee7395fd22355e97df1a6bf46f49ea779832967f9f0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/basetypes.h"
+          },
+          "hashes": {
+            "sha-256": "fe269021f4246463ac736566828ef761724b13cddf08bf963668741391976818"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/commonmacros.h"
+          },
+          "hashes": {
+            "sha-256": "85ac99b6508bc4252a954911ce34cec158612223af5b92414e6946691e958e12"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/platform.h"
+          },
+          "hashes": {
+            "sha-256": "216a4fdd74b12d207cf4e66ee1c7ebe95ab47d8f085cefad5b51ab54f4ecbb97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/wchartypes.h"
+          },
+          "hashes": {
+            "sha-256": "583b8b24ae0ffc8b78bfed00ba8e994540a96a753055f779298c37b776c4b993"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_off.h"
+          },
+          "hashes": {
+            "sha-256": "3d61910bc9860d0239b4e4b112bf8cba2121d3830491e6eebe4e572fc53a03a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_on.h"
+          },
+          "hashes": {
+            "sha-256": "65e186ed82fcee5effc33266c95fbd277cc218c461fa8c43ff88b53083541e97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_minmax_on.h"
+          },
+          "hashes": {
+            "sha-256": "fb450f3f15a15d1058bf2289688dd995285c69c8c2f04d94ac9d39419d22e740"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/annotations.h"
+          },
+          "hashes": {
+            "sha-256": "3a0a94401af5aec47ddc775419b0851d761ef1fff336896114dfe9cdebc7503f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/fasttimer.h"
+          },
+          "hashes": {
+            "sha-256": "71a29533a668038ca7f7bb0f828608c1af35e6ace1fc7be1388aceae3df410cf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/protected_things.h"
+          },
+          "hashes": {
+            "sha-256": "59d6c726f9f6c4499b497ec098d4388e8dba9b5e20ac52d69ac8833d6062c42e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/xbox_codeline_defines.h"
+          },
+          "hashes": {
+            "sha-256": "0e7522820f894fe046c5c42e19f02f03365790479fd3b923dbd0854ad9c93f3b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/dbg.h"
+          },
+          "hashes": {
+            "sha-256": "ee41db02c154b2740c4ff907abed22795b7f9e4e89e360541eefb781cdb10968"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/dbgflag.h"
+          },
+          "hashes": {
+            "sha-256": "1bbb5eb7eefd8e2f1d8c5680d79cc7003c3ebcd1e0e5e7ab796d09f1bb3bd3e6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/type_traits.h"
+          },
+          "hashes": {
+            "sha-256": "279842657d131a6c585e255c1653cd60447ffa2f57e44eb0897acdc9c326e1fe"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/vcrmode.h"
+          },
+          "hashes": {
+            "sha-256": "f90b2a6fbf079971a6dd0253320e18f249aee8ba4d8fac641c4ec27e8738f2ca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/vcr_shared.h"
+          },
+          "hashes": {
+            "sha-256": "fea9514bc70fb016720fe50ecb2640c8ec8d86c1eb98c86b3e97f3d3fe3e6500"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/vprof_telemetry.h"
+          },
+          "hashes": {
+            "sha-256": "5956b027eeb0749312f365c637fcd316e1ca86bb789e39f9df9b262ea8904d4b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/tmapi_dummy.h"
+          },
+          "hashes": {
+            "sha-256": "92cc69bbaec321c670f98972153b7ebf077e4e8ad50c00ab6b09af891b7a309c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector2d.h"
+          },
+          "hashes": {
+            "sha-256": "60815e8c87cd3dcb98fb0c129f4c44db2ed325f15ecfd2a4504ed1723cba32b2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/math_pfns.h"
+          },
+          "hashes": {
+            "sha-256": "28b381d07bc9388963aae989cc82bfdb56e31db6aae615b23b0985810b286fe5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlvector.h"
+          },
+          "hashes": {
+            "sha-256": "6cf720fa527793def501a808f4ca16b83f17f3abfc7caf56a52d620bc2f90d3f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memalloc.h"
+          },
+          "hashes": {
+            "sha-256": "599c07a92d6ca66c1d71705a6df4b4dcf4f7187aba895f44a3455b7bcf895570"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/mem.h"
+          },
+          "hashes": {
+            "sha-256": "68dfe8a5f1fc493eef6ef206801ea749841fe973e06852b62495b35a9fffaf8c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memdbgon.h"
+          },
+          "hashes": {
+            "sha-256": "4d350e1ec5045fb3dbe586ab2f9fbffa3b2042c7a402742978a2e4054a4757fb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memdbgoff.h"
+          },
+          "hashes": {
+            "sha-256": "75325a022f28cc3c18a7b2e5730b9db1f1f20d431b4f5837ebcb179271d4a842"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlblockmemory.h"
+          },
+          "hashes": {
+            "sha-256": "e171f448b0f423f9fa52f318c4e087a4ae3f01872640f149a3c85102e5bf98fa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/strtools.h"
+          },
+          "hashes": {
+            "sha-256": "67b109cf7e03cd43518cb1228e8f02cccb59a46010ee480d46f5dd1219dc12db"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vstdlib/random.h"
+          },
+          "hashes": {
+            "sha-256": "4b82b78005566eebc9e92683d238350b7ad988e4101f26dd8d620282313aa294"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vstdlib/vstdlib.h"
+          },
+          "hashes": {
+            "sha-256": "0d063a4c39c67eeaea0856bc22f4d0b8e630928bec1461e2565527c874d99eba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/interface.h"
+          },
+          "hashes": {
+            "sha-256": "2eb45db6d646aac3927e35741c4c5269d4b92c373969ea3042fac8c21979aa79"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/trace.h"
+          },
+          "hashes": {
+            "sha-256": "713a33c994b2398de054bb0ec3d341d66bba6f9c2928d0bea208a3482ff3ff40"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/basehandle.h"
+          },
+          "hashes": {
+            "sha-256": "ce4990df3023f9006b9af57e9506a61a0b717aa90a4e0e69e081df8cca938516"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/const.h"
+          },
+          "hashes": {
+            "sha-256": "b2d4b74de9f05e7a16ef18c8b94031ea0af5e338945b87c4f20f631d1eb31664"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/ihandleentity.h"
+          },
+          "hashes": {
+            "sha-256": "e17c7b1463c457c8f156ea9fff86cbe6797069d656bcb07b30a9ae71a13e2517"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/bspflags.h"
+          },
+          "hashes": {
+            "sha-256": "1d40dc6c8bf53d98f7a742d87a01c0cf22992ba20a1fcc5e63a3f7cc296abf18"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/vcollide.h"
+          },
+          "hashes": {
+            "sha-256": "5754878b83b66c1d48b60fedd671e2d5f6c5be254dd082ad4f45c640489188cb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/gametrace.h"
+          },
+          "hashes": {
+            "sha-256": "a05127cecf73c20489990819c2319ad90b50ce24dceb8f849a2e5d4a628f06af"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/ispatialpartition.h"
+          },
+          "hashes": {
+            "sha-256": "0ce0275155928f37add0176424cfc829eac988caf57cfb4a05e1e32eb8881ac0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/iserverentity.h"
+          },
+          "hashes": {
+            "sha-256": "08996b873e250524f93ea5e599761ca6a43e09f2bf67cff97c11276c9fc64f4b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/iserverunknown.h"
+          },
+          "hashes": {
+            "sha-256": "1030a9b34bf130953c6ee991fee6f1e79a52caba7dafeda088504e1453cf8100"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/string_t.h"
+          },
+          "hashes": {
+            "sha-256": "6592ecd9818deee7263c85ba93f19b43bc6c67868634c969d412fd69d7118860"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/engine/icollideable.h"
+          },
+          "hashes": {
+            "sha-256": "f1920f9db568f23d9bcb194c076e87032d767581231438a5306f84612c7e1c00"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/iservernetworkable.h"
+          },
+          "hashes": {
+            "sha-256": "f727b6cfdf549dc76b658868ddab3c179700adbbafeb140ddf817806dbaba48e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/bitvec.h"
+          },
+          "hashes": {
+            "sha-256": "133819e9229e519b3b5978fb866fe8603682d9dd1790bf77dc68a20228759f59"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/bspfile.h"
+          },
+          "hashes": {
+            "sha-256": "e574fca6d20253b1fac39fcbf9d7d002d684757205f2ba5c6001b8b3e76cfe95"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/datamap.h"
+          },
+          "hashes": {
+            "sha-256": "485bfbc6f6caec31bb14ac278f506a5e23781879f1d15f22df98aaa0a177c87a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/bumpvects.h"
+          },
+          "hashes": {
+            "sha-256": "4fe080e1bf9ef541b111919f649fbb92959e05d3c8a3f7ef28e451307187c23d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/compressed_light_cube.h"
+          },
+          "hashes": {
+            "sha-256": "400b8033545343072deb16f86f2a996748dd62a99f02768171d0eb631dc09d56"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/zip_uncompressed.h"
+          },
+          "hashes": {
+            "sha-256": "81e9ff8f0d66dc20055775b789eb4b5d91e44f3cd09ef6a1906e4cd1a7e056b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/collisionutils.h"
+          },
+          "hashes": {
+            "sha-256": "596d4507006295a2236b5b896706baf720a39af5cb1e54b45a003efb1f5114a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/ssemath.h"
+          },
+          "hashes": {
+            "sha-256": "25d1ccd24f95938b4a17f640f90da4fc9214579792f6c187d64380db5895fe2e"
+          }
+        }
+      ]
+    }
+  ]
+}

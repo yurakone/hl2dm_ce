@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>saverestoretypes.h</FILENAME>
+      <LINE>280</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CGameSaveRestoreInfo::CHashElement::index' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CGameSaveRestoreInfo::CHashElement::{ctor}</FUNCTION>
+    <DECORATED>??0CHashElement@CGameSaveRestoreInfo@@QEAA@PEBVCBaseEntity@@@Z</DECORATED>
+    <FUNCLINE>280</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CGameSaveRestoreInfo::CHashElement::index</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>saverestoretypes.h</FILENAME>
+      <LINE>281</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CGameSaveRestoreInfo::CHashElement::index' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CGameSaveRestoreInfo::CHashElement::{ctor}</FUNCTION>
+    <DECORATED>??0CHashElement@CGameSaveRestoreInfo@@QEAA@XZ</DECORATED>
+    <FUNCLINE>281</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CGameSaveRestoreInfo::CHashElement::index</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>saverestoretypes.h</FILENAME>
+      <LINE>281</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CGameSaveRestoreInfo::CHashElement::pEntity' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CGameSaveRestoreInfo::CHashElement::{ctor}</FUNCTION>
+    <DECORATED>??0CHashElement@CGameSaveRestoreInfo@@QEAA@XZ</DECORATED>
+    <FUNCLINE>281</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CGameSaveRestoreInfo::CHashElement::pEntity</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;CGameSaveRestoreInfo::CHashElement,int&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@UCHashElement@CGameSaveRestoreInfo@@H@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;CUtlVector&lt;CGameSaveRestoreInfo::CHashElement,CUtlMemory&lt;CGameSaveRestoreInfo::CHashElement,int&gt; &gt;,int&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@V?$CUtlVector@UCHashElement@CGameSaveRestoreInfo@@V?$CUtlMemory@UCHashElement@CGameSaveRestoreInfo@@H@@@@H@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

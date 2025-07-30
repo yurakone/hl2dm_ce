@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>SpriteTrail.cpp</FILENAME>
+      <LINE>119</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSpriteTrail::m_iszSpriteName' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSpriteTrail::{ctor}</FUNCTION>
+    <DECORATED>??0CSpriteTrail@@QEAA@XZ</DECORATED>
+    <FUNCLINE>119</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CSpriteTrail::m_iszSpriteName</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>SpriteTrail.cpp</FILENAME>
+      <LINE>119</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSpriteTrail::m_bAnimate' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSpriteTrail::{ctor}</FUNCTION>
+    <DECORATED>??0CSpriteTrail@@QEAA@XZ</DECORATED>
+    <FUNCLINE>119</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CSpriteTrail::m_bAnimate</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

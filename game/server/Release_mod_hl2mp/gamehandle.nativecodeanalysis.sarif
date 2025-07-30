@@ -1,0 +1,163 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "MSVC Code Analysis",
+          "version": "14.44.35207.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/gamehandle.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "d132ef008d363410f822023387f2a8d28403502eff124ea66f185dfb5d02e62e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/winlite.h"
+          },
+          "hashes": {
+            "sha-256": "a2ba203d4456af04709b7d887ae0b20ba05870cf64fb4605c846401147da3c85"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memdbgon.h"
+          },
+          "hashes": {
+            "sha-256": "4d350e1ec5045fb3dbe586ab2f9fbffa3b2042c7a402742978a2e4054a4757fb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/basetypes.h"
+          },
+          "hashes": {
+            "sha-256": "fe269021f4246463ac736566828ef761724b13cddf08bf963668741391976818"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/commonmacros.h"
+          },
+          "hashes": {
+            "sha-256": "85ac99b6508bc4252a954911ce34cec158612223af5b92414e6946691e958e12"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/platform.h"
+          },
+          "hashes": {
+            "sha-256": "216a4fdd74b12d207cf4e66ee1c7ebe95ab47d8f085cefad5b51ab54f4ecbb97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/wchartypes.h"
+          },
+          "hashes": {
+            "sha-256": "583b8b24ae0ffc8b78bfed00ba8e994540a96a753055f779298c37b776c4b993"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_off.h"
+          },
+          "hashes": {
+            "sha-256": "3d61910bc9860d0239b4e4b112bf8cba2121d3830491e6eebe4e572fc53a03a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_on.h"
+          },
+          "hashes": {
+            "sha-256": "65e186ed82fcee5effc33266c95fbd277cc218c461fa8c43ff88b53083541e97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_minmax_on.h"
+          },
+          "hashes": {
+            "sha-256": "fb450f3f15a15d1058bf2289688dd995285c69c8c2f04d94ac9d39419d22e740"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/annotations.h"
+          },
+          "hashes": {
+            "sha-256": "3a0a94401af5aec47ddc775419b0851d761ef1fff336896114dfe9cdebc7503f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/fasttimer.h"
+          },
+          "hashes": {
+            "sha-256": "71a29533a668038ca7f7bb0f828608c1af35e6ace1fc7be1388aceae3df410cf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/protected_things.h"
+          },
+          "hashes": {
+            "sha-256": "59d6c726f9f6c4499b497ec098d4388e8dba9b5e20ac52d69ac8833d6062c42e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/xbox_codeline_defines.h"
+          },
+          "hashes": {
+            "sha-256": "0e7522820f894fe046c5c42e19f02f03365790479fd3b923dbd0854ad9c93f3b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memalloc.h"
+          },
+          "hashes": {
+            "sha-256": "599c07a92d6ca66c1d71705a6df4b4dcf4f7187aba895f44a3455b7bcf895570"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/mem.h"
+          },
+          "hashes": {
+            "sha-256": "68dfe8a5f1fc493eef6ef206801ea749841fe973e06852b62495b35a9fffaf8c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memdbgoff.h"
+          },
+          "hashes": {
+            "sha-256": "75325a022f28cc3c18a7b2e5730b9db1f1f20d431b4f5837ebcb179271d4a842"
+          }
+        }
+      ]
+    }
+  ]
+}

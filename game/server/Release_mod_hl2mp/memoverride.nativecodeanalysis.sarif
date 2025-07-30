@@ -1,0 +1,1983 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "'pszModuleName' could be '0':  this does not adhere to the specification for the function 'GetModuleFileNameA'. "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 3,
+                  "endLine": 56,
+                  "endColumn": 84
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "MakeModuleFileName",
+                  "decoratedName": "?MakeModuleFileName@@YAPEBDXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 48,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "'pszModuleName' may be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 52,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 56,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "'pszModuleName' is an Input to 'GetModuleFileNameA' (declared at c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:208)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 56,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "'pszModuleName' should not be NULL, because this is not consistent with the SAL annotation on 'GetModuleFileNameA'"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "'pszModuleName' could be '0':  this does not adhere to the specification for the function 'strrchr'. See line 56 for an earlier location where this can occur"
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 9,
+                  "endLine": 57,
+                  "endColumn": 40
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "MakeModuleFileName",
+                  "decoratedName": "?MakeModuleFileName@@YAPEBDXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 48,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "'pszModuleName' may be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 52,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 56,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "'pszModuleName' is an Input to 'GetModuleFileNameA' (declared at c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:208)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 57,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "'pszModuleName' is an In/Out argument to 'strrchr' (declared at c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\string.h:512)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                          },
+                          "region": {
+                            "startLine": 57,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "'pszModuleName' should not be NULL, because this is not consistent with the SAL annotation on 'strrchr'"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for 'malloc': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(101). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "malloc",
+                  "decoratedName": "malloc",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for 'free': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(89). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 156,
+                  "startColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "free",
+                  "decoratedName": "free",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for 'realloc': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(126). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 161,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "realloc",
+                  "decoratedName": "realloc",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for 'calloc': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(66). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 166,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "calloc",
+                  "decoratedName": "calloc",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_malloc_base': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(95). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 186,
+                  "startColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_malloc_base",
+                  "decoratedName": "_malloc_base",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_calloc_base': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(59). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 197,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_calloc_base",
+                  "decoratedName": "_calloc_base",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_realloc_base': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(119). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 204,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_realloc_base",
+                  "decoratedName": "_realloc_base",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_recalloc_base': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(133). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 210,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_recalloc_base",
+                  "decoratedName": "_recalloc_base",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_free_base': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(84). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 231,
+                  "startColumn": 6
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_free_base",
+                  "decoratedName": "_free_base",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_recalloc': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(141). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 267,
+                  "startColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_recalloc",
+                  "decoratedName": "_recalloc",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_msize_base': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(107). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 278,
+                  "startColumn": 8
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_msize_base",
+                  "decoratedName": "_msize_base",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_msize': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(113). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 286,
+                  "startColumn": 8
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_msize",
+                  "decoratedName": "_msize",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_expand': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_malloc.h(78). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 306,
+                  "startColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_expand",
+                  "decoratedName": "_expand",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_heapchk': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\malloc.h(71). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 329,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_heapchk",
+                  "decoratedName": "_heapchk",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_heapmin': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\malloc.h(64). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 334,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_heapmin",
+                  "decoratedName": "_heapmin",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_heapwalk': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\malloc.h(67). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 355,
+                  "startColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_heapwalk",
+                  "decoratedName": "_heapwalk",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for 'new': this instance has no annotations. See d:\\speedvoltage\\hl2mp-essential-fixes-latest\\src\\game\\server\\predefined c++ types (compiler internal)(43). The first user-provided annotation on this built-in function is at line c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vcruntime_new.h(44). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 419,
+                  "startColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "new",
+                  "decoratedName": "??2@YAPEAX_K@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for 'new': this instance has no annotations. See c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vcruntime_new_debug.h(26). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 425,
+                  "startColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "new",
+                  "decoratedName": "??2@YAPEAX_KHPEBDH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for 'new[]': this instance has no annotations. See d:\\speedvoltage\\hl2mp-essential-fixes-latest\\src\\game\\server\\predefined c++ types (compiler internal)(68). The first user-provided annotation on this built-in function is at line c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vcruntime_new.h(55). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 451,
+                  "startColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "new[]",
+                  "decoratedName": "??_U@YAPEAX_K@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for 'new[]': this instance has no annotations. See c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vcruntime_new_debug.h(34). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 457,
+                  "startColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "new[]",
+                  "decoratedName": "??_U@YAPEAX_KHPEBDH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_malloc_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(423). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 525,
+                  "startColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_malloc_dbg",
+                  "decoratedName": "_malloc_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_calloc_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(400). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 540,
+                  "startColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_calloc_dbg",
+                  "decoratedName": "_calloc_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_realloc_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(436). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 555,
+                  "startColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_realloc_dbg",
+                  "decoratedName": "_realloc_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_expand_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(409). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 562,
+                  "startColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_expand_dbg",
+                  "decoratedName": "_expand_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_free_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(417). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 569,
+                  "startColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_free_dbg",
+                  "decoratedName": "_free_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_msize_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(430). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 575,
+                  "startColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_msize_dbg",
+                  "decoratedName": "_msize_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtSetDumpClient': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(170). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 716,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtSetDumpClient",
+                  "decoratedName": "_CrtSetDumpClient",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtSetDbgFlag': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(234). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 721,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtSetDbgFlag",
+                  "decoratedName": "_CrtSetDbgFlag",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtSetAllocHook': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(164). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 753,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtSetAllocHook",
+                  "decoratedName": "_CrtSetAllocHook",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtSetBreakAlloc': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(230). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 759,
+                  "startColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtSetBreakAlloc",
+                  "decoratedName": "_CrtSetBreakAlloc",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtIsValidHeapPointer': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(196). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 764,
+                  "startColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtIsValidHeapPointer",
+                  "decoratedName": "_CrtIsValidHeapPointer",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtIsValidPointer': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(201). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 769,
+                  "startColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtIsValidPointer",
+                  "decoratedName": "_CrtIsValidPointer",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtIsMemoryBlock': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(187). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 780,
+                  "startColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtIsMemoryBlock",
+                  "decoratedName": "_CrtIsMemoryBlock",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtMemDifference': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(211). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 787,
+                  "startColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtMemDifference",
+                  "decoratedName": "_CrtMemDifference",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtMemDumpStatistics': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(221). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 793,
+                  "startColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtMemDumpStatistics",
+                  "decoratedName": "_CrtMemDumpStatistics",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtMemCheckpoint': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(207). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 798,
+                  "startColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtMemCheckpoint",
+                  "decoratedName": "_CrtMemCheckpoint",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtMemDumpAllObjectsSince': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(217). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 804,
+                  "startColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtMemDumpAllObjectsSince",
+                  "decoratedName": "_CrtMemDumpAllObjectsSince",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtDoForAllClientObjects': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(180). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 809,
+                  "startColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtDoForAllClientObjects",
+                  "decoratedName": "_CrtDoForAllClientObjects",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtSetReportMode': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(659). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 820,
+                  "startColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtSetReportMode",
+                  "decoratedName": "_CrtSetReportMode",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtSetReportFile': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(654). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 825,
+                  "startColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtSetReportFile",
+                  "decoratedName": "_CrtSetReportFile",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtSetReportHook': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(673). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 830,
+                  "startColumn": 26
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtSetReportHook",
+                  "decoratedName": "_CrtSetReportHook",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtDbgReport': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(611). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 835,
+                  "startColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtDbgReport",
+                  "decoratedName": "_CrtDbgReport",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_aligned_offset_recalloc_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(370). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 1040,
+                  "startColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_aligned_offset_recalloc_dbg",
+                  "decoratedName": "_aligned_offset_recalloc_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_aligned_recalloc_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(390). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 1051,
+                  "startColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_aligned_recalloc_dbg",
+                  "decoratedName": "_aligned_recalloc_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_recalloc_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(445). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 1056,
+                  "startColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_recalloc_dbg",
+                  "decoratedName": "_recalloc_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_CrtReportBlockType': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(226). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 1067,
+                  "startColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_CrtReportBlockType",
+                  "decoratedName": "_CrtReportBlockType",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_aligned_malloc_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(337). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 1161,
+                  "startColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_aligned_malloc_dbg",
+                  "decoratedName": "_aligned_malloc_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_aligned_realloc_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(381). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 1166,
+                  "startColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_aligned_realloc_dbg",
+                  "decoratedName": "_aligned_realloc_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_aligned_offset_malloc_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(351). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 1172,
+                  "startColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_aligned_offset_malloc_dbg",
+                  "decoratedName": "_aligned_offset_malloc_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_aligned_offset_realloc_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(360). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 1178,
+                  "startColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_aligned_offset_realloc_dbg",
+                  "decoratedName": "_aligned_offset_realloc_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for '_aligned_free_dbg': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\crtdbg.h(332). "
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+                },
+                "region": {
+                  "startLine": 1184,
+                  "startColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "_aligned_free_dbg",
+                  "decoratedName": "_aligned_free_dbg",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "MSVC Code Analysis",
+          "version": "14.44.35207.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memoverride.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "95937d20eb4995245346f02ccdd192c457c9e53181a50075446d337a2a696d43"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/dbg.h"
+          },
+          "hashes": {
+            "sha-256": "ee41db02c154b2740c4ff907abed22795b7f9e4e89e360541eefb781cdb10968"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/basetypes.h"
+          },
+          "hashes": {
+            "sha-256": "fe269021f4246463ac736566828ef761724b13cddf08bf963668741391976818"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/commonmacros.h"
+          },
+          "hashes": {
+            "sha-256": "85ac99b6508bc4252a954911ce34cec158612223af5b92414e6946691e958e12"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/platform.h"
+          },
+          "hashes": {
+            "sha-256": "216a4fdd74b12d207cf4e66ee1c7ebe95ab47d8f085cefad5b51ab54f4ecbb97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/wchartypes.h"
+          },
+          "hashes": {
+            "sha-256": "583b8b24ae0ffc8b78bfed00ba8e994540a96a753055f779298c37b776c4b993"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_off.h"
+          },
+          "hashes": {
+            "sha-256": "3d61910bc9860d0239b4e4b112bf8cba2121d3830491e6eebe4e572fc53a03a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_on.h"
+          },
+          "hashes": {
+            "sha-256": "65e186ed82fcee5effc33266c95fbd277cc218c461fa8c43ff88b53083541e97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/valve_minmax_on.h"
+          },
+          "hashes": {
+            "sha-256": "fb450f3f15a15d1058bf2289688dd995285c69c8c2f04d94ac9d39419d22e740"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/annotations.h"
+          },
+          "hashes": {
+            "sha-256": "3a0a94401af5aec47ddc775419b0851d761ef1fff336896114dfe9cdebc7503f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/fasttimer.h"
+          },
+          "hashes": {
+            "sha-256": "71a29533a668038ca7f7bb0f828608c1af35e6ace1fc7be1388aceae3df410cf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/protected_things.h"
+          },
+          "hashes": {
+            "sha-256": "59d6c726f9f6c4499b497ec098d4388e8dba9b5e20ac52d69ac8833d6062c42e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/xbox_codeline_defines.h"
+          },
+          "hashes": {
+            "sha-256": "0e7522820f894fe046c5c42e19f02f03365790479fd3b923dbd0854ad9c93f3b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/dbgflag.h"
+          },
+          "hashes": {
+            "sha-256": "1bbb5eb7eefd8e2f1d8c5680d79cc7003c3ebcd1e0e5e7ab796d09f1bb3bd3e6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memalloc.h"
+          },
+          "hashes": {
+            "sha-256": "599c07a92d6ca66c1d71705a6df4b4dcf4f7187aba895f44a3455b7bcf895570"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/mem.h"
+          },
+          "hashes": {
+            "sha-256": "68dfe8a5f1fc493eef6ef206801ea749841fe973e06852b62495b35a9fffaf8c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/memdbgoff.h"
+          },
+          "hashes": {
+            "sha-256": "75325a022f28cc3c18a7b2e5730b9db1f1f20d431b4f5837ebcb179271d4a842"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier0/minidump.h"
+          },
+          "hashes": {
+            "sha-256": "f2d4fc08a48be4f8072119046a851b1ecd3ddd168c11bbc420a770c4bf2c77a1"
+          }
+        }
+      ]
+    }
+  ]
+}

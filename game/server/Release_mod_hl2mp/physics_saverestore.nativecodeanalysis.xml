@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>saverestoretypes.h</FILENAME>
+      <LINE>280</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CGameSaveRestoreInfo::CHashElement::index' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CGameSaveRestoreInfo::CHashElement::{ctor}</FUNCTION>
+    <DECORATED>??0CHashElement@CGameSaveRestoreInfo@@QEAA@PEBVCBaseEntity@@@Z</DECORATED>
+    <FUNCLINE>280</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CGameSaveRestoreInfo::CHashElement::index</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>saverestoretypes.h</FILENAME>
+      <LINE>281</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CGameSaveRestoreInfo::CHashElement::index' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CGameSaveRestoreInfo::CHashElement::{ctor}</FUNCTION>
+    <DECORATED>??0CHashElement@CGameSaveRestoreInfo@@QEAA@XZ</DECORATED>
+    <FUNCLINE>281</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CGameSaveRestoreInfo::CHashElement::index</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>saverestoretypes.h</FILENAME>
+      <LINE>281</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CGameSaveRestoreInfo::CHashElement::pEntity' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CGameSaveRestoreInfo::CHashElement::{ctor}</FUNCTION>
+    <DECORATED>??0CHashElement@CGameSaveRestoreInfo@@QEAA@XZ</DECORATED>
+    <FUNCLINE>281</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CGameSaveRestoreInfo::CHashElement::pEntity</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>physics_saverestore.cpp</FILENAME>
+      <LINE>126</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPhysSaveRestoreBlockHandler::m_fDoLoad' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPhysSaveRestoreBlockHandler::{ctor}</FUNCTION>
+    <DECORATED>??0CPhysSaveRestoreBlockHandler@@QEAA@XZ</DECORATED>
+    <FUNCLINE>126</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPhysSaveRestoreBlockHandler::m_fDoLoad</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>physics_saverestore.cpp</FILENAME>
+      <LINE>126</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPhysSaveRestoreBlockHandler::m_blockHeader' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPhysSaveRestoreBlockHandler::{ctor}</FUNCTION>
+    <DECORATED>??0CPhysSaveRestoreBlockHandler@@QEAA@XZ</DECORATED>
+    <FUNCLINE>126</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPhysSaveRestoreBlockHandler::m_blockHeader</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>physics_saverestore.cpp</FILENAME>
+      <LINE>551</LINE>
+      <COLUMN>3</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Using uninitialized memory 'box'.</DESCRIPTION>
+    <FUNCTION>CPhysSaveRestoreBlockHandler::NoteBBox</FUNCTION>
+    <DECORATED>?NoteBBox@CPhysSaveRestoreBlockHandler@@UEAAXAEBVVector@@0PEAVCPhysCollide@@@Z</DECORATED>
+    <FUNCLINE>546</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+        <FILENAME>physics_saverestore.cpp</FILENAME>
+        <LINE>548</LINE>
+        <COLUMN>16</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+        <FILENAME>physics_saverestore.cpp</FILENAME>
+        <LINE>550</LINE>
+        <COLUMN>10</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'box' is not initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+        <FILENAME>physics_saverestore.cpp</FILENAME>
+        <LINE>551</LINE>
+        <COLUMN>12</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'box' is an Output from 'Vector::=' (declared at d:\speedvoltage\hl2mp-essential-fixes-latest\src\public\mathlib\vector.h:176)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+        <FILENAME>physics_saverestore.cpp</FILENAME>
+        <LINE>552</LINE>
+        <COLUMN>12</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+        <FILENAME>physics_saverestore.cpp</FILENAME>
+        <LINE>553</LINE>
+        <COLUMN>33</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+        <FILENAME>physics_saverestore.cpp</FILENAME>
+        <LINE>551</LINE>
+        <COLUMN>3</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'box' is used, but may not have been initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>physics_saverestore.cpp</FILENAME>
+      <LINE>620</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPhysSaveRestoreBlockHandler::QueuedItem_t::ppPhysObj' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPhysSaveRestoreBlockHandler::QueuedItem_t::{ctor}</FUNCTION>
+    <DECORATED>??0QueuedItem_t@CPhysSaveRestoreBlockHandler@@QEAA@XZ</DECORATED>
+    <FUNCLINE>620</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPhysSaveRestoreBlockHandler::QueuedItem_t::ppPhysObj</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>physics_saverestore.cpp</FILENAME>
+      <LINE>806</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CPhysObjSaveRestoreOps::m_type' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CPhysObjSaveRestoreOps::{ctor}</FUNCTION>
+    <DECORATED>??0CPhysObjSaveRestoreOps@@QEAA@XZ</DECORATED>
+    <FUNCLINE>806</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CPhysObjSaveRestoreOps::m_type</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;CPhysCollide const *,BBox_t,unsigned short,bool (__cdecl*)(CPhysCollide const * const &amp;,CPhysCollide const * const &amp;)&gt;::Node_t::elem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;CPhysCollide const *,BBox_t,unsigned short,bool (__cdecl*)(CPhysCollide const * const &amp;,CPhysCollide const * const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@PEBVCPhysCollide@@UBBox_t@@GP6A_NAEBQEBV1@0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;CPhysCollide const *,BBox_t,unsigned short,bool (__cdecl*)(CPhysCollide const * const &amp;,CPhysCollide const * const &amp;)&gt;::Node_t::elem</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;CPhysCollide const *,BBox_t,unsigned short,bool (__cdecl*)(CPhysCollide const * const &amp;,CPhysCollide const * const &amp;)&gt;::Node_t::key' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;CPhysCollide const *,BBox_t,unsigned short,bool (__cdecl*)(CPhysCollide const * const &amp;,CPhysCollide const * const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@PEBVCPhysCollide@@UBBox_t@@GP6A_NAEBQEBV1@0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;CPhysCollide const *,BBox_t,unsigned short,bool (__cdecl*)(CPhysCollide const * const &amp;,CPhysCollide const * const &amp;)&gt;::Node_t::key</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;IPhysicsObject *,CPhysCollide const *,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::elem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;IPhysicsObject *,CPhysCollide const *,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@PEAVIPhysicsObject@@PEBVCPhysCollide@@GP6A_NAEBQEAV1@0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;IPhysicsObject *,CPhysCollide const *,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::elem</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;IPhysicsObject *,CPhysCollide const *,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::key' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;IPhysicsObject *,CPhysCollide const *,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@PEAVIPhysicsObject@@PEBVCPhysCollide@@GP6A_NAEBQEAV1@0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;IPhysicsObject *,CPhysCollide const *,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::key</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;IPhysicsObject *,int,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::elem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;IPhysicsObject *,int,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@PEAVIPhysicsObject@@HGP6A_NAEBQEAV1@0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;IPhysicsObject *,int,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::elem</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;IPhysicsObject *,int,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::key' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;IPhysicsObject *,int,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@PEAVIPhysicsObject@@HGP6A_NAEBQEAV1@0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;IPhysicsObject *,int,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t::key</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;CBaseEntity *,CPhysSaveRestoreBlockHandler::CEntityRestoreSet *,unsigned short,bool (__cdecl*)(CBaseEntity * const &amp;,CBaseEntity * const &amp;)&gt;::Node_t::key' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;CBaseEntity *,CPhysSaveRestoreBlockHandler::CEntityRestoreSet *,unsigned short,bool (__cdecl*)(CBaseEntity * const &amp;,CBaseEntity * const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@PEAVCBaseEntity@@PEAVCEntityRestoreSet@CPhysSaveRestoreBlockHandler@@GP6A_NAEBQEAV1@0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;CBaseEntity *,CPhysSaveRestoreBlockHandler::CEntityRestoreSet *,unsigned short,bool (__cdecl*)(CBaseEntity * const &amp;,CBaseEntity * const &amp;)&gt;::Node_t::key</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmap.h</FILENAME>
+      <LINE>246</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUtlMap&lt;CBaseEntity *,CPhysSaveRestoreBlockHandler::CEntityRestoreSet *,unsigned short,bool (__cdecl*)(CBaseEntity * const &amp;,CBaseEntity * const &amp;)&gt;::Node_t::elem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUtlMap&lt;CBaseEntity *,CPhysSaveRestoreBlockHandler::CEntityRestoreSet *,unsigned short,bool (__cdecl*)(CBaseEntity * const &amp;,CBaseEntity * const &amp;)&gt;::Node_t::{ctor}</FUNCTION>
+    <DECORATED>??0Node_t@?$CUtlMap@PEAVCBaseEntity@@PEAVCEntityRestoreSet@CPhysSaveRestoreBlockHandler@@GP6A_NAEBQEAV1@0@Z@@QEAA@XZ</DECORATED>
+    <FUNCLINE>246</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CUtlMap&lt;CBaseEntity *,CPhysSaveRestoreBlockHandler::CEntityRestoreSet *,unsigned short,bool (__cdecl*)(CBaseEntity * const &amp;,CBaseEntity * const &amp;)&gt;::Node_t::elem</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;CPhysSaveRestoreBlockHandler::QueuedItem_t,int&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@UQueuedItem_t@CPhysSaveRestoreBlockHandler@@H@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;CGameSaveRestoreInfo::CHashElement,int&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@UCHashElement@CGameSaveRestoreInfo@@H@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;UtlRBTreeNode_t&lt;CUtlMap&lt;CBaseEntity *,CPhysSaveRestoreBlockHandler::CEntityRestoreSet *,unsigned short,bool (__cdecl*)(CBaseEntity * const &amp;,CBaseEntity * const &amp;)&gt;::Node_t,unsigned short&gt;,unsigned short&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@U?$UtlRBTreeNode_t@UNode_t@?$CUtlMap@PEAVCBaseEntity@@PEAVCEntityRestoreSet@CPhysSaveRestoreBlockHandler@@GP6A_NAEBQEAV1@0@Z@@G@@G@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;UtlRBTreeNode_t&lt;CUtlMap&lt;IPhysicsObject *,int,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t,unsigned short&gt;,unsigned short&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@U?$UtlRBTreeNode_t@UNode_t@?$CUtlMap@PEAVIPhysicsObject@@HGP6A_NAEBQEAV1@0@Z@@G@@G@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;UtlRBTreeNode_t&lt;CUtlMap&lt;IPhysicsObject *,CPhysCollide const *,unsigned short,bool (__cdecl*)(IPhysicsObject * const &amp;,IPhysicsObject * const &amp;)&gt;::Node_t,unsigned short&gt;,unsigned short&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@U?$UtlRBTreeNode_t@UNode_t@?$CUtlMap@PEAVIPhysicsObject@@PEBVCPhysCollide@@GP6A_NAEBQEAV1@0@Z@@G@@G@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;UtlRBTreeNode_t&lt;CUtlMap&lt;CPhysCollide const *,BBox_t,unsigned short,bool (__cdecl*)(CPhysCollide const * const &amp;,CPhysCollide const * const &amp;)&gt;::Node_t,unsigned short&gt;,unsigned short&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@U?$UtlRBTreeNode_t@UNode_t@?$CUtlMap@PEBVCPhysCollide@@UBBox_t@@GP6A_NAEBQEBV1@0@Z@@G@@G@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\tier1\</FILEPATH>
+      <FILENAME>utlmemory.h</FILENAME>
+      <LINE>763</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc' might return null pointer: assigning null pointer to 'm_pMemory', which is passed as an argument to 'realloc', will cause the original memory block to be leaked.</DESCRIPTION>
+    <FUNCTION>CUtlMemory&lt;CUtlVector&lt;CGameSaveRestoreInfo::CHashElement,CUtlMemory&lt;CGameSaveRestoreInfo::CHashElement,int&gt; &gt;,int&gt;::Grow</FUNCTION>
+    <DECORATED>?Grow@?$CUtlMemory@V?$CUtlVector@UCHashElement@CGameSaveRestoreInfo@@V?$CUtlMemory@UCHashElement@CGameSaveRestoreInfo@@H@@@@H@@QEAAXH@Z</DECORATED>
+    <FUNCLINE>715</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

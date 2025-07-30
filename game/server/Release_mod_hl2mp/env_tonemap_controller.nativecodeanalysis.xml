@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>env_tonemap_controller.cpp</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CEnvTonemapController::m_flBlendStartTime' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CEnvTonemapController::{ctor}</FUNCTION>
+    <DECORATED>??0CEnvTonemapController@@QEAA@XZ</DECORATED>
+    <FUNCLINE>58</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CEnvTonemapController::m_flBlendStartTime</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>env_tonemap_controller.cpp</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CEnvTonemapController::m_flBlendEndTime' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CEnvTonemapController::{ctor}</FUNCTION>
+    <DECORATED>??0CEnvTonemapController@@QEAA@XZ</DECORATED>
+    <FUNCLINE>58</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CEnvTonemapController::m_flBlendEndTime</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>env_tonemap_controller.cpp</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CEnvTonemapController::m_flBlendTonemapEnd' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CEnvTonemapController::{ctor}</FUNCTION>
+    <DECORATED>??0CEnvTonemapController@@QEAA@XZ</DECORATED>
+    <FUNCLINE>58</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CEnvTonemapController::m_flBlendTonemapEnd</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\server\</FILEPATH>
+      <FILENAME>env_tonemap_controller.cpp</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CEnvTonemapController::m_flBlendTonemapStart' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CEnvTonemapController::{ctor}</FUNCTION>
+    <DECORATED>??0CEnvTonemapController@@QEAA@XZ</DECORATED>
+    <FUNCLINE>58</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CEnvTonemapController::m_flBlendTonemapStart</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

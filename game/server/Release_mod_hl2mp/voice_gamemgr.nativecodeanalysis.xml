@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>voice_gamemgr.cpp</FILENAME>
+      <LINE>102</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CVoiceGameMgr::m_pHelper' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CVoiceGameMgr::{ctor}</FUNCTION>
+    <DECORATED>??0CVoiceGameMgr@@QEAA@XZ</DECORATED>
+    <FUNCLINE>102</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CVoiceGameMgr::m_pHelper</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\game\shared\</FILEPATH>
+      <FILENAME>voice_gamemgr.cpp</FILENAME>
+      <LINE>168</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'sscanf'.</DESCRIPTION>
+    <FUNCTION>CVoiceGameMgr::ClientCommand</FUNCTION>
+    <DECORATED>?ClientCommand@CVoiceGameMgr@@QEAA_NPEAVCBasePlayer@@AEBVCCommand@@@Z</DECORATED>
+    <FUNCLINE>153</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\speedvoltage\hl2mp-essential-fixes-latest\src\public\</FILEPATH>
+      <FILENAME>bitvec.h</FILENAME>
+      <LINE>376</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CFixedBitVecBase&lt;101&gt;::m_Ints' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CFixedBitVecBase&lt;101&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$CFixedBitVecBase@$0GF@@@IEAA@XZ</DECORATED>
+    <FUNCLINE>376</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>CFixedBitVecBase&lt;101&gt;::m_Ints</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>
