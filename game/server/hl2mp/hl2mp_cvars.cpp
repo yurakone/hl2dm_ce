@@ -64,3 +64,9 @@ ConVar mp_noblock(
 	"0",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"If non-zero, disable collisions between players");
+//noblock
+ConVar sv_specpanel_disable(
+	"sv_specpanel_disable",
+	"0",
+	FCVAR_GAMEDLL | FCVAR_NOTIFY,
+	"If non-zero, force hide specpanel");

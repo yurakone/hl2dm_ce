@@ -198,8 +198,9 @@ ConVar	sv_player_usercommand_timeout( "sv_player_usercommand_timeout", "3", FCVA
 ConVar  sv_player_net_suppress_usercommands( "sv_player_net_suppress_usercommands", "0", FCVAR_CHEAT, "For testing usercommand hacking sideeffects. DO NOT SHIP" );
 #endif // _DEBUG
 ConVar  sv_player_display_usercommand_errors( "sv_player_display_usercommand_errors", "0", FCVAR_CHEAT, "1 = Display warning when command values are out-of-range. 2 = Spew invalid ranges." );
-
 ConVar  player_debug_print_damage( "player_debug_print_damage", "0", FCVAR_CHEAT, "When true, print amount and type of all damage received by player to console." );
+
+extern ConVar sv_specpanel_disable;
 
 
 void CC_GiveCurrentAmmo( void )
@@ -2330,9 +2331,15 @@ bool CBasePlayer::StartObserverMode(int mode)
 
 	SetObserverMode( OBS_MODE_ROAMING );
 
+	/*
 	if ( gpGlobals->eLoadType != MapLoad_Background )
 	{
 		ShowViewPortPanel( "specgui" , ModeWantsSpectatorGUI(mode) );
+	}
+	*/
+	if (!sv_specpanel_disable.GetBool()) 
+	{
+		ShowViewPortPanel("info", true);
 	}
 	
 	// Setup flags
@@ -4701,20 +4708,20 @@ void CBasePlayer::PostThink()
 		ClientSettingsChanged();
 	}
 
-	if ( IsObserver() )
+	if (IsObserver())
 	{
-		if ( m_iObserverMode == OBS_MODE_POI || m_iObserverMode == OBS_MODE_FIXED )
+		if (m_iObserverMode == OBS_MODE_POI || m_iObserverMode == OBS_MODE_FIXED)
 		{
 			// Remove a pointless second third person view
 			m_iObserverMode = OBS_MODE_ROAMING;
 		}
 
-		if ( m_iObserverLastMode == OBS_MODE_ROAMING )
+		if (m_iObserverLastMode == OBS_MODE_ROAMING)
 		{
-			SetMoveType( MOVETYPE_OBSERVER );
+			SetMoveType(MOVETYPE_OBSERVER);
 		}
 
-		if ( m_iObserverMode != OBS_MODE_IN_EYE )
+		if (m_iObserverMode != OBS_MODE_IN_EYE)
 		{
 			m_Local.m_iHideHUD = HIDEHUD_CROSSHAIR;
 		}
@@ -4722,13 +4729,12 @@ void CBasePlayer::PostThink()
 		{
 			m_Local.m_iHideHUD &= ~HIDEHUD_CROSSHAIR;
 		}
+		if (sv_specpanel_disable.GetBool())
+		{
+			ShowViewPortPanel("specmenu", false);
+		}
 	}
-
-	if (IsObserver())
-	{
-		ShowViewPortPanel("specmenu", false);
-	}
-
+	
 	m_vecSmoothedVelocity = m_vecSmoothedVelocity * SMOOTHING_FACTOR + GetAbsVelocity() * ( 1 - SMOOTHING_FACTOR );
 
 	if ( !g_fGameOver && !m_iPlayerLocked )
