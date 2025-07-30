@@ -71,13 +71,13 @@ void FinishClientPutInServer( CHL2MP_Player *pPlayer )
 	}
 
 	// notify other clients of player joining the game
-	UTIL_ClientPrintAll( HUD_PRINTNOTIFY, "#Game_connected", sName[0] != 0 ? sName : "<unconnected>" );
-
+	UTIL_ClientPrintAll(1, "#Game_connected", sName[0] != 0 ? sName : "<unconnected>");
+	/*
 	if ( HL2MPRules()->IsTeamplay() == true )
 	{
 		ClientPrint( pPlayer, HUD_PRINTTALK, "You are on team %s1\n", pPlayer->GetTeam()->GetName() );
 	}
-
+	*/
 	if ( pPlayer->GetTeamNumber() == TEAM_SPECTATOR )
 	{
 		pPlayer->RemoveAllItems( true );
