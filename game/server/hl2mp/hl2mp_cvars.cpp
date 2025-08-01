@@ -70,3 +70,9 @@ ConVar sv_specpanel_disable(
 	"0",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"If non-zero, force hide specpanel");
+
+ConVar mp_fast_gather(
+	"mp_fast_gather",
+	"0",
+	FCVAR_GAMEDLL | FCVAR_NOTIFY,
+	"If non-zero, enables fast gathering physgun mode");

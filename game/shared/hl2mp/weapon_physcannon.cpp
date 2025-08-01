@@ -51,6 +51,7 @@
 #define	SPRITE_SCALE	128.0f
 
 static const char *s_pWaitForUpgradeContext = "WaitForUpgrade";
+extern ConVar mp_fast_gather;
 
 ConVar	g_debug_physcannon( "g_debug_physcannon", "0", FCVAR_REPLICATED | FCVAR_CHEAT );
 
@@ -2005,13 +2006,22 @@ bool CGrabController::UpdateObject( CBasePlayer *pPlayer, float flError )
 
 void CWeaponPhysCannon::UpdateObject( void )
 {
-	CBasePlayer *pPlayer = ToBasePlayer( GetOwner() );
+	auto *pPlayer = dynamic_cast<CHL2MP_Player*>(GetOwner());
+	
 	Assert( pPlayer );
 
 	float flError = 12;
 	if ( !m_grabController.UpdateObject( pPlayer, flError ) )
 	{
 		DetachObject();
+
+		auto fastGather = mp_fast_gather.GetBool();
+
+		if (fastGather)
+		{
+			m_nAttack2Debounce = 0;
+			m_flNextSecondaryAttack = gpGlobals->curtime + 0.1f;
+		}
 		return;
 	}
 }
