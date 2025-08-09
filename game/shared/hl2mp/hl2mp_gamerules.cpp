@@ -394,8 +394,7 @@ void CHL2MPRules::Think( void )
 
 		if (mp_noblock.GetBool())
 		{
-			// Всегда noblock
-			collisionGroup = COLLISION_GROUP_DEBRIS_TRIGGER;
+			collisionGroup = COLLISION_GROUP_INTERACTIVE_DEBRIS;
 		}
 
 		pPlayer->SetCollisionGroup(collisionGroup);
