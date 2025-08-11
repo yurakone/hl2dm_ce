@@ -394,7 +394,7 @@ void CHL2MPRules::Think( void )
 
 		if (mp_noblock.GetBool())
 		{
-			collisionGroup = COLLISION_GROUP_INTERACTIVE_DEBRIS;
+			collisionGroup = COLLISION_GROUP_WEAPON;
 		}
 
 		pPlayer->SetCollisionGroup(collisionGroup);
@@ -1487,7 +1487,7 @@ void CHL2MPRules::DeathNotice( CBasePlayer *pVictim, const CTakeDamageInfo &info
 
 			if ( pKillerTeam )
 			{
-				pKillerTeam->AddScore( -2 );
+				pKillerTeam->AddScore( -1 );
 			}
 		}
 
