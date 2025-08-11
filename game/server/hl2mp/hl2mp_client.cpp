@@ -121,8 +121,8 @@ void ClientActive( edict_t *pEdict, bool bLoadGame )
 	Assert( !bLoadGame );
 
 	CHL2MP_Player *pPlayer = ToHL2MPPlayer( CBaseEntity::Instance( pEdict ) );
-	pPlayer->CompensateScoreOnTeamSwitch( true );
-	pPlayer->CompensateTeamScoreOnTeamSwitch( true );
+	pPlayer->CompensateScoreOnTeamSwitch( false );
+	pPlayer->CompensateTeamScoreOnTeamSwitch( false );
 	FinishClientPutInServer( pPlayer );
 }
 
