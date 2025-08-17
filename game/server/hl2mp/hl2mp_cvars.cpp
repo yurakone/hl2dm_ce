@@ -64,15 +64,15 @@ ConVar mp_noblock(
 	"0",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"If non-zero, disable collisions between players");
-//noblock
+//specpanel
 ConVar sv_specpanel_disable(
 	"sv_specpanel_disable",
 	"0",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"If non-zero, force hide specpanel");
-
+//fastgather
 ConVar mp_fast_gather(
 	"mp_fast_gather",
 	"0",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
-	"If non-zero, enables fast gathering physgun mode");
+	"Gathering physgun mode, 0 - Disabled, 1 - Fast Gather, 2 - Vacuum mode");

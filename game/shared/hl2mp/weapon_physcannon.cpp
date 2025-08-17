@@ -2014,12 +2014,14 @@ void CWeaponPhysCannon::UpdateObject( void )
 	if ( !m_grabController.UpdateObject( pPlayer, flError ) )
 	{
 		DetachObject();
-
-		auto fastGather = mp_fast_gather.GetBool();
+		auto fastGather = mp_fast_gather.GetInt();
 
 		if (fastGather)
 		{
-			m_nAttack2Debounce = 0;
+			if (fastGather > 1)
+			{
+				m_nAttack2Debounce = 0;
+			}
 			m_flNextSecondaryAttack = gpGlobals->curtime + 0.1f;
 		}
 		return;

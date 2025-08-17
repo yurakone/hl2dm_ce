@@ -39,7 +39,7 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'Quaternion::w' is uninitialized. Always initialize a member variable (type.6)."
+            "text": "Variable 'Quaternion::y' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
             "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
@@ -65,39 +65,7 @@
             }
           ],
           "properties": {
-            "targetSymbol": "Quaternion::w"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'Quaternion::x' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
-                },
-                "region": {
-                  "startLine": 1717,
-                  "startColumn": 20
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Quaternion::{ctor}",
-                  "decoratedName": "??0Quaternion@@QEAA@AEBVRadianEuler@@@Z",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "Quaternion::x"
+            "targetSymbol": "Quaternion::y"
           }
         },
         {
@@ -135,7 +103,7 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'Quaternion::y' is uninitialized. Always initialize a member variable (type.6)."
+            "text": "Variable 'Quaternion::x' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
             "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
@@ -161,13 +129,13 @@
             }
           ],
           "properties": {
-            "targetSymbol": "Quaternion::y"
+            "targetSymbol": "Quaternion::x"
           }
         },
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'RadianEuler::z' is uninitialized. Always initialize a member variable (type.6)."
+            "text": "Variable 'Quaternion::w' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
             "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
@@ -179,21 +147,21 @@
                   "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
                 },
                 "region": {
-                  "startLine": 1736,
-                  "startColumn": 21
+                  "startLine": 1717,
+                  "startColumn": 20
                 }
               },
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "RadianEuler::{ctor}",
-                  "decoratedName": "??0RadianEuler@@QEAA@AEBVQuaternion@@@Z",
+                  "fullyQualifiedName": "Quaternion::{ctor}",
+                  "decoratedName": "??0Quaternion@@QEAA@AEBVRadianEuler@@@Z",
                   "kind": "function"
                 }
               ]
             }
           ],
           "properties": {
-            "targetSymbol": "RadianEuler::z"
+            "targetSymbol": "Quaternion::w"
           }
         },
         {
@@ -231,6 +199,38 @@
         {
           "ruleId": "C26495",
           "message": {
+            "text": "Variable 'RadianEuler::z' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/mathlib/vector.h"
+                },
+                "region": {
+                  "startLine": 1736,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RadianEuler::{ctor}",
+                  "decoratedName": "??0RadianEuler@@QEAA@AEBVQuaternion@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "RadianEuler::z"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
             "text": "Variable 'RadianEuler::y' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
@@ -258,38 +258,6 @@
           ],
           "properties": {
             "targetSymbol": "RadianEuler::y"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'CGlobalVarsBase::network_protocol' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
-                },
-                "region": {
-                  "startLine": 102,
-                  "startColumn": 25
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
-                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CGlobalVarsBase::network_protocol"
           }
         },
         {
@@ -327,38 +295,6 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'CGlobalVarsBase::maxClients' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
-                },
-                "region": {
-                  "startLine": 102,
-                  "startColumn": 25
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
-                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CGlobalVarsBase::maxClients"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
             "text": "Variable 'CGlobalVarsBase::frametime' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
@@ -391,7 +327,7 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'CGlobalVarsBase::absoluteframetime' is uninitialized. Always initialize a member variable (type.6)."
+            "text": "Variable 'CGlobalVarsBase::maxClients' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
             "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
@@ -417,103 +353,7 @@
             }
           ],
           "properties": {
-            "targetSymbol": "CGlobalVarsBase::absoluteframetime"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'CGlobalVarsBase::interpolation_amount' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
-                },
-                "region": {
-                  "startLine": 102,
-                  "startColumn": 25
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
-                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CGlobalVarsBase::interpolation_amount"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'CGlobalVarsBase::framecount' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
-                },
-                "region": {
-                  "startLine": 102,
-                  "startColumn": 25
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
-                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CGlobalVarsBase::framecount"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'CGlobalVarsBase::simTicksThisFrame' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
-                },
-                "region": {
-                  "startLine": 102,
-                  "startColumn": 25
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
-                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CGlobalVarsBase::simTicksThisFrame"
+            "targetSymbol": "CGlobalVarsBase::maxClients"
           }
         },
         {
@@ -551,7 +391,7 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'CGlobalVarsBase::realtime' is uninitialized. Always initialize a member variable (type.6)."
+            "text": "Variable 'CGlobalVarsBase::network_protocol' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
             "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
@@ -577,13 +417,13 @@
             }
           ],
           "properties": {
-            "targetSymbol": "CGlobalVarsBase::realtime"
+            "targetSymbol": "CGlobalVarsBase::network_protocol"
           }
         },
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'CGlobalVarsBase::interval_per_tick' is uninitialized. Always initialize a member variable (type.6)."
+            "text": "Variable 'CGlobalVarsBase::framecount' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
             "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
@@ -609,7 +449,39 @@
             }
           ],
           "properties": {
-            "targetSymbol": "CGlobalVarsBase::interval_per_tick"
+            "targetSymbol": "CGlobalVarsBase::framecount"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::absoluteframetime' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::absoluteframetime"
           }
         },
         {
@@ -647,7 +519,135 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'CGlobalVars::mapversion' is uninitialized. Always initialize a member variable (type.6)."
+            "text": "Variable 'CGlobalVarsBase::simTicksThisFrame' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::simTicksThisFrame"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::interval_per_tick' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::interval_per_tick"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::realtime' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::realtime"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVarsBase::interpolation_amount' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/globalvars_base.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVarsBase::{ctor}",
+                  "decoratedName": "??0CGlobalVarsBase@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVarsBase::interpolation_amount"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::mapname' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
             "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
@@ -673,7 +673,7 @@
             }
           ],
           "properties": {
-            "targetSymbol": "CGlobalVars::mapversion"
+            "targetSymbol": "CGlobalVars::mapname"
           }
         },
         {
@@ -706,6 +706,38 @@
           ],
           "properties": {
             "targetSymbol": "CGlobalVars::startspot"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CGlobalVars::mapversion' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CGlobalVars::{ctor}",
+                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CGlobalVars::mapversion"
           }
         },
         {
@@ -802,38 +834,6 @@
           ],
           "properties": {
             "targetSymbol": "CGlobalVars::coop"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'CGlobalVars::mapname' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/edict.h"
-                },
-                "region": {
-                  "startLine": 66,
-                  "startColumn": 21
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CGlobalVars::{ctor}",
-                  "decoratedName": "??0CGlobalVars@@QEAA@_N@Z",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CGlobalVars::mapname"
           }
         },
         {
@@ -1147,38 +1147,6 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'DVariant::<unnamed-tag>::m_Float' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/dt_common.h"
-                },
-                "region": {
-                  "startLine": 131,
-                  "startColumn": 5
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "DVariant::{ctor}",
-                  "decoratedName": "??0DVariant@@QEAA@XZ",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "DVariant::<unnamed-tag>::m_Float"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
             "text": "Variable 'DVariant::<unnamed-tag>::m_Int' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
@@ -1206,38 +1174,6 @@
           ],
           "properties": {
             "targetSymbol": "DVariant::<unnamed-tag>::m_Int"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'DVariant::<unnamed-tag>::m_pString' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/dt_common.h"
-                },
-                "region": {
-                  "startLine": 131,
-                  "startColumn": 5
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "DVariant::{ctor}",
-                  "decoratedName": "??0DVariant@@QEAA@XZ",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "DVariant::<unnamed-tag>::m_pString"
           }
         },
         {
@@ -1275,6 +1211,70 @@
         {
           "ruleId": "C26495",
           "message": {
+            "text": "Variable 'DVariant::<unnamed-tag>::m_Float' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/dt_common.h"
+                },
+                "region": {
+                  "startLine": 131,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "DVariant::{ctor}",
+                  "decoratedName": "??0DVariant@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "DVariant::<unnamed-tag>::m_Float"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'DVariant::<unnamed-tag>::m_pString' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/dt_common.h"
+                },
+                "region": {
+                  "startLine": 131,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "DVariant::{ctor}",
+                  "decoratedName": "??0DVariant@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "DVariant::<unnamed-tag>::m_pString"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
             "text": "Variable 'DVariant::<unnamed-tag>::m_Vector' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
@@ -1302,102 +1302,6 @@
           ],
           "properties": {
             "targetSymbol": "DVariant::<unnamed-tag>::m_Vector"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'CViewVectors::m_vDuckHullMin' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/shareddefs.h"
-                },
-                "region": {
-                  "startLine": 33,
-                  "startColumn": 2
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CViewVectors::{ctor}",
-                  "decoratedName": "??0CViewVectors@@QEAA@XZ",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CViewVectors::m_vDuckHullMin"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'CViewVectors::m_vObsHullMax' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/shareddefs.h"
-                },
-                "region": {
-                  "startLine": 33,
-                  "startColumn": 2
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CViewVectors::{ctor}",
-                  "decoratedName": "??0CViewVectors@@QEAA@XZ",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CViewVectors::m_vObsHullMax"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'CViewVectors::m_vHullMin' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/shareddefs.h"
-                },
-                "region": {
-                  "startLine": 33,
-                  "startColumn": 2
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CViewVectors::{ctor}",
-                  "decoratedName": "??0CViewVectors@@QEAA@XZ",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CViewVectors::m_vHullMin"
           }
         },
         {
@@ -1435,6 +1339,38 @@
         {
           "ruleId": "C26495",
           "message": {
+            "text": "Variable 'CViewVectors::m_vDuckHullMin' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/shareddefs.h"
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CViewVectors::{ctor}",
+                  "decoratedName": "??0CViewVectors@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CViewVectors::m_vDuckHullMin"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
             "text": "Variable 'CViewVectors::m_vHullMax' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
@@ -1462,6 +1398,102 @@
           ],
           "properties": {
             "targetSymbol": "CViewVectors::m_vHullMax"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CViewVectors::m_vDuckHullMax' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/shareddefs.h"
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CViewVectors::{ctor}",
+                  "decoratedName": "??0CViewVectors@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CViewVectors::m_vDuckHullMax"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CViewVectors::m_vHullMin' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/shareddefs.h"
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CViewVectors::{ctor}",
+                  "decoratedName": "??0CViewVectors@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CViewVectors::m_vHullMin"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CViewVectors::m_vObsHullMax' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/shareddefs.h"
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CViewVectors::{ctor}",
+                  "decoratedName": "??0CViewVectors@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CViewVectors::m_vObsHullMax"
           }
         },
         {
@@ -1558,38 +1590,6 @@
           ],
           "properties": {
             "targetSymbol": "CViewVectors::m_vDuckView"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "Variable 'CViewVectors::m_vDuckHullMax' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/game/shared/shareddefs.h"
-                },
-                "region": {
-                  "startLine": 33,
-                  "startColumn": 2
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CViewVectors::{ctor}",
-                  "decoratedName": "??0CViewVectors@@QEAA@XZ",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CViewVectors::m_vDuckHullMax"
           }
         },
         {
@@ -1723,38 +1723,6 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'Ray_t::m_IsSwept' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/cmodel.h"
-                },
-                "region": {
-                  "startLine": 120,
-                  "startColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Ray_t::{ctor}",
-                  "decoratedName": "??0Ray_t@@QEAA@XZ",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "Ray_t::m_IsSwept"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
             "text": "Variable 'Ray_t::m_IsRay' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
@@ -1782,6 +1750,38 @@
           ],
           "properties": {
             "targetSymbol": "Ray_t::m_IsRay"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Ray_t::m_IsSwept' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/cmodel.h"
+                },
+                "region": {
+                  "startLine": 120,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Ray_t::{ctor}",
+                  "decoratedName": "??0Ray_t@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Ray_t::m_IsSwept"
           }
         },
         {
@@ -2005,38 +2005,6 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'CUtlSymbolTable::CStringPoolIndex::m_iOffset' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "analysisTarget": {
-            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlsymbol.h"
-                },
-                "region": {
-                  "startLine": 123,
-                  "startColumn": 3
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CUtlSymbolTable::CStringPoolIndex::{ctor}",
-                  "decoratedName": "??0CStringPoolIndex@CUtlSymbolTable@@QEAA@XZ",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "CUtlSymbolTable::CStringPoolIndex::m_iOffset"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
             "text": "Variable 'CUtlSymbolTable::CStringPoolIndex::m_iPool' is uninitialized. Always initialize a member variable (type.6)."
           },
           "analysisTarget": {
@@ -2064,6 +2032,38 @@
           ],
           "properties": {
             "targetSymbol": "CUtlSymbolTable::CStringPoolIndex::m_iPool"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'CUtlSymbolTable::CStringPoolIndex::m_iOffset' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/game/server/stdafx.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/speedvoltage/hl2mp-essential-fixes-latest/src/public/tier1/utlsymbol.h"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CUtlSymbolTable::CStringPoolIndex::{ctor}",
+                  "decoratedName": "??0CStringPoolIndex@CUtlSymbolTable@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "CUtlSymbolTable::CStringPoolIndex::m_iOffset"
           }
         },
         {
@@ -2289,7 +2289,7 @@
         "driver": {
           "name": "PREfast",
           "fullName": "MSVC Code Analysis",
-          "version": "14.44.35207.1",
+          "version": "14.44.35213.0",
           "informationUri": "https://aka.ms/cpp/ca"
         }
       },
@@ -2811,7 +2811,7 @@
             "uri": "file:///d:/speedvoltage/hl2mp-essential-fixes-latest/src/public/const.h"
           },
           "hashes": {
-            "sha-256": "b2d4b74de9f05e7a16ef18c8b94031ea0af5e338945b87c4f20f631d1eb31664"
+            "sha-256": "dd0d71be04ef333e41875b746399e4fbd9c43f1f397dd8d1aca750e736e1d773"
           }
         },
         {

@@ -1026,7 +1026,7 @@ CON_COMMAND( fov, "Change players FOV" )
 			{
 				pHL2Player->SavePlayerSettings();
 			}
-
+			
 			ClientPrint( pPlayer, HUD_PRINTCONSOLE, UTIL_VarArgs( "\"fov\" is \"%d\"\n", nFOV ) );
 		}
 		else

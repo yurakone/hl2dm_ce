@@ -45,7 +45,7 @@ static void mp_teamplay_changed(IConVar* pConVar, const char* pOldString, float 
 					pPlayer->ChangeTeam(TEAM_UNASSIGNED);
 			}
 		}
-	}
+	}	
 	return;
 }
 
