@@ -254,6 +254,7 @@ CHL2MPRules::CHL2MPRules()
 		g_Teams.AddToTail( pTeam );
 	}
 
+	#endif	
 	m_bTeamPlayEnabled = teamplay.GetBool();
 	m_flIntermissionEndTime = 0.0f;
 	m_flGameStartTime = 0;
@@ -283,7 +284,6 @@ CHL2MPRules::CHL2MPRules()
 	g_mapVotes.RemoveAll();
 	g_playersWhoVoted.RemoveAll();
 	g_nominatedMaps.RemoveAll();
-#endif
 }
 
 const CViewVectors* CHL2MPRules::GetViewVectors()const
@@ -1506,33 +1506,33 @@ void CHL2MPRules::DeathNotice( CBasePlayer *pVictim, const CTakeDamageInfo &info
 
 }
 
-void CHL2MPRules::ClientSettingsChanged( CBasePlayer *pPlayer )
+void CHL2MPRules::ClientSettingsChanged(CBasePlayer* pPlayer)
 {
 #ifndef CLIENT_DLL
-	
-	CHL2MP_Player *pHL2Player = ToHL2MPPlayer( pPlayer );
 
-	if ( pHL2Player == NULL )
+	CHL2MP_Player* pHL2Player = ToHL2MPPlayer(pPlayer);
+
+	if (pHL2Player == NULL)
 		return;
 
-	const char *pCurrentModel = modelinfo->GetModelName( pPlayer->GetModel() );
-	const char *szModelName = engine->GetClientConVarValue( engine->IndexOfEdict( pPlayer->edict() ), "cl_playermodel" );
+	const char* pCurrentModel = modelinfo->GetModelName(pPlayer->GetModel());
+	const char* szModelName = engine->GetClientConVarValue(engine->IndexOfEdict(pPlayer->edict()), "cl_playermodel");
 
 	//If we're different.
-	if ( stricmp( szModelName, pCurrentModel ) )
+	if (stricmp(szModelName, pCurrentModel))
 	{
 		//Too soon, set the cvar back to what it was.
 		//Note: this will make this function be called again
 		//but since our models will match it'll just skip this whole dealio.
-		if ( pHL2Player->GetNextModelChangeTime() >= gpGlobals->curtime )
+		if (pHL2Player->GetNextModelChangeTime() >= gpGlobals->curtime)
 		{
 			char szReturnString[512];
 
-			Q_snprintf( szReturnString, sizeof (szReturnString ), "cl_playermodel %s\n", pCurrentModel );
-			engine->ClientCommand ( pHL2Player->edict(), szReturnString );
+			Q_snprintf(szReturnString, sizeof(szReturnString), "cl_playermodel %s\n", pCurrentModel);
+			engine->ClientCommand(pHL2Player->edict(), szReturnString);
 
-			Q_snprintf( szReturnString, sizeof( szReturnString ), "Please wait %d more seconds before trying to switch models.\n", (int)(pHL2Player->GetNextModelChangeTime() - gpGlobals->curtime) );
-			ClientPrint( pHL2Player, HUD_PRINTTALK, szReturnString );
+			Q_snprintf(szReturnString, sizeof(szReturnString), "Please wait %d more seconds before trying to switch models.\n", (int)(pHL2Player->GetNextModelChangeTime() - gpGlobals->curtime));
+			ClientPrint(pHL2Player, HUD_PRINTTALK, szReturnString);
 			return;
 		}
 
@@ -1545,9 +1545,9 @@ void CHL2MPRules::ClientSettingsChanged( CBasePlayer *pPlayer )
 
 			if (sv_showplayermodel.GetBool())
 			{
-			Q_snprintf(szReturnString, sizeof(szReturnString), "Your choosen player model is: %s\n", pszCurrentModelName);
-			ClientPrint(pHL2Player, HUD_PRINTTALK, szReturnString);
-		    }
+				Q_snprintf(szReturnString, sizeof(szReturnString), "Your choosen player model is: %s\n", pszCurrentModelName);
+				ClientPrint(pHL2Player, HUD_PRINTTALK, szReturnString);
+			}
 		}
 
 		else
@@ -1564,14 +1564,13 @@ void CHL2MPRules::ClientSettingsChanged( CBasePlayer *pPlayer )
 			}
 		}
 	}
-	if ( sv_report_client_settings.GetInt() == 1 )
+	if (sv_report_client_settings.GetInt() == 1)
 	{
-		UTIL_LogPrintf( "\"%s\" cl_cmdrate = \"%s\"\n", pHL2Player->GetPlayerName(), engine->GetClientConVarValue( pHL2Player->entindex(), "cl_cmdrate" ));
+		UTIL_LogPrintf("\"%s\" cl_cmdrate = \"%s\"\n", pHL2Player->GetPlayerName(), engine->GetClientConVarValue(pHL2Player->entindex(), "cl_cmdrate"));
 	}
 
-	BaseClass::ClientSettingsChanged( pPlayer );
+	BaseClass::ClientSettingsChanged(pPlayer);
 #endif
-	
 }
 
 int CHL2MPRules::PlayerRelationship( CBaseEntity *pPlayer, CBaseEntity *pTarget )
@@ -1819,7 +1818,7 @@ void CHL2MPRules::RestartGame()
 	}
 
 	// Respawn entities (glass, doors, etc..)
-
+	
 	CTeam *pRebels = GetGlobalTeam( TEAM_REBELS );
 	CTeam *pCombine = GetGlobalTeam( TEAM_COMBINE );
 
@@ -1836,16 +1835,26 @@ void CHL2MPRules::RestartGame()
 	m_flIntermissionEndTime = 0;
 	m_flRestartGameTime = 0.0;		
 	m_bCompleteReset = false;
-
-	IGameEvent * event = gameeventmanager->CreateEvent( "round_start" );
-	if ( event )
+	if (!IsTeamplay()) 
 	{
-		event->SetInt("fraglimit", 0 );
-		event->SetInt( "priority", 6 ); // HLTV event priority, not transmitted
+		IGameEvent* event = gameeventmanager->CreateEvent("round_start");
+		if (event)
+		{
+			event->SetInt("fraglimit", 0);
+			event->SetInt("priority", 6); // HLTV event priority, not transmitted
 
-		event->SetString("objective","DEATHMATCH");
+			event->SetString("objective", "DEATHMATCH");
 
-		gameeventmanager->FireEvent( event );
+			gameeventmanager->FireEvent(event);
+		}
+	}
+	else
+	{
+		IGameEvent* event = gameeventmanager->CreateEvent("teamplay_round_start");
+		if (event)
+		{
+			gameeventmanager->FireEvent(event);
+		}
 	}
 }
 
@@ -2075,4 +2084,119 @@ const char *CHL2MPRules::GetChatFormat( bool bTeamOnly, CBasePlayer *pPlayer )
 }
 
 #endif
+
+void CHL2MPRules::ChangeTeamplayMode(bool bTeamplay)
+{
+	m_bTeamPlayEnabled = bTeamplay;
+
+	Msg("Switching to %s mode...\n", bTeamplay ? "Team Deathmatch" : "Deathmatch");
+
+	ResetAllPlayersScores();
+	RestartGame();
+
+	if (HL2MPRules()->IsTeamplay())
+	{
+		ReassignPlayerTeams();
+		IGameEvent* event = gameeventmanager->CreateEvent("teamplay_round_start");
+		if (event)
+		{
+			gameeventmanager->FireEvent(event);
+		}
+	}
+	else
+	{
+		for (int i = 1; i <= gpGlobals->maxClients; i++)
+		{
+			CHL2MP_Player* pPlayer = (CHL2MP_Player*)UTIL_PlayerByIndex(i);
+			if (pPlayer && !HL2MPRules()->IsTeamplay())
+			{
+				if (!pPlayer->IsHLTV() && !pPlayer->IsObserver() && pPlayer->IsConnected())
+				{
+					pPlayer->ChangeTeam(TEAM_UNASSIGNED);
+				}
+			}
+		}
+	}
+
+	RecalculateTeamCounts();
+
+	UTIL_ClientPrintAll(HUD_PRINTCENTER, bTeamplay ?
+		"Switched to Team Deathmatch!" : "Switched to Deathmatch!");
+}
+
+void CHL2MPRules::ResetAllPlayersScores()
+{
+	for (int i = 1; i <= gpGlobals->maxClients; i++)
+	{
+		CHL2MP_Player* pPlayer = (CHL2MP_Player*)UTIL_PlayerByIndex(i);
+		if (pPlayer)
+		{
+			if (!pPlayer->IsHLTV() && pPlayer->IsConnected())
+			{
+				pPlayer->ResetFragCount();
+				pPlayer->ResetDeathCount();
+			}
+		}
+	}
+
+	for (int team = TEAM_COMBINE; team <= TEAM_REBELS; team++)
+	{
+		GetGlobalTeam(team)->SetScore(0);
+	}
+}
+
+void CHL2MPRules::ReassignPlayerTeams()
+{
+	int iCombineCount = 0, iRebelCount = 0;
+
+	for (int i = 1; i <= gpGlobals->maxClients; i++)
+	{
+		CHL2MP_Player* pPlayer = (CHL2MP_Player*)UTIL_PlayerByIndex(i);
+		if (pPlayer && HL2MPRules()->IsTeamplay())
+		{
+			if (!pPlayer->IsHLTV() && !pPlayer->IsObserver() && pPlayer->IsConnected())
+			{
+				int newTeam;
+				if (iCombineCount <= iRebelCount)
+				{
+					newTeam = TEAM_COMBINE;
+					iCombineCount++;
+				}
+				else
+				{
+					newTeam = TEAM_REBELS;
+					iRebelCount++;
+				}
+				pPlayer->ChangeTeam(newTeam);
+			}
+		}
+	}
+}
+
+void CHL2MPRules::RecalculateTeamCounts()
+{
+	CTeam* pCombine = GetGlobalTeam(TEAM_COMBINE);
+	CTeam* pRebels = GetGlobalTeam(TEAM_REBELS);
+
+	if (pCombine && pRebels)
+	{
+		for (int i = 1; i <= gpGlobals->maxClients; i++)
+		{
+			CHL2MP_Player* pPlayer = (CHL2MP_Player*)UTIL_PlayerByIndex(i);
+			if (pPlayer && HL2MPRules()->IsTeamplay())
+			{
+				if (!pPlayer->IsHLTV() && !pPlayer->IsObserver() && pPlayer->IsConnected() && pPlayer->GetTeamNumber() == TEAM_UNASSIGNED)
+				{
+					int team = pPlayer->GetTeamNumber();
+					if (team == TEAM_COMBINE)
+						pCombine->AddPlayer(pPlayer);
+					else if (team == TEAM_REBELS)
+						pRebels->AddPlayer(pPlayer);
+				}
+			}
+		}
+		pCombine->NetworkStateChanged();
+		pRebels->NetworkStateChanged();
+	}
+}
 
