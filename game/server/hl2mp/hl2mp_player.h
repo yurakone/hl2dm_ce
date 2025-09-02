@@ -42,7 +42,9 @@ public:
 
 	CHL2MP_Player();
 	~CHL2MP_Player( void );
-	
+
+	int GetLastHitGroup() const { return m_iLastHitGroup; }
+
 	static CHL2MP_Player *CreatePlayer( const char *className, edict_t *ed )
 	{
 		CHL2MP_Player::s_PlayerEdict = ed;
@@ -155,6 +157,25 @@ public:
 	bool SavePlayerSettings();
 	bool LoadPlayerSettings();
 	void DelayedLoadPlayerSettings();
+
+	// Hit sound system
+	struct HitSoundConfig
+	{
+		char szHitBodySound[MAX_PATH];
+		char szHitHeadSound[MAX_PATH];
+		char szKillBodySound[MAX_PATH];
+		char szKillHeadSound[MAX_PATH];
+		bool bEnabled;
+		float flHitVolume;
+		float flKillVolume;
+	};
+
+	static HitSoundConfig s_HitSounds;
+	static bool s_bHitSoundsLoaded;
+
+	virtual void LoadHitSoundConfig();
+	virtual void PlayHitSound(const char* szSound, float flVolume = 1.0f);
+	int m_iLastHitGroup;
 
 private:
 
