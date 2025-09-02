@@ -125,6 +125,7 @@ ConVar cl_backspeed( "cl_backspeed", "450", FCVAR_REPLICATED | FCVAR_CHEAT );
 // This is declared in the engine, too
 ConVar	sv_noclipduringpause( "sv_noclipduringpause", "0", FCVAR_REPLICATED | FCVAR_CHEAT, "If cheats are enabled, then you can noclip with the game paused (for doing screenshots, etc.)." );
 
+extern ConVar mp_suitvoice;
 extern ConVar mp_ear_ringing;
 extern ConVar sv_maxunlag;
 extern ConVar sv_turbophysics;
@@ -4393,7 +4394,7 @@ void CBasePlayer::CheckSuitUpdate()
 	// if in range of radiation source, ping geiger counter
 	UpdateGeigerCounter();
 
-	if ( g_pGameRules->IsMultiplayer() )
+	if ( !mp_suitvoice.GetBool() )
 	{
 		// don't bother updating HEV voice in multiplayer.
 		return;
@@ -4452,7 +4453,7 @@ void CBasePlayer::SetSuitUpdate(const char *name, int fgroup, int iNoRepeatTime)
 	if ( !IsSuitEquipped() )
 		return;
 
-	if ( g_pGameRules->IsMultiplayer() )
+	if ( !mp_suitvoice.GetBool() )
 	{
 		// due to static channel design, etc. We don't play HEV sounds in multiplayer right now.
 		return;

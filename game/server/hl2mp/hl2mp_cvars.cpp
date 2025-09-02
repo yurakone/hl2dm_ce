@@ -88,3 +88,9 @@ ConVar mp_hitsounds_enabled(
 	"1",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"Hitsounds, 0 - Disabled, 1 - Enable");
+//suivoice
+ConVar mp_suitvoice(
+	"mp_suitvoice",
+	"0",
+	FCVAR_GAMEDLL,
+	"If non-zero, game will enable suit notifications");
