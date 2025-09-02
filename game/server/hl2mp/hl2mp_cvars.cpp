@@ -76,3 +76,15 @@ ConVar mp_fast_gather(
 	"0",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"Gathering physgun mode, 0 - Disabled, 1 - Fast Gather, 2 - Vacuum mode");
+//killsounds
+ConVar mp_killsounds_enabled(
+	"mp_killsounds_enabled",
+	"1",
+	FCVAR_GAMEDLL | FCVAR_NOTIFY,
+	"Killsounds, 0 - Disabled, 1 - Enable");
+//Hitsounds
+ConVar mp_hitsounds_enabled(
+	"mp_hitsounds_enabled",
+	"1",
+	FCVAR_GAMEDLL | FCVAR_NOTIFY,
+	"Hitsounds, 0 - Disabled, 1 - Enable");

@@ -36,6 +36,8 @@
 
 CHL2MP_Player::HitSoundConfig CHL2MP_Player::s_HitSounds;
 bool CHL2MP_Player::s_bHitSoundsLoaded = false;
+extern ConVar mp_hitsounds_enabled;
+extern ConVar mp_killsounds_enabled;
 
 int g_iLastCitizenModel = 0;
 int g_iLastCombineModel = 0;
@@ -1488,7 +1490,7 @@ void CHL2MP_Player::Event_Killed( const CTakeDamageInfo &info )
 	DetonateTripmines();
 
 	// kill sounds before calling base Event_Killed
-	if (s_HitSounds.bEnabled)
+	if (mp_hitsounds_enabled.GetBool())
 	{
 		CBaseEntity* pAttacker = info.GetAttacker();
 
@@ -1571,7 +1573,7 @@ int CHL2MP_Player::OnTakeDamage( const CTakeDamageInfo &inputInfo )
 	int ret = BaseClass::OnTakeDamage(info);
 
 	// Process hit sounds after damage is applied but before potential death
-	if (s_HitSounds.bEnabled && pAttacker && pAttacker->IsPlayer() && IsAlive())
+	if (mp_hitsounds_enabled.GetBool() && pAttacker && pAttacker->IsPlayer() && IsAlive())
 	{
 		CHL2MP_Player* pAttackerPlayer = ToHL2MPPlayer(pAttacker);
 
@@ -2083,7 +2085,6 @@ void CHL2MP_Player::LoadHitSoundConfig()
 	KeyValues* pKV = new KeyValues("Sounds");
 
 	// Set default values
-	s_HitSounds.bEnabled = true;
 	s_HitSounds.flHitVolume = 0.5f;
 	s_HitSounds.flKillVolume = 0.7f;
 	Q_strncpy(s_HitSounds.szHitBodySound, "physics/flesh/flesh_impact_bullet1.wav", sizeof(s_HitSounds.szHitBodySound));
@@ -2094,7 +2095,6 @@ void CHL2MP_Player::LoadHitSoundConfig()
 	// Try to load config file
 	if (pKV->LoadFromFile(filesystem, "cfg/gameplay/sounds.cfg", "MOD"))
 	{
-		s_HitSounds.bEnabled = pKV->GetBool("enabled", true);
 
 		KeyValues* pHitSounds = pKV->FindKey("hitsounds");
 		if (pHitSounds)
@@ -2134,8 +2134,6 @@ void CHL2MP_Player::LoadHitSoundConfig()
 //HIT KILL SOUNDS
 void CHL2MP_Player::PlayHitSound(const char* szSound, float flVolume)
 {
-	if (!s_HitSounds.bEnabled || !szSound || !szSound[0])
-		return;
 
 	// Play sound only for this player (the attacker)
 	CSingleUserRecipientFilter filter(this);
@@ -2156,7 +2154,7 @@ void CHL2MP_Player::PlayHitSound(const char* szSound, float flVolume)
 	EmitSound(filter, entindex(), params);
 }
 
-CON_COMMAND(sv_hitsounds_reload, "Reload hit sounds configuration from cfg/core/sounds.cfg")
+CON_COMMAND(snd_reload_hitkillsounds, "Reload hit sounds configuration from cfg/gameplay/sounds.cfg")
 {
 	if (!UTIL_IsCommandIssuedByServerAdmin())
 		return;
