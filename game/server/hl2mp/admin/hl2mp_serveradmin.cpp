@@ -7,6 +7,7 @@
 #include "tier0/icommandline.h"
 #include <time.h>
 #include "fmtstr.h"
+#include "game.h"
 
 // always comes last
 #include "tier0/memdbgon.h"
@@ -37,6 +38,7 @@ CUtlVector<CUtlString> g_recentlyPlayedMaps;
 
 const int MAX_NOMINATIONS = 5;
 
+extern ConVar mapcyclefile;
 ConVar sv_rtv_enabled( "sv_rtv_enabled", "0", 0 );
 ConVar sv_rtv_needed( "sv_rtv_needed", "0.60", 0, "Percentage of players needed to start a map vote. Range: 0.00 - 1.00" );
 ConVar sv_rtv_mintime( "sv_rtv_mintime", "30", 0, "How long to wait until players can start typing RTV (time in seconds)" );
@@ -175,14 +177,15 @@ void StartMapVote()
 	g_currentVoteMaps.RemoveAll();
 
 	CUtlVector<CUtlString> mapList;
+	auto iMapCycle = mapcyclefile.GetString();
 
 	// Open the mapcycle.txt file
-	FileHandle_t file = filesystem->Open( "mapcycle.txt", "r", "MOD" );
+	FileHandle_t file = filesystem->Open( iMapCycle, "r", "MOD" );
 
 	// Got nothing? Try to load the default one
 	if ( !file )
 	{
-		file = filesystem->Open( "mapcycle_default.txt", "r", "MOD" );
+		file = filesystem->Open( "cfg/mapcycle_default.txt", "r", "MOD" );
 
 		// Still nothing? We won't continue any further then
 		// We could eventually fetch the BSPs in the maps folder
@@ -3537,7 +3540,7 @@ static void MapCommand( const CCommand &args )
 			UTIL_PrintToAllClients( UTIL_VarArgs( CHAT_DEFAULT "Console " CHAT_ADMIN "is changing the map to " CHAT_DEFAULT "%s" CHAT_ADMIN " in 5 seconds...\n", exactMatchMap ) );
 		else
 			UTIL_PrintToAllClients( UTIL_VarArgs( CHAT_ADMIN "Admin " CHAT_DEFAULT "%s " CHAT_ADMIN "is changing the map to " CHAT_DEFAULT "%s" CHAT_ADMIN " in 5 seconds...\n", pPlayer->GetPlayerName(), exactMatchMap ) );
-		engine->ServerCommand( "mp_timelimit 0\n" );
+		engine->ServerCommand( "mp_timelimit 1\n" );
 
 		CHL2MP_Admin::LogAction(
 			pPlayer,
@@ -6272,9 +6275,11 @@ void OpenNominateMenu( int currentPage = 0 )
 
 	const char *currentMapName = STRING( gpGlobals->mapname );
 
+	auto iMapCycle = mapcyclefile.GetString();
+
 	if ( g_allMapsInCycle.Count() == 0 )
 	{
-		FileHandle_t file = filesystem->Open( "cfg/mapcycle.txt", "r", "MOD" );
+		FileHandle_t file = filesystem->Open( iMapCycle, "r", "MOD" );
 		if ( !file )
 		{
 			file = filesystem->Open( "cfg/mapcycle_default.txt", "r", "MOD" );
