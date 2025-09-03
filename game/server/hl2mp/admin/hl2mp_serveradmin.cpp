@@ -177,12 +177,12 @@ void StartMapVote()
 	CUtlVector<CUtlString> mapList;
 
 	// Open the mapcycle.txt file
-	FileHandle_t file = filesystem->Open( "cfg/mapcycle.txt", "r", "MOD" );
+	FileHandle_t file = filesystem->Open( "mapcycle.txt", "r", "MOD" );
 
 	// Got nothing? Try to load the default one
 	if ( !file )
 	{
-		file = filesystem->Open( "cfg/mapcycle_default.txt", "r", "MOD" );
+		file = filesystem->Open( "mapcycle_default.txt", "r", "MOD" );
 
 		// Still nothing? We won't continue any further then
 		// We could eventually fetch the BSPs in the maps folder
