@@ -94,3 +94,15 @@ ConVar mp_suitvoice(
 	"0",
 	FCVAR_GAMEDLL,
 	"If non-zero, game will enable suit notifications");
+//lockteams
+ConVar mp_lockteams(
+	"mp_lockteams",
+	"0",
+	FCVAR_GAMEDLL | FCVAR_NOTIFY,
+	"If non-zero, teams will be locked, new players will move to spectators");
+
+ConVar mp_armor_sparks(
+	"mp_armor_sparks",
+	"0",
+	FCVAR_GAMEDLL,
+	"If non-zero, game will enable spark effect if suit get damage");

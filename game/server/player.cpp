@@ -68,6 +68,7 @@
 #include "hl2orange.spa.h"
 #include "dt_utlvector_send.h"
 #include "vote_controller.h"
+#include "te_effect_dispatch.h"
 #include "ai_speech.h"
 #ifdef HL2MP
 #include "hl2mp_gamerules.h"
@@ -124,7 +125,7 @@ ConVar cl_backspeed( "cl_backspeed", "450", FCVAR_REPLICATED | FCVAR_CHEAT );
 
 // This is declared in the engine, too
 ConVar	sv_noclipduringpause( "sv_noclipduringpause", "0", FCVAR_REPLICATED | FCVAR_CHEAT, "If cheats are enabled, then you can noclip with the game paused (for doing screenshots, etc.)." );
-
+extern ConVar mp_armor_sparks;
 extern ConVar mp_suitvoice;
 extern ConVar mp_ear_ringing;
 extern ConVar sv_maxunlag;
@@ -1673,8 +1674,29 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 		ApplyAbsVelocityImpulse( force );
 	}
 
-	// fire global game event
+	//armor spark
+	if (ArmorValue() > 5 && mp_armor_sparks.GetBool())
+	{
+		//PrecacheParticleSystem("blood_impact_synth_01");
+		PrecacheScriptSound("Grenade.ImpactHard");
+		Vector vecDamagePos = info.GetDamagePosition();
 
+		if (vecDamagePos != vec3_origin)
+		{
+			CEffectData data;
+			data.m_vOrigin = vecDamagePos;
+			data.m_vNormal = Vector(0, 0, 1);
+			data.m_flScale = 2.0f;
+			data.m_fFlags = 0;
+
+			DispatchEffect("EnergySplash", data);
+			DispatchEffect("EnergySplash", data);
+			DispatchEffect("EnergySplash", data);
+			EmitSound("Grenade.ImpactHard");
+	
+		}
+	}
+	// fire global game event
 	IGameEvent * event = gameeventmanager->CreateEvent( "player_hurt" );
 	if ( event )
 	{

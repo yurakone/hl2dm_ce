@@ -38,9 +38,11 @@ CHL2MP_Player::HitSoundConfig CHL2MP_Player::s_HitSounds;
 bool CHL2MP_Player::s_bHitSoundsLoaded = false;
 extern ConVar mp_hitsounds_enabled;
 extern ConVar mp_killsounds_enabled;
+extern ConVar mp_lockteams;
 
 int g_iLastCitizenModel = 0;
 int g_iLastCombineModel = 0;
+
 
 CBaseEntity	 *g_pLastCombineSpawn = NULL;
 CBaseEntity	 *g_pLastRebelSpawn = NULL;
@@ -222,7 +224,7 @@ void CHL2MP_Player::Precache( void )
 		LoadHitSoundConfig();
 	}
 
-	if (s_HitSounds.bEnabled)
+	if (mp_hitsounds_enabled.GetBool() || mp_killsounds_enabled.GetBool())
 	{
 		PrecacheScriptSound(s_HitSounds.szHitBodySound);
 		PrecacheScriptSound(s_HitSounds.szHitHeadSound);
@@ -345,52 +347,52 @@ void CHL2MP_Player::GiveDefaultItems(void)
 
 void CHL2MP_Player::PickDefaultSpawnTeam( void )
 {
-	if ( GetTeamNumber() == 0 )
-	{
-		if ( HL2MPRules()->IsTeamplay() == false )
+		if (GetTeamNumber() == 0)
 		{
-			if ( GetModelPtr() == NULL )
+			if (HL2MPRules()->IsTeamplay() == false)
 			{
-				const char *szModelName = NULL;
-				szModelName = engine->GetClientConVarValue( engine->IndexOfEdict( edict() ), "cl_playermodel" );
-
-				if ( ValidatePlayerModel( szModelName ) == false )
+				if (GetModelPtr() == NULL)
 				{
-					char szReturnString[512];
+					const char* szModelName = NULL;
+					szModelName = engine->GetClientConVarValue(engine->IndexOfEdict(edict()), "cl_playermodel");
 
-					Q_snprintf( szReturnString, sizeof (szReturnString ), "cl_playermodel models/combine_soldier.mdl\n" );
-					engine->ClientCommand ( edict(), szReturnString );
+					if (ValidatePlayerModel(szModelName) == false)
+					{
+						char szReturnString[512];
+
+						Q_snprintf(szReturnString, sizeof(szReturnString), "cl_playermodel models/combine_soldier.mdl\n");
+						engine->ClientCommand(edict(), szReturnString);
+					}
+
+					ChangeTeam(TEAM_UNASSIGNED);
 				}
-
-				ChangeTeam( TEAM_UNASSIGNED );
-			}
-		}
-		else
-		{
-			CTeam *pCombine = g_Teams[TEAM_COMBINE];
-			CTeam *pRebels = g_Teams[TEAM_REBELS];
-
-			if ( pCombine == NULL || pRebels == NULL )
-			{
-				ChangeTeam( random->RandomInt( TEAM_COMBINE, TEAM_REBELS ) );
 			}
 			else
 			{
-				if ( pCombine->GetNumPlayers() > pRebels->GetNumPlayers() )
+				CTeam* pCombine = g_Teams[TEAM_COMBINE];
+				CTeam* pRebels = g_Teams[TEAM_REBELS];
+
+				if (pCombine == NULL || pRebels == NULL)
 				{
-					ChangeTeam( TEAM_REBELS );
-				}
-				else if ( pCombine->GetNumPlayers() < pRebels->GetNumPlayers() )
-				{
-					ChangeTeam( TEAM_COMBINE );
+					ChangeTeam(random->RandomInt(TEAM_COMBINE, TEAM_REBELS));
 				}
 				else
 				{
-					ChangeTeam( random->RandomInt( TEAM_COMBINE, TEAM_REBELS ) );
+					if (pCombine->GetNumPlayers() > pRebels->GetNumPlayers())
+					{
+						ChangeTeam(TEAM_REBELS);
+					}
+					else if (pCombine->GetNumPlayers() < pRebels->GetNumPlayers())
+					{
+						ChangeTeam(TEAM_COMBINE);
+					}
+					else
+					{
+						ChangeTeam(random->RandomInt(TEAM_COMBINE, TEAM_REBELS));
+					}
 				}
 			}
 		}
-	}
 }
 
 //-----------------------------------------------------------------------------
@@ -405,6 +407,12 @@ void CHL2MP_Player::Spawn(void)
 {
 	// m_flNextModelChangeTime = 0.0f;
 	// m_flNextTeamChangeTime = 0.0f;
+	if (mp_lockteams.GetBool())
+	{
+		ChangeTeam(TEAM_SPECTATOR);
+		StartObserverMode(OBS_MODE_ROAMING);
+		return;
+	}
 
 	PickDefaultSpawnTeam();
 
@@ -1056,8 +1064,6 @@ void CHL2MP_Player::ChangeTeam( int iTeam )
 
 	bool bKill = false;
 	bool bWasSpectator = false;
-	bool bIsDead = !IsAlive();
-	bool bTeamplay = GameRules()->IsTeamplay();
 	int iPrevTeam = GetTeamNumber();
 
 	if ( HL2MPRules()->IsTeamplay() != true && iTeam != TEAM_SPECTATOR )
@@ -1143,15 +1149,6 @@ void CHL2MP_Player::ChangeTeam( int iTeam )
 	{
 		LeaveVehicle();
 	}
-	/*
-	if ( bTeamplay && !bIsDead && !IsCompensatingScoreOnTeamSwitch() && iTeam != TEAM_SPECTATOR )
-	{
-		IncrementFragCount( 1 );
-		IncrementDeathCount( -1 );
-
-		CompensateScoreOnTeamSwitch( true );
-	}
-	*/
 	if ( bKill == true )
 	{
 		CommitSuicide();
@@ -1183,8 +1180,13 @@ bool CHL2MP_Player::HandleCommand_JoinTeam( int team )
 	}
 
 	// end early
-	if ( this->GetTeamNumber() == TEAM_SPECTATOR )
+	if ( this->GetTeamNumber() == TEAM_SPECTATOR && !mp_lockteams.GetBool())
 	{
+		if (mp_lockteams.GetBool())
+		{
+			UTIL_PrintToClient(this, CHAT_RED "Teams are currently locked!\n");
+			return true;
+		}
 		ChangeTeam( team );
 		return true;
 	}
@@ -1198,23 +1200,23 @@ bool CHL2MP_Player::HandleCommand_JoinTeam( int team )
 			return false;
 		}
 
-		/*
-		if ( GetTeamNumber() != TEAM_UNASSIGNED && !IsDead() )
+		if (mp_lockteams.GetBool())
 		{
-			m_fNextSuicideTime = gpGlobals->curtime;	// allow the suicide to work
-
-			CommitSuicide();
-
-			// add 1 to frags to balance out the 1 subtracted for killing yourself
-			IncrementFragCount( 1 );
+			UTIL_PrintToClient(this, CHAT_RED "Teams are currently locked!\n");
+			return true;
 		}
-		*/
+
 		ChangeTeam( TEAM_SPECTATOR );
 
 		return true;
 	}
 	else
 	{
+		if (mp_lockteams.GetBool())
+		{
+			UTIL_PrintToClient(this, CHAT_RED "Teams are currently locked!\n");
+			return true;
+		}
 		StopObserverMode();
 		State_Transition( STATE_ACTIVE );
 	}
@@ -1237,32 +1239,31 @@ void CHL2MP_Player::SendFOVCommand(int fov)
 
 bool CHL2MP_Player::ClientCommand( const CCommand &args )
 {
-	if ( FStrEq( args[0], "spectate" ) )
-	{
-		if ( ShouldRunRateLimitedCommand( args ) )
+		if (FStrEq(args[0], "spectate"))
 		{
-			// instantly join spectators
-			HandleCommand_JoinTeam( TEAM_SPECTATOR );	
+			if (ShouldRunRateLimitedCommand(args))
+			{
+				// instantly join spectators
+				HandleCommand_JoinTeam(TEAM_SPECTATOR);
+			}
+			return true;
 		}
-		return true;
-	}
-	else if ( FStrEq( args[0], "jointeam" ) ) 
-	{
-		if ( ShouldRunRateLimitedCommand( args ) )
+		else if (FStrEq(args[0], "jointeam"))
 		{
-			int iTeam = atoi( args[1] );
-			HandleCommand_JoinTeam( iTeam );
+			if (ShouldRunRateLimitedCommand(args))
+			{
+				int iTeam = atoi(args[1]);
+				HandleCommand_JoinTeam(iTeam);
+			}
+			return true;
 		}
-		return true;
-	}
-	else if ( FStrEq( args[0], "joingame" ) )
-	{
-		if ( GetTeamNumber() == TEAM_SPECTATOR )
-			ChangeTeam( random->RandomInt( 2, 3 ) );
+		else if (FStrEq(args[0], "joingame"))
+		{
+			if (GetTeamNumber() == TEAM_SPECTATOR)
+				ChangeTeam(random->RandomInt(2, 3));
 
-		return true;
-	}
-
+			return true;
+		}
 	return BaseClass::ClientCommand( args );
 }
 
@@ -1561,20 +1562,19 @@ int CHL2MP_Player::OnTakeDamage( const CTakeDamageInfo &inputInfo )
 	
 	gamestats->Event_PlayerDamage( this, inputInfo );
 
-	CTakeDamageInfo info = inputInfo;
+	return BaseClass::OnTakeDamage(inputInfo);
 
 	// Store hit group before damage processing
 	m_iLastHitGroup = LastHitGroup();
 
 	// Get attacker info before calling base class
-	CBaseEntity* pInflictor = info.GetInflictor();
-	CBaseEntity* pAttacker = info.GetAttacker();
-	float flDamage = info.GetDamage();
+	//CBaseEntity* pInflictor = inputInfo.GetInflictor();
+	CBaseEntity* pAttacker = inputInfo.GetAttacker();
+	//float flDamage = inputInfo.GetDamage();
 
-	//return BaseClass::OnTakeDamage( inputInfo );
-	int ret = BaseClass::OnTakeDamage(info);
+	int ret = BaseClass::OnTakeDamage(inputInfo);
 
-	// Process hit sounds after damage is applied but before potential death
+			// Process hit sounds after damage is applied but before potential death
 	if (mp_hitsounds_enabled.GetBool() && pAttacker && pAttacker->IsPlayer() && IsAlive())
 	{
 		CHL2MP_Player* pAttackerPlayer = ToHL2MPPlayer(pAttacker);
@@ -1589,7 +1589,7 @@ int CHL2MP_Player::OnTakeDamage( const CTakeDamageInfo &inputInfo )
 			}
 			else
 			{
-				pAttackerPlayer->PlayHitSound(s_HitSounds.szHitBodySound, s_HitSounds.flHitVolume);
+					pAttackerPlayer->PlayHitSound(s_HitSounds.szHitBodySound, s_HitSounds.flHitVolume);
 			}
 		}
 	}
