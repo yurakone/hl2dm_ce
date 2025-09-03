@@ -100,9 +100,16 @@ ConVar mp_lockteams(
 	"0",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"If non-zero, teams will be locked, new players will move to spectators");
-
+//armorsparks
 ConVar mp_armor_sparks(
 	"mp_armor_sparks",
 	"0",
 	FCVAR_GAMEDLL,
 	"If non-zero, game will enable spark effect if suit get damage");
+
+//spec on join
+ConVar sv_join_spec_on_connect(
+	"sv_join_spec_on_connect",
+	"0",
+	0,
+	"If non-zero, put connecting players to team spectators on fully joined");

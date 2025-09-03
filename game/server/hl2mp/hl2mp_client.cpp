@@ -25,6 +25,7 @@
 #include "engine/IEngineSound.h"
 #include "team.h"
 #include "viewport_panel_names.h"
+#include "hl2mp_cvars.h" 
 
 #include "tier0/vprof.h"
 
@@ -33,6 +34,8 @@
 
 void Host_Say( edict_t *pEdict, bool teamonly );
 
+extern ConVar sv_join_spec_on_connect;
+extern ConVar mp_lockteams;
 ConVar sv_motd_unload_on_dismissal( "sv_motd_unload_on_dismissal", "0", 0, "If enabled, the MOTD contents will be unloaded when the player closes the MOTD." );
 ConVar sv_displaymotd( "sv_displaymotd", "1", 0, "If enabled, display the MOTD to players after server entry." );
 
@@ -49,12 +52,16 @@ void FinishClientPutInServer( CHL2MP_Player *pPlayer )
 {
 	g_voters++;
 	pPlayer->InitialSpawn();
+
 	// Peter: I can't seem to find anything that would suggest 
 	// this would be broken after connecting to a server, but clearly, 
 	// delaying this fixes: 
 	// 
 	// 1) The spawning angles of 0, 0, 0 
 	// 2) Always spawning in showers on lockdown
+	if (sv_join_spec_on_connect.GetBool())
+		pPlayer->ChangeTeam(TEAM_SPECTATOR);
+
 	pPlayer->SetContextThink( &CBasePlayer::DelayedSpawn, gpGlobals->curtime + 0.01f, "DelayedSnapEyeAngles" );
 
 	UTIL_SendConVarValue( pPlayer->edict(), "sv_wpn_sway_pred_legacy", "1" );
@@ -78,9 +85,11 @@ void FinishClientPutInServer( CHL2MP_Player *pPlayer )
 		ClientPrint( pPlayer, HUD_PRINTTALK, "You are on team %s1\n", pPlayer->GetTeam()->GetName() );
 	}
 	*/
-	if ( pPlayer->GetTeamNumber() == TEAM_SPECTATOR )
+
+	if (pPlayer->GetTeamNumber() == TEAM_SPECTATOR)
 	{
-		pPlayer->RemoveAllItems( true );
+		pPlayer->SetObserverMode(OBS_MODE_ROAMING);
+		pPlayer->RemoveAllItems(true);
 	}
 
 	if ( sv_displaymotd.GetBool() )

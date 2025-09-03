@@ -402,18 +402,20 @@ void CHL2MP_Player::DelayedLoadPlayerSettings()
 {
 	LoadPlayerSettings();
 }
+extern ConVar sv_join_spec_on_connect;
 
 void CHL2MP_Player::Spawn(void)
 {
 	// m_flNextModelChangeTime = 0.0f;
 	// m_flNextTeamChangeTime = 0.0f;
+	
 	if (mp_lockteams.GetBool())
 	{
 		ChangeTeam(TEAM_SPECTATOR);
-		StartObserverMode(OBS_MODE_ROAMING);
+		SetObserverMode(OBS_MODE_IN_EYE);
 		return;
 	}
-
+	
 	PickDefaultSpawnTeam();
 
 	BaseClass::Spawn();
@@ -1143,6 +1145,7 @@ void CHL2MP_Player::ChangeTeam( int iTeam )
 			FlashlightTurnOff();
 
 		State_Transition( STATE_OBSERVER_MODE );
+		
 	}
 
 	if ( IsInAVehicle() )
