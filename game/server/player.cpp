@@ -139,7 +139,7 @@ extern ConVar sv_turbophysics;
 extern ConVar *sv_maxreplay;
 extern ConVar mp_impact_effects;
 extern ConVar mp_armor_effects;
-
+extern ConVar mp_armor_impact_volume;
 extern CServerGameDLL g_ServerGameDLL;
 
 // TIME BASED DAMAGE AMOUNT
@@ -1731,7 +1731,7 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 				EmitSound_t es;
 				es.m_nChannel = channels[i];
 				es.m_pSoundName = "SolidMetal.ImpactHard";
-				es.m_flVolume = 1.0f;
+				es.m_flVolume = mp_armor_impact_volume.GetFloat();
 				es.m_SoundLevel = SNDLVL_100dB;
 				EmitSound(filter, entindex(), es);
 			}

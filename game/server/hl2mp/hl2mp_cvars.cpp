@@ -155,3 +155,10 @@ ConVar mp_hitsounds_projectiles(
 	"1",
 	FCVAR_GAMEDLL ,
 	"If non-zero, play hitsounds for projectile weapons");
+
+//Armor impact volume
+ConVar mp_armor_impact_volume(
+	"mp_armor_impact_volume",
+	"0.5",
+	FCVAR_GAMEDLL,
+	"Volume of armor impact effect, 0.0 - 1.0, def 0.5");
