@@ -8,6 +8,7 @@
 #include <time.h>
 #include "fmtstr.h"
 #include "game.h"
+#include "hl2mp_gamerules.h"
 
 // always comes last
 #include "tier0/memdbgon.h"
@@ -44,6 +45,16 @@ ConVar sv_rtv_needed( "sv_rtv_needed", "0.60", 0, "Percentage of players needed 
 ConVar sv_rtv_mintime( "sv_rtv_mintime", "30", 0, "How long to wait until players can start typing RTV (time in seconds)" );
 ConVar sv_rtv_minmaprotation( "sv_rtv_minmaprotation", "15", 0, "Minimum number of maps before allowing a previously played map in RTV or nominations" );
 ConVar sv_rtv_showmapvotes( "sv_rtv_showmapvotes", "0", 0, "If non-zero, shows what map a player has voted during RTV" );
+// Добавьте эти ConVar'ы в начало файла или в класс плагина
+ConVar sv_rtv_extend("sv_rtv_extend", "1", FCVAR_NONE, "Enable extend map option in votes");
+ConVar sv_rtv_extend_time("sv_rtv_extend_time", "10", FCVAR_NONE, "Time in minutes to extend the map");
+ConVar sv_rtv_extend_frags("sv_rtv_extend_frags", "10", FCVAR_NONE, "Fraglimit increase when extending map");
+ConVar sv_rtv_max_extends("sv_rtv_max_extends", "2", FCVAR_NONE, "Maximum number of extends per map");
+ConVar sv_rtv_extend_sound("sv_rtv_extend_sound", "buttons/bell1.wav", FCVAR_NONE, "Sound to play when vote starts");
+
+// Глобальная переменная для отслеживания количества продлений
+int g_currentMapExtends = 0;
+
 
 // 10/17/24
 #define SA_POWERED	"Server Binaries"
@@ -173,7 +184,7 @@ void StartMapVote()
 	if ( !serverpluginhelpers )
 		return;
 
-	g_votetime = gpGlobals->curtime + 20;
+	g_votetime = gpGlobals->curtime + 45;
 	g_currentVoteMaps.RemoveAll();
 
 	CUtlVector<CUtlString> mapList;
@@ -227,7 +238,7 @@ void StartMapVote()
 	}
 	filesystem->Close( file );
 
-	if ( mapList.Count() < 5 )
+	if ( mapList.Count() < 6 )
 	{
 		Msg( "Not enough maps in mapcycle file for a vote.\n" );
 		return;
@@ -248,11 +259,11 @@ void StartMapVote()
 	kv->SetString( "title", "Rock the Vote - Map Selection" );
 	kv->SetInt( "level", 1 );
 	kv->SetColor( "color", Color( 255, 128, 0, 255 ) );
-	kv->SetInt( "time", 20 );
+	kv->SetInt( "time", 45 );
 	kv->SetString( "msg", "Choose a map to play next:" );
 
 	CUtlVector<CUtlString> selectedMaps;
-	for ( unsigned int i = 0; i < g_nominatedMaps.Count() && selectedMaps.Count() < 5; i++ )
+	for ( unsigned int i = 0; i < g_nominatedMaps.Count() && selectedMaps.Count() < 6; i++ )
 	{
 		const CUtlString &nominatedMap = g_nominatedMaps.Element( i );
 		if ( !selectedMaps.HasElement( nominatedMap ) && !g_recentlyPlayedMaps.HasElement( nominatedMap ) )
@@ -261,7 +272,7 @@ void StartMapVote()
 		}
 	}
 
-	for ( int i = 0; i < mapList.Count() && selectedMaps.Count() < 5; i++ )
+	for ( int i = 0; i < mapList.Count() && selectedMaps.Count() < 6; i++ )
 	{
 		if ( !selectedMaps.HasElement( mapList[ i ] ) )
 		{
@@ -279,14 +290,212 @@ void StartMapVote()
 
 	for ( int i = 1; i <= gpGlobals->maxClients; i++ )
 	{
-		CBasePlayer *pClient = UTIL_PlayerByIndex( i );
-		if ( pClient && pClient->IsConnected() )
+		CBasePlayer* pPlayer = UTIL_PlayerByIndex(i);
+		if (pPlayer && !pPlayer->IsBot() && pPlayer->IsConnected() && !pPlayer->IsObserver() && !pPlayer->IsHLTV())
 		{
-			serverpluginhelpers->CreateMessage( pClient->edict(), DIALOG_MENU, kv, &g_AdminPluginCallbacks );
+			serverpluginhelpers->CreateMessage( pPlayer->edict(), DIALOG_MENU, kv, &g_AdminPluginCallbacks );
+		}
+	}
+	kv->deleteThis();
+}
+/*
+void StartMapVote()
+{
+	if (!serverpluginhelpers)
+		return;
+
+	// Воспроизведение звука напоминания о начале голосования
+	if (sv_rtv_extend_sound.GetString()[0] != '\0')
+	{
+		for (int i = 1; i <= gpGlobals->maxClients; i++)
+		{
+			CBasePlayer* pClient = UTIL_PlayerByIndex(i);
+			if (pClient && pClient->IsConnected())
+			{
+				engine->ClientCommand(pClient->edict(), "play %s", sv_rtv_extend_sound.GetString());
+			}
 		}
 	}
 
+	g_votetime = gpGlobals->curtime + 20;
+	g_currentVoteMaps.RemoveAll();
+	CUtlVector<CUtlString> mapList;
+	auto iMapCycle = mapcyclefile.GetString();
+
+	// Open the mapcycle.txt file
+	FileHandle_t file = filesystem->Open(iMapCycle, "r", "MOD");
+	// Got nothing? Try to load the default one
+	if (!file)
+	{
+		file = filesystem->Open("cfg/mapcycle_default.txt", "r", "MOD");
+		// Still nothing? We won't continue any further then
+		// We could eventually fetch the BSPs in the maps folder
+		// but there could be maps the ops don't want to use
+		if (!file)
+		{
+			Msg("No mapcycle file found.\n");
+			return;
+		}
+	}
+	const int bufferSize = 256;
+	char buffer[bufferSize];
+	while (filesystem->ReadLine(buffer, bufferSize, file))
+	{
+		CUtlString mapName(buffer);
+		RemoveTrailingWhitespace(mapName);
+		int commentPos = -1;
+		for (int i = 0; i < mapName.Length() - 1; i++)
+		{
+			if (mapName[i] == '/' && mapName[i + 1] == '/')
+			{
+				commentPos = i;
+				break;
+			}
+		}
+		if (commentPos != -1)
+		{
+			mapName = mapName.Left(commentPos);
+			RemoveTrailingWhitespace(mapName);
+		}
+		if (mapName.IsEmpty() || g_recentlyPlayedMaps.HasElement(mapName))
+			continue;
+		mapList.AddToTail(mapName);
+	}
+	filesystem->Close(file);
+
+	// Определяем минимальное количество карт с учетом возможного пункта "продлить карту"
+	int minMapsRequired = sv_rtv_extend.GetBool() ? 5 : 6;
+	if (mapList.Count() < minMapsRequired)
+	{
+		Msg("Not enough maps in mapcycle file for a vote.\n");
+		return;
+	}
+
+	// Перемешиваем список карт
+	for (int i = 0; i < mapList.Count(); i++)
+	{
+		int swapIndex = RandomInt(i, mapList.Count() - 1);
+		if (i != swapIndex)
+		{
+			CUtlString temp = mapList[i];
+			mapList[i] = mapList[swapIndex];
+			mapList[swapIndex] = temp;
+		}
+	}
+
+	KeyValues* kv = new KeyValues("mapvote");
+	kv->SetString("title", "Rock the Vote - Map Selection");
+	kv->SetInt("level", 1);
+	kv->SetColor("color", Color(255, 128, 0, 255));
+	kv->SetInt("time", 20);
+	kv->SetString("msg", "Choose a map to play next:");
+
+	CUtlVector<CUtlString> selectedMaps;
+
+	// Добавляем номинированные карты
+	for (unsigned int i = 0; i < g_nominatedMaps.Count() && selectedMaps.Count() < 5; i++)
+	{
+		const CUtlString& nominatedMap = g_nominatedMaps.Element(i);
+		if (!selectedMaps.HasElement(nominatedMap) && !g_recentlyPlayedMaps.HasElement(nominatedMap))
+		{
+			selectedMaps.AddToTail(nominatedMap);
+		}
+	}
+
+	// Добавляем случайные карты из списка
+	for (int i = 0; i < mapList.Count() && selectedMaps.Count() < 4; i++)
+	{
+		if (!selectedMaps.HasElement(mapList[i]))
+		{
+			selectedMaps.AddToTail(mapList[i]);
+		}
+	}
+
+	// Создаем пункты меню для карт
+	for (int i = 0; i < selectedMaps.Count(); i++)
+	{
+		KeyValues* item = kv->FindKey(CFmtStr("%d", i + 1), true);
+		item->SetString("msg", selectedMaps[i].Get());
+		item->SetString("command", UTIL_VarArgs("vote_map \"%s\"; play buttons/combine_button1.wav", selectedMaps[i].Get()));
+		g_currentVoteMaps.AddToTail(selectedMaps[i]);
+	}
+
+	// Добавляем пункт "продлить карту" если он включен и не превышен лимит продлений
+	if (sv_rtv_extend.GetBool() && g_currentMapExtends < sv_rtv_max_extends.GetInt())
+	{
+		int extendIndex = selectedMaps.Count() + 1;
+		KeyValues* extendItem = kv->FindKey(CFmtStr("%d", extendIndex), true);
+
+		// Получаем текущее название карты
+		char currentMapName[256];
+		V_strncpy(currentMapName, STRING(gpGlobals->mapname), sizeof(currentMapName));
+
+		// Формируем текст пункта меню
+		char extendText[256];
+		V_snprintf(extendText, sizeof(extendText), "Extend %s (+%d min, +%d frags)",
+			currentMapName, sv_rtv_extend_time.GetInt(), sv_rtv_extend_frags.GetInt());
+
+		extendItem->SetString("msg", extendText);
+		extendItem->SetString("command", "vote_extend_map; play buttons/combine_button1.wav");
+
+		// Добавляем специальный маркер для пункта продления
+		g_currentVoteMaps.AddToTail(CUtlString("__EXTEND_MAP__"));
+	}
+
+	// Отправляем меню всем игрокам
+	for (int i = 1; i <= gpGlobals->maxClients; i++)
+	{
+		CBasePlayer* pClient = UTIL_PlayerByIndex(i);
+		if (pClient && pClient->IsConnected())
+		{
+			serverpluginhelpers->CreateMessage(pClient->edict(), DIALOG_MENU, kv, &g_AdminPluginCallbacks);
+		}
+	}
 	kv->deleteThis();
+}
+
+void ExtendCurrentMap()
+{
+	if (g_currentMapExtends >= sv_rtv_max_extends.GetInt())
+	{
+		UTIL_ClientPrintAll(HUD_PRINTTALK, "Map cannot be extended anymore (max extends reached).");
+		return;
+	}
+
+	g_currentMapExtends++;
+
+	// Увеличиваем время карты
+	ConVar* mp_timelimit = cvar->FindVar("mp_timelimit");
+	if (mp_timelimit)
+	{
+		float currentTimeLimit = mp_timelimit->GetFloat();
+		float newTimeLimit = currentTimeLimit + sv_rtv_extend_time.GetFloat();
+		mp_timelimit->SetValue(newTimeLimit);
+	}
+
+	// Увеличиваем фраглимит
+	ConVar* mp_fraglimit = cvar->FindVar("mp_fraglimit");
+	if (mp_fraglimit)
+	{
+		int currentFragLimit = mp_fraglimit->GetInt();
+		int newFragLimit = currentFragLimit + sv_rtv_extend_frags.GetInt();
+		mp_fraglimit->SetValue(newFragLimit);
+	}
+
+	// Уведомляем игроков о продлении
+	UTIL_ClientPrintAll(HUD_PRINTTALK,
+		UTIL_VarArgs("Map extended! Time limit: +%d min, Frag limit: +%d frags",
+			sv_rtv_extend_time.GetInt(), sv_rtv_extend_frags.GetInt()));
+
+	// Показываем центральное сообщение
+	UTIL_ClientPrintAll(HUD_PRINTCENTER,
+		UTIL_VarArgs("MAP EXTENDED!\n+%d minutes, +%d frags",
+			sv_rtv_extend_time.GetInt(), sv_rtv_extend_frags.GetInt()));
+}
+*/
+void ResetMapExtensions()
+{
+	g_currentMapExtends = 0;
 }
 
 void CheckRTVThreshold( CBasePlayer *pPlayer )
@@ -3441,6 +3650,7 @@ static void GagPlayerCommand( const CCommand &args )
 //-----------------------------------------------------------------------------
 // Purpose: Change map
 //-----------------------------------------------------------------------------
+/*
 static void MapCommand( const CCommand &args )
 {
 	CBasePlayer *pPlayer = UTIL_GetCommandClient();
@@ -3540,7 +3750,7 @@ static void MapCommand( const CCommand &args )
 			UTIL_PrintToAllClients( UTIL_VarArgs( CHAT_DEFAULT "Console " CHAT_ADMIN "is changing the map to " CHAT_DEFAULT "%s" CHAT_ADMIN " in 5 seconds...\n", exactMatchMap ) );
 		else
 			UTIL_PrintToAllClients( UTIL_VarArgs( CHAT_ADMIN "Admin " CHAT_DEFAULT "%s " CHAT_ADMIN "is changing the map to " CHAT_DEFAULT "%s" CHAT_ADMIN " in 5 seconds...\n", pPlayer->GetPlayerName(), exactMatchMap ) );
-		engine->ServerCommand( "mp_timelimit 1\n" );
+		engine->ServerCommand( "mp_timelimit 0\n" );
 
 		CHL2MP_Admin::LogAction(
 			pPlayer,
@@ -3623,6 +3833,173 @@ static void MapCommand( const CCommand &args )
 	{
 		delete[] matchingMaps[ i ];
 	}
+}
+*/
+static void MapCommand(const CCommand& args)
+{
+	CBasePlayer* pPlayer = UTIL_GetCommandClient();
+	bool isServerConsole = !pPlayer && UTIL_IsCommandIssuedByServerAdmin();
+
+	if (!pPlayer && !isServerConsole)
+	{
+		Msg("Command must be issued by a player or the server console.\n");
+		return;
+	}
+
+	if (pPlayer && !CHL2MP_Admin::IsPlayerAdmin(pPlayer, "g"))
+	{
+		UTIL_PrintToClient(pPlayer, CHAT_ADMIN "You do not have permission to use this command.\n");
+		return;
+	}
+
+	if (args.ArgC() < 3)
+	{
+		if (isServerConsole)
+			Msg("Usage: sa map <mapname>\n");
+		else
+			UTIL_PrintToClient(pPlayer, CHAT_ADMIN "Usage: " CHAT_ADMIN_LIGHT "sa map <mapname>\n");
+		return;
+	}
+
+	if (HL2MPRules()->IsMapChangeOnGoing())
+	{
+		if (isServerConsole)
+			Msg("A map change is already in progress...\n");
+		else
+			UTIL_PrintToClient(pPlayer, CHAT_ADMIN "A map change is already in progress...\n");
+		return;
+	}
+
+	const char* partialMapName = args.Arg(2);
+
+	CUtlVector<char*> matchingMaps;
+	char* exactMatchMap = nullptr;
+
+	// === Чтение списка карт из maplist.ini ===
+	FileHandle_t f = filesystem->Open("maplist.ini", "r", "MOD");
+	if (f != nullptr)
+	{
+		char line[256];
+		while (filesystem->ReadLine(line, sizeof(line), f))
+		{
+			V_StripTrailingWhitespace(line);
+
+			if (line[0] == '\0' || line[0] == ';' || line[0] == '#') // пустые или комментарии
+				continue;
+
+			// сравнение на точное совпадение
+			if (Q_stricmp(line, partialMapName) == 0)
+			{
+				exactMatchMap = new char[Q_strlen(line) + 1];
+				Q_strncpy(exactMatchMap, line, Q_strlen(line) + 1);
+				break;
+			}
+
+			// поиск по подстроке
+			if (Q_stristr(line, partialMapName))
+			{
+				char* mapNameCopy = new char[Q_strlen(line) + 1];
+				Q_strncpy(mapNameCopy, line, Q_strlen(line) + 1);
+				matchingMaps.AddToTail(mapNameCopy);
+			}
+		}
+		filesystem->Close(f);
+	}
+
+	// === Дальше всё остаётся почти без изменений ===
+	if (exactMatchMap)
+	{
+		if (!ArePlayersInGame())
+		{
+			engine->ServerCommand(UTIL_VarArgs("changelevel %s\n", exactMatchMap));
+			delete[] exactMatchMap;
+			return;
+		}
+
+		HL2MPRules()->SetScheduledMapName(exactMatchMap);
+		HL2MPRules()->SetMapChange(true);
+		HL2MPRules()->SetMapChangeOnGoing(true);
+		bAdminMapChange = true;
+
+		if (isServerConsole)
+			UTIL_PrintToAllClients(UTIL_VarArgs(CHAT_DEFAULT "Console " CHAT_ADMIN "is changing the map to " CHAT_DEFAULT "%s" CHAT_ADMIN " in 5 seconds...\n", exactMatchMap));
+		else
+			UTIL_PrintToAllClients(UTIL_VarArgs(CHAT_ADMIN "Admin " CHAT_DEFAULT "%s " CHAT_ADMIN "is changing the map to " CHAT_DEFAULT "%s" CHAT_ADMIN " in 5 seconds...\n", pPlayer->GetPlayerName(), exactMatchMap));
+
+		//engine->ServerCommand("mp_timelimit 0\n");
+		HL2MPRules()->GoToIntermission();
+
+		CHL2MP_Admin::LogAction(
+			pPlayer,
+			nullptr,
+			"changed map",
+			UTIL_VarArgs("to %s", exactMatchMap)
+		);
+
+		delete[] exactMatchMap;
+		return;
+	}
+
+	if (matchingMaps.Count() == 0)
+	{
+		if (isServerConsole)
+			Msg("No maps found matching \"%s\".\n", partialMapName);
+		else
+			UTIL_PrintToClient(pPlayer, UTIL_VarArgs(CHAT_RED "No maps found matching " CHAT_DEFAULT "%s\n", partialMapName));
+		return;
+	}
+
+	if (matchingMaps.Count() == 1)
+	{
+		if (!ArePlayersInGame())
+		{
+			engine->ServerCommand(UTIL_VarArgs("changelevel %s\n", matchingMaps[0]));
+
+			CHL2MP_Admin::LogAction(
+				pPlayer,
+				nullptr,
+				"changed map",
+				UTIL_VarArgs("to %s", matchingMaps[0])
+			);
+		}
+		else
+		{
+			HL2MPRules()->SetScheduledMapName(matchingMaps[0]);
+			HL2MPRules()->SetMapChange(true);
+			HL2MPRules()->SetMapChangeOnGoing(true);
+			bAdminMapChange = true;
+
+			CHL2MP_Admin::LogAction(
+				pPlayer,
+				nullptr,
+				"changed map",
+				UTIL_VarArgs("to %s", matchingMaps[0])
+			);
+
+			if (isServerConsole)
+				UTIL_PrintToAllClients(UTIL_VarArgs(CHAT_DEFAULT "Console " CHAT_ADMIN "is changing the map to " CHAT_DEFAULT "%s" CHAT_ADMIN "in 5 seconds...\n", matchingMaps[0]));
+			else
+				UTIL_PrintToAllClients(UTIL_VarArgs(CHAT_ADMIN "Admin " CHAT_DEFAULT "%s " CHAT_ADMIN "is changing the map to " CHAT_DEFAULT "%s" CHAT_ADMIN " in 5 seconds...\n", pPlayer->GetPlayerName(), matchingMaps[0]));
+		}
+	}
+	else
+	{
+		if (isServerConsole)
+		{
+			Msg("Multiple maps match the partial name:\n");
+			for (int i = 0; i < matchingMaps.Count(); i++)
+				Msg("%s\n", matchingMaps[i]);
+		}
+		else
+		{
+			UTIL_PrintToClient(pPlayer, CHAT_ADMIN "Multiple maps match the partial name:\n");
+			for (int i = 0; i < matchingMaps.Count(); i++)
+				UTIL_PrintToClient(pPlayer, UTIL_VarArgs(CHAT_ADMIN_LIGHT "%s\n", matchingMaps[i]));
+		}
+	}
+
+	for (int i = 0; i < matchingMaps.Count(); i++)
+		delete[] matchingMaps[i];
 }
 
 //-----------------------------------------------------------------------------
@@ -6528,6 +6905,7 @@ void NominateCommand( const CCommand &args )
 
 static ConCommand rtv( "rtv", RtvCommand, "Rock the vote to initiate a map vote", FCVAR_NONE );
 static ConCommand nominate( "nominate", NominateCommand, "Open the map nomination menu", FCVAR_NONE );
+/*
 //-----------------------------------------------------------------------------
 // Purpose: Checks chat for certain strings (chat commands)
 //-----------------------------------------------------------------------------
@@ -6958,9 +7336,137 @@ void CHL2MP_Admin::CheckChatText( char *p, int bufsize )
 			}
 			return;
 		}
+
+		else if (Q_strncmp(p, "!1", 2) == 0 || Q_strncmp(p, "/1", 2) == 0)
+		{
+			char consoleCmd[256];
+
+			// convert the chat message into a console command
+			if (!pPlayer->IsObserver())
+			{
+				Q_snprintf(consoleCmd, sizeof(consoleCmd), "jointeam 1");
+			}
+			else
+			{
+				if (!GameRules()->IsTeamplay())
+				{
+					UTIL_PrintToClient(pPlayer, CHAT_ADMIN "You already in spectator mode. Type !2 to join the game\n");
+				}
+				else
+				{
+					UTIL_PrintToClient(pPlayer, CHAT_ADMIN "You already in spectator mode. Type !2 to join BLUE team or !3 to the RED team\n");
+				}
+				return;
+			}
+		
+			if (pPlayer)
+			{
+				engine->ClientCommand(pPlayer->edict(), consoleCmd);
+				if (!GameRules()->IsTeamplay()) 
+				{
+					UTIL_PrintToClient(pPlayer, CHAT_ADMIN "You are in spectator mode. Type !2 to join the game\n");
+				}
+				else
+				{
+					UTIL_PrintToClient(pPlayer, CHAT_ADMIN "You are in spectator mode. Type !2 to join BLUE team or !3 to the RED team\n");
+				}	
+			}
+			return;
+		}
+
+		else if (Q_strncmp(p, "!2", 2) == 0 || Q_strncmp(p, "/2", 2) == 0)
+		{
+			char consoleCmd[256];
+
+			// convert the chat message into a console command
+			if (GameRules()->IsTeamplay())
+			{
+				if (pPlayer->IsObserver() || pPlayer->GetTeamNumber() != 2)
+				{
+					Q_snprintf(consoleCmd, sizeof(consoleCmd), "jointeam 2");
+				}
+				else
+				{
+					UTIL_PrintToClient(pPlayer, "\a305CDE" "You already in BLUE team.Type\aFF0000 !3\a305CDE to join\aFF0000 BLUE\a305CDE team or \a898989 !1\a305CDE to\a898989 spectate\n");
+					return;
+				}
+			}
+			else 
+			{
+				if (pPlayer->IsObserver())
+				{
+					Q_snprintf(consoleCmd, sizeof(consoleCmd), "jointeam 2");
+				}
+				else
+				{
+					UTIL_PrintToClient(pPlayer, "\a6D8196" "You already in game. Type\a898989 !1\a6D8196 to\a898989 spectate\n");
+					return;
+				}
+			}
+		
+			if (pPlayer)
+			{
+				engine->ClientCommand(pPlayer->edict(), consoleCmd);
+
+				if (!GameRules()->IsTeamplay())
+				{
+					UTIL_PrintToClient(pPlayer, CHAT_ADMIN "You have joined the game\n");
+				}
+				else
+				{
+					UTIL_PrintToClient(pPlayer, CHAT_ADMIN "You have joined the BLUE team\n");
+				}
+			}
+			return;
+		}
+
+		else if (Q_strncmp(p, "!3", 2) == 0 || Q_strncmp(p, "/3", 2) == 0)
+		{
+			char consoleCmd[256];
+
+			// convert the chat message into a console command
+			if (GameRules()->IsTeamplay())
+			{
+				if (pPlayer->IsObserver() || pPlayer->GetTeamNumber() != 3)
+				{
+					Q_snprintf(consoleCmd, sizeof(consoleCmd), "jointeam 3");
+				}
+				else
+				{
+					UTIL_PrintToClient(pPlayer, "\x07""FF0000" "You already in RED team.Type\a305CDE !2\aFF0000 to join\a305CDE BLUE\aFF0000 team or\a898989 !1\aFF0000 to\a898989 spectate\n");
+					return;
+				}
+			}
+			else
+			{
+				if (pPlayer->IsObserver())
+				{
+					Q_snprintf(consoleCmd, sizeof(consoleCmd), "jointeam 3");
+				}
+				else
+				{
+					UTIL_PrintToClient(pPlayer, "\a6D8196" "You already in game. Type\a898989 !1\a6D8196 to\a898989 spectate\n");
+					return;
+				}
+			}
+
+			if (pPlayer)
+			{
+				engine->ClientCommand(pPlayer->edict(), consoleCmd);
+				if (!GameRules()->IsTeamplay())
+				{
+					UTIL_PrintToClient(pPlayer, CHAT_ADMIN "You have joined the game\n");
+				}
+				else
+				{
+					UTIL_PrintToClient(pPlayer, CHAT_ADMIN "You have joined the RED team\n");
+				}
+			}
+			return;
+		}
 	}
 }
-
+*/
 //-----------------------------------------------------------------------------
 // Purpose: Action log
 //-----------------------------------------------------------------------------

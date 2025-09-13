@@ -39,7 +39,7 @@ public:
     // static void RegisterAdminCommands();
     static void AddAdmin( const char *steamID, const char *permissions );
     bool FindSpecialTargetGroup( const char *targetSpecifier );
-    static void CheckChatText( char *p, int bufsize );
+    //static void CheckChatText( char *p, int bufsize );
     static void LogAction( CBasePlayer *pAdmin, CBasePlayer *pTarget, const char *action, const char *details = "", const char *groupTarget = nullptr );
 
     bool IsAllPlayers() const { return bAll; }
@@ -51,7 +51,7 @@ public:
     bool IsAllDeadPlayers() const { return bDead; }
     bool IsAllBotsPlayers() const { return bBots; }
     bool IsAllHumanPlayers() const { return bHumans; }
-
+ 
 private:
     const char *m_steamID;
     const char *m_permissions;
