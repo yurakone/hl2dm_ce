@@ -1,0 +1,1 @@
+devtools\bin\vpc.exe /hl2mp /define:SOURCESDK +chatplugin /mksln chatplugin.sln

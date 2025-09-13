@@ -198,50 +198,50 @@ void CCrossbowBolt::Precache( void )
 //-----------------------------------------------------------------------------
 void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 {
-	if ( !GetOwnerEntity() )
-	{
-		UTIL_Remove( this );
-		return;
-	}
+    if ( !GetOwnerEntity() )
+    {
+        UTIL_Remove( this );
+        return;
+    }
 
-	if ( !pOther->IsSolid() || pOther->IsSolidFlagSet(FSOLID_VOLUME_CONTENTS) )
-		return;
+    if ( !pOther->IsSolid() || pOther->IsSolidFlagSet(FSOLID_VOLUME_CONTENTS) )
+        return;
 
-	if ( FClassnameIs( pOther, "prop_door_rotating" ) ||
-		FClassnameIs( pOther, "func_door" ) ||
-		FClassnameIs( pOther, "func_door_rotating" ) ||
-		FClassnameIs( pOther, "func_movelinear" ) ||
-		FClassnameIs( pOther, "func_train" ) ||
-		FClassnameIs( pOther, "func_tanktrain" ) ||
-		FClassnameIs( pOther, "func_conveyor" ) ||
-		FClassnameIs( pOther, "func_tracktrain" ) )
-	{
-		trace_t tr;
-		tr = BaseClass::GetTouchTrace();
+    if ( FClassnameIs( pOther, "prop_door_rotating" ) ||
+         FClassnameIs( pOther, "func_door" ) ||
+         FClassnameIs( pOther, "func_door_rotating" ) ||
+         FClassnameIs( pOther, "func_movelinear" ) ||
+         FClassnameIs( pOther, "func_train" ) ||
+         FClassnameIs( pOther, "func_tanktrain" ) ||
+         FClassnameIs( pOther, "func_conveyor" ) ||
+         FClassnameIs( pOther, "func_tracktrain" ) )
+    {
+        trace_t tr;
+        tr = BaseClass::GetTouchTrace();
 
-		Vector vecDir = GetAbsVelocity();
-		float speed = VectorNormalize( vecDir );
+        Vector vecDir = GetAbsVelocity();
+        float speed = VectorNormalize( vecDir );
 
-		float hitDot = DotProduct( tr.plane.normal, -vecDir );
-		Vector vReflection = 2.0f * tr.plane.normal * hitDot + vecDir;
+        float hitDot = DotProduct( tr.plane.normal, -vecDir );
+        Vector vReflection = 2.0f * tr.plane.normal * hitDot + vecDir;
 
-		QAngle reflectAngles;
-		VectorAngles( vReflection, reflectAngles );
+        QAngle reflectAngles;
+        VectorAngles( vReflection, reflectAngles );
 
-		SetLocalAngles( reflectAngles );
-		SetAbsVelocity( vReflection * speed * 0.75f );
+        SetLocalAngles( reflectAngles );
+        SetAbsVelocity( vReflection * speed * 0.75f );
 
-		// Shoot some sparks
-		if ( UTIL_PointContents( GetAbsOrigin() ) != CONTENTS_WATER )
-		{
-			g_pEffects->Sparks( GetAbsOrigin() );
-		}
+        // Shoot some sparks
+        if ( UTIL_PointContents( GetAbsOrigin() ) != CONTENTS_WATER )
+        {
+            g_pEffects->Sparks( GetAbsOrigin() );
+        }
 
-		EmitSound( "Weapon_Crossbow.BoltBounce" );
+        EmitSound( "Weapon_Crossbow.BoltBounce" );
 
-		return;
-	}
-
+        return;
+    }
+	
 	if ( ( FClassnameIs( pOther, "item_*" ) || FClassnameIs( pOther, "weapon_*" ) ) && !FClassnameIs( pOther, "weapon_rpg" ) )
 	{
 		CGameTrace tr;
@@ -251,13 +251,13 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 		CTraceFilterSkipTwoEntities traceFilter( this, GetOwnerEntity(), COLLISION_GROUP_NONE );
 
 		enginetrace->TraceRay( ray, MASK_SOLID, &traceFilter, &tr );
-
+		
 		if ( tr.m_pEnt != pOther )
 		{
 			SetCollisionGroup( COLLISION_GROUP_DEBRIS );
 			return;
 		}
-
+		
 		IPhysicsObject *pPhysics = pOther->VPhysicsGetObject();
 		if ( pPhysics )
 		{
@@ -267,7 +267,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 
 			pPhysics->ApplyForceCenter( vecImpulse );
 		}
-
+		
 		UTIL_Remove( this );
 		return;
 	}

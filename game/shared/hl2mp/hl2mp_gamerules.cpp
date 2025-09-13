@@ -1644,37 +1644,46 @@ void CHL2MPRules::DeathNotice( CBasePlayer *pVictim, const CTakeDamageInfo &info
 			killer_weapon_name = "slam";
 		}
 
-		if ( pKiller && mp_killsounds_enabled.GetBool() && mp_server_files.GetBool() )
+		if (pScorer && mp_killsounds_enabled.GetBool() && mp_server_files.GetBool())
 		{
-			CHL2MP_Player* pAttackerPlayer = ToHL2MPPlayer(pKiller);
+			CHL2MP_Player* pAttackerPlayer = ToHL2MPPlayer(pScorer);
+			if (!pAttackerPlayer)
+				return; // не игрок, выходим
+
 			CRecipientFilter filter;
 			filter.AddRecipient(pAttackerPlayer);
 			filter.MakeReliable();
 
-			if (pKiller->GetTeamNumber() == pScorer->GetTeamNumber() && IsTeamplay())
+			if (IsTeamplay() && pVictim->GetTeamNumber() == pAttackerPlayer->GetTeamNumber())
 			{
-				pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szKillBodySound, CHL2MP_Player::s_HitSounds.flKillVolume);
+				pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szKillBodySound,
+					CHL2MP_Player::s_HitSounds.flKillVolume);
 			}
 			else
 			{
 				trace_t trace;
 				Vector vecStart = info.GetDamagePosition();
 				Vector vecEnd = pVictim->GetAbsOrigin();
+
 				UTIL_TraceLine(vecStart, vecEnd, MASK_SHOT, pAttackerPlayer, COLLISION_GROUP_NONE, &trace);
 
 				if (trace.hitgroup == 0)
 				{
 					Vector mins(-1.5f, -1.5f, -1.5f);
 					Vector maxs(1.5f, 1.5f, 1.5f);
-					UTIL_TraceHull(vecStart, vecEnd, mins, maxs, MASK_SHOT, pAttackerPlayer, COLLISION_GROUP_NONE, &trace);
+					UTIL_TraceHull(vecStart, vecEnd, mins, maxs,
+						MASK_SHOT, pAttackerPlayer, COLLISION_GROUP_NONE, &trace);
 				}
-				if ( trace.hitgroup == HITGROUP_HEAD )
+
+				if (trace.hitgroup == HITGROUP_HEAD)
 				{
-					pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szKillHeadSound, CHL2MP_Player::s_HitSounds.flKillVolume);
+					pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szKillHeadSound,
+						CHL2MP_Player::s_HitSounds.flKillVolume);
 				}
 				else
 				{
-					pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szKillBodySound, CHL2MP_Player::s_HitSounds.flKillVolume);
+					pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szKillBodySound,
+						CHL2MP_Player::s_HitSounds.flKillVolume);
 				}
 			}
 		}

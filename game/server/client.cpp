@@ -303,7 +303,7 @@ void Host_Say( edict_t *pEdict, const CCommand &args, bool teamonly )
 		pszPrefix = g_pGameRules->GetChatPrefix( teamonly, pPlayer );
 		pszLocation = g_pGameRules->GetChatLocation( teamonly, pPlayer );
 	}
-
+	
 	const char *pszPlayerName = pPlayer ? pPlayer->GetPlayerName() : "Console";
 
 	if ( pszPrefix && strlen( pszPrefix ) > 0 )
@@ -319,16 +319,16 @@ void Host_Say( edict_t *pEdict, const CCommand &args, bool teamonly )
 	}
 	else
 	{
-		Q_snprintf( text, sizeof( text ), "%s: ", pszPlayerName );
+		Q_snprintf( text, sizeof( text ), "%s: ", pszPlayerName );	
 	}
-
+	
 	j = sizeof( text ) - 2 - strlen( text );  // -2 for /n and null terminator
 	if ( ( int ) strlen( p ) > j )
 		p[ j ] = 0;
-
+	
 	Q_strncat( text, p, sizeof( text ), COPY_ALL_CHARACTERS );
 	Q_strncat( text, "\n", sizeof( text ), COPY_ALL_CHARACTERS );
-
+	
 	// loop through all players
 	// Start with the first player.
 	// This may return the world in single player if the client types something between levels or during spawn
@@ -400,13 +400,13 @@ void Host_Say( edict_t *pEdict, const CCommand &args, bool teamonly )
 		// print to the sending client
 		CSingleUserRecipientFilter user( pPlayer );
 		user.MakeReliable();
-
+	
 		if ( pszFormat )
 		{
 			UTIL_SayText2Filter( user, pPlayer, true, pszFormat, pszPlayerName, p, pszLocation );
 		}
 		else
-		{
+		{	
 			UTIL_SayTextFilter( user, text, pPlayer, true );
 		}
 	}
