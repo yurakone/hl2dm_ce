@@ -81,6 +81,8 @@ ConVar	ai_shot_bias_max( "ai_shot_bias_max", "1.0", FCVAR_REPLICATED );
 ConVar	ai_debug_shoot_positions( "ai_debug_shoot_positions", "0", FCVAR_REPLICATED | FCVAR_CHEAT );
 
 extern ConVar mp_hitsounds_enabled;
+extern ConVar mp_helmetsound_enabled;
+extern ConVar mp_server_files;
 // Utility func to throttle rate at which the "reasonable position" spew goes out
 static double s_LastEntityReasonableEmitTime;
 bool CheckEmitReasonablePhysicsSpew()
@@ -1763,7 +1765,7 @@ void CBaseEntity::FireBullets( const FireBulletsInfo_t &info )
 			AI_TraceLine( info.m_vecSrc, vecEnd, MASK_SHOT, &traceFilter, &tr );
 		}
 #ifndef CLIENT_DLL
-		if (tr.fraction != 1.0f && tr.m_pEnt && mp_hitsounds_enabled.GetBool())
+		if (tr.fraction != 1.0f && tr.m_pEnt && mp_hitsounds_enabled.GetBool() && mp_server_files.GetBool() )
 		{		
 			CHL2MP_Player* pAttackerPlayer = dynamic_cast<CHL2MP_Player*>(pAttacker);
 
@@ -1774,23 +1776,21 @@ void CBaseEntity::FireBullets( const FireBulletsInfo_t &info )
 				
 				if (pAttacker != pHitEntity)
 				{
-					CRecipientFilter filter;
-					filter.AddRecipient(ToBasePlayer(pAttacker));
-					filter.MakeReliable();
-					PrecacheScriptSound("Concrete_Block.ImpactHard");
-
 					CBasePlayer* pHitPlayer = ToBasePlayer(pHitEntity);
 					if (pHitPlayer)
 					{
 						if (hitGroup == HITGROUP_HEAD)
 						{
-							if (pHitPlayer->ArmorValue() > 5)
+							if (pHitPlayer->ArmorValue() > 5 && mp_helmetsound_enabled.GetBool())
 							{
-								EmitSound(filter, entindex(), "Concrete_Block.ImpactHard");
+								// Play helmet sound
+								pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitHeadSound, CHL2MP_Player::s_HitSounds.flHitVolume);
 							}
-
-							// Play headshot sound
-							pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitHeadSound, CHL2MP_Player::s_HitSounds.flHitVolume);
+							else
+							{
+								// Play headshot sound
+								pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitHeadSound, CHL2MP_Player::s_HitSounds.flHitVolume);
+							}
 						}
 						else
 						{

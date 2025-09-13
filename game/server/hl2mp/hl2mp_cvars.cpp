@@ -58,19 +58,19 @@ ConVar sv_instant_teamplay(
 	FCVAR_GAMEDLL,
 	"If non-zero, allow live change of teamplay");
 
-//noblock
+//Noblock
 ConVar mp_noblock(
 	"mp_noblock",
 	"0",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"If non-zero, disable collisions between players");
-//specpanel
+//Specpanel
 ConVar sv_specpanel_disable(
 	"sv_specpanel_disable",
 	"0",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"If non-zero, force hide specpanel");
-//fastgather
+//Fastgather
 ConVar mp_fast_gather(
 	"mp_fast_gather",
 	"0",
@@ -88,53 +88,70 @@ ConVar mp_hitsounds_enabled(
 	"1",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"Hitsounds, 0 - Disabled, 1 - Enable");
-//suivoice
+//Suivoice
 ConVar mp_suitvoice(
 	"mp_suitvoice",
 	"0",
 	FCVAR_GAMEDLL,
 	"If non-zero, game will enable suit notifications");
-//lockteams
+//Lockteams
 ConVar mp_lockteams(
 	"mp_lockteams",
 	"0",
 	FCVAR_GAMEDLL | FCVAR_NOTIFY,
 	"If non-zero, teams will be locked, new players will move to spectators");
-//armorsparks
+//Armorsparks
 ConVar mp_armor_sparks(
 	"mp_armor_sparks",
 	"0",
 	FCVAR_GAMEDLL,
 	"If non-zero, game will enable spark effect if suit get damage");
 
-//spec on join
+//Spec on connect
 ConVar sv_join_spec_on_connect(
 	"sv_join_spec_on_connect",
 	"0",
 	0,
 	"If non-zero, put connecting players to team spectators on fully joined");
 
-//freeze players
+//Freeze players
 ConVar mp_freeze_players(
 	"mp_freeze_players",
 	"0",
 	0,
 	"If non-zero, freeze players");
 
+//Server downloadable files
 ConVar mp_server_files(
 	"mp_server_files",
 	"1",
 	FCVAR_GAMEDLL ,
 	"If non-zero, allow clients to download custom files from server");
 
+//Armor effects file
 ConVar mp_armor_effects(
 	"mp_spark_effects",
 	"blood_impact_synth_01_arc_parents",
 	FCVAR_GAMEDLL,
 	"Particle system name for armor effects");
 
+//Impact armor effects file
 ConVar mp_impact_effects(
 	"mp_impact_effects",
 	"blood_impact_synth_01_droplets",
 	FCVAR_GAMEDLL,
 	"Particle system name for armor impact effects");
+
+//Helmet sound
+ConVar mp_helmetsound_enabled(
+	"mp_helmetsound_enabled",
+	"1",
+	FCVAR_GAMEDLL ,
+	"If non-zero, play a sound when helmet blocks a headshot");
+
+//Hitsounds projectiles
+ConVar mp_hitsounds_projectiles(
+	"mp_hitsounds_projectiles",
+	"1",
+	FCVAR_GAMEDLL ,
+	"If non-zero, play hitsounds for projectile weapons");

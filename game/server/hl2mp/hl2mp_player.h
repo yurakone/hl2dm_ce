@@ -165,9 +165,11 @@ public:
 		char szHitHeadSound[MAX_PATH];
 		char szKillBodySound[MAX_PATH];
 		char szKillHeadSound[MAX_PATH];
+		char szHelmetSound[MAX_PATH];
 		bool bEnabled;
 		float flHitVolume;
 		float flKillVolume;
+		float flHelmetVolume;
 	};
 
 	static HitSoundConfig s_HitSounds;

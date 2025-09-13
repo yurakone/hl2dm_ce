@@ -21,6 +21,7 @@
 
 #ifndef CLIENT_DLL
 #include "hl2mp_player.h"
+#include "filesystem.h"
 #endif
 
 #define VEC_CROUCH_TRACE_MIN	HL2MPRules()->GetHL2MPViewVectors()->m_vCrouchTraceMin
@@ -127,8 +128,10 @@ public:
 	void RestartGame();
 
 	void OnNavMeshLoad( void );
-	
+	void InitExcludedExtensions();
+
 #ifndef CLIENT_DLL
+	void RegisterDownloadableFiles(char* path, FileFindHandle_t findHandle, INetworkStringTable* pDownloadables);
 	virtual Vector VecItemRespawnSpot( CItem *pItem );
 	virtual QAngle VecItemRespawnAngles( CItem *pItem );
 	virtual float	FlItemRespawnTime( CItem *pItem );
@@ -144,7 +147,7 @@ public:
 	void CreateTeams();
 
 #endif
-
+	
 	bool IsOfficialMap( void );
 
 	virtual void ClientDisconnected( edict_t *pClient );

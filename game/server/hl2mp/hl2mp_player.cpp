@@ -39,6 +39,7 @@ CHL2MP_Player::HitSoundConfig CHL2MP_Player::s_HitSounds;
 bool CHL2MP_Player::s_bHitSoundsLoaded = false;
 extern ConVar mp_hitsounds_enabled;
 extern ConVar mp_killsounds_enabled;
+extern ConVar mp_helmetsound_enabled;
 extern ConVar mp_lockteams;
 
 int g_iLastCitizenModel = 0;
@@ -231,6 +232,7 @@ void CHL2MP_Player::Precache( void )
 		PrecacheScriptSound(s_HitSounds.szHitHeadSound);
 		PrecacheScriptSound(s_HitSounds.szKillBodySound);
 		PrecacheScriptSound(s_HitSounds.szKillHeadSound);
+		PrecacheScriptSound(s_HitSounds.szHelmetSound);
 	}
 }
 
@@ -1482,44 +1484,16 @@ void CHL2MP_Player::DetonateTripmines( void )
 
 void CHL2MP_Player::Event_Killed( const CTakeDamageInfo &info )
 {
-	LadderRespawnFix();
-
 	//update damage info with our accumulated physics force
 	CTakeDamageInfo subinfo = info;
 	subinfo.SetDamageForce( m_vecTotalBulletForce );
-
-	SetNumAnimOverlays( 0 );
-
+	LadderRespawnFix();
+	SetNumAnimOverlays(0);
 	// Note: since we're dead, it won't draw us on the client, but we don't set EF_NODRAW
 	// because we still want to transmit to the clients in our PVS.
 	CreateRagdollEntity();
 
 	DetonateTripmines();
-
-	// kill sounds before calling base Event_Killed
-	if (mp_killsounds_enabled.GetBool())
-	{
-		CBaseEntity* pAttacker = info.GetAttacker();
-
-		if (pAttacker && pAttacker->IsPlayer())
-		{
-			CHL2MP_Player* pAttackerPlayer = ToHL2MPPlayer(pAttacker);
-
-			// Don't play kill sounds for suicide
-			if (pAttackerPlayer && pAttackerPlayer != this)
-			{
-				// Determine which kill sound to play based on last hit group
-				if (m_iLastHitGroup == HITGROUP_HEAD)
-				{
-					pAttackerPlayer->PlayHitSound(s_HitSounds.szKillHeadSound, s_HitSounds.flKillVolume);
-				}
-				else
-				{
-					pAttackerPlayer->PlayHitSound(s_HitSounds.szKillBodySound, s_HitSounds.flKillVolume);
-				}
-			}
-		}
-	}
 
 	BaseClass::Event_Killed( subinfo );
 
@@ -2060,12 +2034,14 @@ void CHL2MP_Player::LoadHitSoundConfig()
 	KeyValues* pKV = new KeyValues("Sounds");
 
 	// Set default values
-	s_HitSounds.flHitVolume = 0.5f;
-	s_HitSounds.flKillVolume = 0.7f;
+	s_HitSounds.flHitVolume = 1.0f;
+	s_HitSounds.flKillVolume = 1.0f;
+	s_HitSounds.flHelmetVolume = 1.0f;
 	Q_strncpy(s_HitSounds.szHitBodySound, "physics/flesh/flesh_impact_bullet1.wav", sizeof(s_HitSounds.szHitBodySound));
 	Q_strncpy(s_HitSounds.szHitHeadSound, "physics/flesh/flesh_impact_bullet5.wav", sizeof(s_HitSounds.szHitHeadSound));
 	Q_strncpy(s_HitSounds.szKillBodySound, "physics/flesh/flesh_squishy_impact_hard3.wav", sizeof(s_HitSounds.szKillBodySound));
 	Q_strncpy(s_HitSounds.szKillHeadSound, "physics/flesh/flesh_bloody_break.wav", sizeof(s_HitSounds.szKillHeadSound));
+	Q_strncpy(s_HitSounds.szHelmetSound, "physics/concrete/concrete_block_impact_hard1.wav", sizeof(s_HitSounds.szHelmetSound));
 
 	// Try to load config file
 	if (pKV->LoadFromFile(filesystem, "cfg/gameplay/sounds.cfg", "MOD"))
@@ -2086,13 +2062,17 @@ void CHL2MP_Player::LoadHitSoundConfig()
 			Q_strncpy(s_HitSounds.szKillHeadSound,
 				pHitSounds->GetString("killhead", s_HitSounds.szKillHeadSound),
 				sizeof(s_HitSounds.szKillHeadSound));
+			Q_strncpy(s_HitSounds.szHelmetSound,
+				pHitSounds->GetString("helmet", s_HitSounds.szHelmetSound),
+				sizeof(s_HitSounds.szHelmetSound));
 		}
 
 		KeyValues* pVolume = pKV->FindKey("volume");
 		if (pVolume)
 		{
-			s_HitSounds.flHitVolume = pVolume->GetFloat("hit", 0.5f);
-			s_HitSounds.flKillVolume = pVolume->GetFloat("kill", 0.7f);
+			s_HitSounds.flHitVolume = pVolume->GetFloat("hit", 1.0f);
+			s_HitSounds.flKillVolume = pVolume->GetFloat("kill", 1.0f);
+			s_HitSounds.flHelmetVolume = pVolume->GetFloat("helm", 1.0f);
 		}
 
 		DevMsg("[HitSounds] Configuration loaded from cfg/gameplay/sounds.cfg\n");
@@ -2114,19 +2094,19 @@ void CHL2MP_Player::PlayHitSound(const char* szSound, float flVolume)
 	CSingleUserRecipientFilter filter(this);
 	filter.MakeReliable();
 
-	EmitSound_t params;
-	params.m_pSoundName = szSound;
-	params.m_flVolume = flVolume;
-	params.m_nChannel = CHAN_VOICE;
-	params.m_SoundLevel = SNDLVL_50dB;
-	params.m_flSoundTime = 0.0f;
-	params.m_pOrigin = &GetAbsOrigin();
-	params.m_nFlags = SND_NOFLAGS;
-	params.m_nPitch = PITCH_NORM;
+	const int channels[] = { CHAN_USER_BASE, CHAN_BODY, CHAN_ITEM };
 
-	EmitSound(filter, entindex(), params);
-	EmitSound(filter, entindex(), params);
-	EmitSound(filter, entindex(), params);
+	for (int i = 0; i < ARRAYSIZE(channels); i++)
+	{
+		EmitSound_t hs;
+		
+		hs.m_pSoundName = szSound;
+		hs.m_flVolume = flVolume;
+		hs.m_nChannel = channels[i];
+		hs.m_SoundLevel = SNDLVL_100dB;
+		hs.m_pOrigin = &GetAbsOrigin();
+		EmitSound(filter, entindex(), hs);
+	}
 }
 
 CON_COMMAND(snd_reload_hitkillsounds, "Reload hit sounds configuration from cfg/gameplay/sounds.cfg")

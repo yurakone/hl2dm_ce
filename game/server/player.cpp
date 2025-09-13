@@ -128,6 +128,10 @@ ConVar cl_backspeed( "cl_backspeed", "450", FCVAR_REPLICATED | FCVAR_CHEAT );
 // This is declared in the engine, too
 ConVar	sv_noclipduringpause( "sv_noclipduringpause", "0", FCVAR_REPLICATED | FCVAR_CHEAT, "If cheats are enabled, then you can noclip with the game paused (for doing screenshots, etc.)." );
 extern ConVar mp_armor_sparks;
+extern ConVar mp_hitsounds_enabled;
+extern ConVar mp_hitsounds_projectiles;
+extern ConVar mp_helmetsound_enabled;
+extern ConVar mp_server_files;
 extern ConVar mp_suitvoice;
 extern ConVar mp_ear_ringing;
 extern ConVar sv_maxunlag;
@@ -1657,6 +1661,30 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 
 	CBaseEntity * attacker = info.GetAttacker();
 
+	if (mp_hitsounds_enabled.GetBool() && mp_server_files.GetBool() && mp_hitsounds_projectiles.GetBool())
+	{
+		if (attacker && attacker->IsPlayer())
+		{
+			CHL2MP_Player* pAttackerPlayer = dynamic_cast<CHL2MP_Player*>(attacker);
+			if (pAttackerPlayer && pAttackerPlayer->GetActiveWeapon())
+			{
+				const char* weaponName = pAttackerPlayer->GetActiveWeapon()->GetClassname();
+
+				// проверяем оружие
+				if (!(FStrEq(weaponName, "weapon_pistol") ||
+					  FStrEq(weaponName, "weapon_smg1")   ||
+					  FStrEq(weaponName, "weapon_357")    ||
+					  FStrEq(weaponName, "weapon_ar2")    ||
+					  FStrEq(weaponName, "weapon_shotgun")))
+				{
+					// Play body shot sound
+					pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitBodySound,
+												  CHL2MP_Player::s_HitSounds.flHitVolume);
+				}
+			}
+		}
+	}
+
 	if ( !attacker )
 		return 0;
 
@@ -1681,34 +1709,32 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 	//armor spark
 	if (ArmorValue() > 5 && mp_armor_sparks.GetBool())
 	{
-		PrecacheScriptSound("SolidMetal.ImpactHard");
-
 		Vector vecDamagePos = info.GetDamagePosition();
 
-		if (vecDamagePos != vec3_origin)
+		if (!vecDamagePos.IsZero())
 		{
-			CEffectData data;
-			data.m_vOrigin = vecDamagePos;
-			data.m_vNormal = Vector(0, 0, 1);
-			//data.m_flScale = 1.00f;
-			//data.m_fFlags = 0;
-			
 			QAngle ang;
-			VectorAngles(data.m_vNormal, ang);
-			DispatchParticleEffect(mp_armor_effects.GetString(), vecDamagePos, ang);
-			DispatchParticleEffect(mp_impact_effects.GetString(), vecDamagePos, ang);
+			VectorAngles(Vector(0, 0, 1), ang);
 
-			SetParent(this);
+			if (mp_armor_effects.GetString()[0])
+				DispatchParticleEffect(mp_armor_effects.GetString(), vecDamagePos, ang);
+			if (mp_impact_effects.GetString()[0])
+				DispatchParticleEffect(mp_impact_effects.GetString(), vecDamagePos, ang);
 
 			CRecipientFilter filter;
 			filter.AddRecipientsByPAS(vecDamagePos);
-			
-			EmitSound_t as;
-			as.m_nChannel = CHAN_BODY;
-			as.m_pSoundName = "SolidMetal.ImpactHard";
-			as.m_flVolume = SOUNDENT_VOLUME_PISTOL;
-			as.m_SoundLevel = SNDLVL_65dB;
-			EmitSound(filter, entindex(), as);
+
+			const int channels[] = { CHAN_VOICE_BASE, CHAN_VOICE2, CHAN_VOICE };
+
+			for (int i = 0; i < ARRAYSIZE(channels); i++)
+			{
+				EmitSound_t es;
+				es.m_nChannel = channels[i];
+				es.m_pSoundName = "SolidMetal.ImpactHard";
+				es.m_flVolume = 1.0f;
+				es.m_SoundLevel = SNDLVL_100dB;
+				EmitSound(filter, entindex(), es);
+			}
 		}
 	}
 	// fire global game event
@@ -5340,6 +5366,7 @@ void CBasePlayer::Precache( void )
 	
 	PrecacheParticleSystem(mp_armor_effects.GetString());
 	PrecacheParticleSystem(mp_impact_effects.GetString());
+	PrecacheScriptSound("SolidMetal.ImpactHard"); ///armorspark
 	PrecacheScriptSound( "Player.FallGib" );
 	PrecacheScriptSound( "Player.Death" );
 	PrecacheScriptSound( "Player.PlasmaDamage" );
@@ -5349,6 +5376,7 @@ void CBasePlayer::Precache( void )
 	PrecacheScriptSound( "Player.Wade" );
 	PrecacheScriptSound( "Player.AmbientUnderWater" );
 	enginesound->PrecacheSentenceGroup( "HEV" );
+	
 
 	// These are always needed
 #ifndef TF_DLL

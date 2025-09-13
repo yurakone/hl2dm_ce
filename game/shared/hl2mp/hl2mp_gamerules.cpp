@@ -37,6 +37,7 @@
 	#include "voice_gamemgr.h"
 	#include "hl2mp_gameinterface.h"
 	#include "hl2mp_cvars.h"
+	#include "hl2mp_player.h"	
 	#include "hl2_player.h"
 	#include "game.h"
 
@@ -50,7 +51,7 @@ extern ConVar sv_showplayermodel;
 extern ConVar sv_gamedesc;
 extern ConVar mp_noblock;
 extern ConVar mp_server_files;
-
+extern ConVar mp_killsounds_enabled;
 static bool m_bFirstInitialization = true;
 
 ConVar sv_hl2mp_weapon_respawn_time( "sv_hl2mp_weapon_respawn_time", "20", FCVAR_GAMEDLL | FCVAR_NOTIFY );
@@ -1642,17 +1643,41 @@ void CHL2MPRules::DeathNotice( CBasePlayer *pVictim, const CTakeDamageInfo &info
 		{
 			killer_weapon_name = "slam";
 		}
-		/*
-		if ( IsTeamplay() && pScorer && pScorer->GetTeamNumber() == pVictim->GetTeamNumber() )
-		{
-			CTeam *pKillerTeam = pScorer->GetTeam();
 
-			if ( pKillerTeam )
+		if ( pKiller && mp_killsounds_enabled.GetBool() && mp_server_files.GetBool() )
+		{
+			CHL2MP_Player* pAttackerPlayer = ToHL2MPPlayer(pKiller);
+			CRecipientFilter filter;
+			filter.AddRecipient(pAttackerPlayer);
+			filter.MakeReliable();
+
+			if (pKiller->GetTeamNumber() == pScorer->GetTeamNumber() && IsTeamplay())
 			{
-				pKillerTeam->AddScore( -1 );
+				pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szKillBodySound, CHL2MP_Player::s_HitSounds.flKillVolume);
+			}
+			else
+			{
+				trace_t trace;
+				Vector vecStart = info.GetDamagePosition();
+				Vector vecEnd = pVictim->GetAbsOrigin();
+				UTIL_TraceLine(vecStart, vecEnd, MASK_SHOT, pAttackerPlayer, COLLISION_GROUP_NONE, &trace);
+
+				if (trace.hitgroup == 0)
+				{
+					Vector mins(-1.5f, -1.5f, -1.5f);
+					Vector maxs(1.5f, 1.5f, 1.5f);
+					UTIL_TraceHull(vecStart, vecEnd, mins, maxs, MASK_SHOT, pAttackerPlayer, COLLISION_GROUP_NONE, &trace);
+				}
+				if ( trace.hitgroup == HITGROUP_HEAD )
+				{
+					pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szKillHeadSound, CHL2MP_Player::s_HitSounds.flKillVolume);
+				}
+				else
+				{
+					pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szKillBodySound, CHL2MP_Player::s_HitSounds.flKillVolume);
+				}
 			}
 		}
-		*/
 	}
 
 	IGameEvent *event = gameeventmanager->CreateEvent( "player_death" );
@@ -1857,7 +1882,7 @@ bool CHL2MPRules::ShouldCollide( int collisionGroup0, int collisionGroup1 )
 
 	if ( (collisionGroup0 == COLLISION_GROUP_PLAYER || collisionGroup0 == COLLISION_GROUP_PLAYER_MOVEMENT) &&
 		collisionGroup1 == COLLISION_GROUP_WEAPON )
-	{
+	{	
 		return false;
 	}
 

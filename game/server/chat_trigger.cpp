@@ -3,9 +3,11 @@
 //-----------------------------------------------------------------------------
 #include "cbase.h"
 #include "chat_trigger.h"
+#include "hl2mp/hl2mp_player.h"
 #include "admin/hl2mp_serveradmin.h"
 #include "filesystem.h"
 #include "utlvector.h"
+#include "motd_menu.cpp"
 #include "tier0/memdbgon.h"
 
 bool g_bAdminSystem = false;
@@ -257,6 +259,11 @@ void CHL2MP_Chat::CheckChatText(char* p, int bufsize)
 		return;
 	}
 
+	if ((Q_strcmp(p, "tmotd") == 0) || (Q_strcmp(p, "!tmotd") == 0))
+	{
+		ShowCustomMOTD(static_cast<CHL2MP_Player*>(pPlayer));
+		return;
+	}
 	// Handle team commands
 	if (HandleTeamCommand(p, pPlayer))
 		return;
