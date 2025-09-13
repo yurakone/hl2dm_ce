@@ -64,6 +64,7 @@
 
 extern ConVar weapon_showproficiency;
 extern ConVar autoaim_max_dist;
+extern ConVar mp_freeze_players;
 
 // Do not touch with without seeing me, please! (sjb)
 // For consistency's sake, enemy gunfire is traced against a scaled down
@@ -1172,6 +1173,15 @@ bool CHL2_Player::HandleInteraction(int interactionType, void *data, CBaseCombat
 void CHL2_Player::PlayerRunCommand(CUserCmd *ucmd, IMoveHelper *moveHelper)
 {
 	float m_flcurrentTime = gpGlobals->curtime;
+	
+	if (mp_freeze_players.GetBool())
+	{
+		AddFlag(FL_FROZEN);
+	}
+	else
+	{
+		RemoveFlag(FL_FROZEN);
+	}
 
 	if ( !IsPenetrationOngoing( m_flcurrentTime ) && CheckForPenetration() )
 	{
@@ -3726,6 +3736,10 @@ void CHL2_Player::PlayUseDenySound()
 
 void CHL2_Player::ItemPostFrame()
 {
+	if (mp_freeze_players.GetBool())
+	{
+		return;
+	}
 	BaseClass::ItemPostFrame();
 
 	if ( m_bPlayUseDenySound )

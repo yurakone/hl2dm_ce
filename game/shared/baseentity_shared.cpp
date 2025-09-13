@@ -18,6 +18,7 @@
 #include "mapentities_shared.h"
 #include "debugoverlay_shared.h"
 #include "coordsize.h"
+#include "hl2mp_player.h"
 #include "vphysics/performance.h"
 
 #ifdef CLIENT_DLL
@@ -79,6 +80,7 @@ ConVar	ai_shot_bias_min( "ai_shot_bias_min", "-1.0", FCVAR_REPLICATED );
 ConVar	ai_shot_bias_max( "ai_shot_bias_max", "1.0", FCVAR_REPLICATED );
 ConVar	ai_debug_shoot_positions( "ai_debug_shoot_positions", "0", FCVAR_REPLICATED | FCVAR_CHEAT );
 
+extern ConVar mp_hitsounds_enabled;
 // Utility func to throttle rate at which the "reasonable position" spew goes out
 static double s_LastEntityReasonableEmitTime;
 bool CheckEmitReasonablePhysicsSpew()
@@ -1760,7 +1762,46 @@ void CBaseEntity::FireBullets( const FireBulletsInfo_t &info )
 			// Default behavior for non-shotgun weapons
 			AI_TraceLine( info.m_vecSrc, vecEnd, MASK_SHOT, &traceFilter, &tr );
 		}
+#ifndef CLIENT_DLL
+		if (tr.fraction != 1.0f && tr.m_pEnt && mp_hitsounds_enabled.GetBool())
+		{		
+			CHL2MP_Player* pAttackerPlayer = dynamic_cast<CHL2MP_Player*>(pAttacker);
 
+			if (mp_hitsounds_enabled.GetBool())
+			{
+				CBaseEntity* pHitEntity = tr.m_pEnt;
+				int hitGroup = tr.hitgroup;
+				
+				if (pAttacker != pHitEntity)
+				{
+					CRecipientFilter filter;
+					filter.AddRecipient(ToBasePlayer(pAttacker));
+					filter.MakeReliable();
+					PrecacheScriptSound("Concrete_Block.ImpactHard");
+
+					CBasePlayer* pHitPlayer = ToBasePlayer(pHitEntity);
+					if (pHitPlayer)
+					{
+						if (hitGroup == HITGROUP_HEAD)
+						{
+							if (pHitPlayer->ArmorValue() > 5)
+							{
+								EmitSound(filter, entindex(), "Concrete_Block.ImpactHard");
+							}
+
+							// Play headshot sound
+							pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitHeadSound, CHL2MP_Player::s_HitSounds.flHitVolume);
+						}
+						else
+						{
+							// Play body shot sound
+							pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitBodySound, CHL2MP_Player::s_HitSounds.flHitVolume);
+						}
+					}
+				}
+			}
+		}
+#endif
 		// Tracker 70354/63250:  ywb 8/2/07
 		// Fixes bug where trace from turret with attachment point outside of Vcollide
 		//  starts solid so doesn't hit anything else in the world and the final coord 

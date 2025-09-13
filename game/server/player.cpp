@@ -33,6 +33,7 @@
 #include "client.h"
 #include "team.h"
 #include "particle_smokegrenade.h"
+#include "particle_parse.h"
 #include "IEffects.h"
 #include "vstdlib/random.h"
 #include "engine/IEngineSound.h"
@@ -70,6 +71,7 @@
 #include "vote_controller.h"
 #include "te_effect_dispatch.h"
 #include "ai_speech.h"
+#include "hl2mp_cvars.h"
 #ifdef HL2MP
 #include "hl2mp_gamerules.h"
 #endif
@@ -131,6 +133,8 @@ extern ConVar mp_ear_ringing;
 extern ConVar sv_maxunlag;
 extern ConVar sv_turbophysics;
 extern ConVar *sv_maxreplay;
+extern ConVar mp_impact_effects;
+extern ConVar mp_armor_effects;
 
 extern CServerGameDLL g_ServerGameDLL;
 
@@ -1677,8 +1681,8 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 	//armor spark
 	if (ArmorValue() > 5 && mp_armor_sparks.GetBool())
 	{
-		//PrecacheParticleSystem("blood_impact_synth_01");
-		PrecacheScriptSound("Grenade.ImpactHard");
+		PrecacheScriptSound("SolidMetal.ImpactHard");
+
 		Vector vecDamagePos = info.GetDamagePosition();
 
 		if (vecDamagePos != vec3_origin)
@@ -1686,14 +1690,25 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 			CEffectData data;
 			data.m_vOrigin = vecDamagePos;
 			data.m_vNormal = Vector(0, 0, 1);
-			data.m_flScale = 2.0f;
-			data.m_fFlags = 0;
+			//data.m_flScale = 1.00f;
+			//data.m_fFlags = 0;
+			
+			QAngle ang;
+			VectorAngles(data.m_vNormal, ang);
+			DispatchParticleEffect(mp_armor_effects.GetString(), vecDamagePos, ang);
+			DispatchParticleEffect(mp_impact_effects.GetString(), vecDamagePos, ang);
 
-			DispatchEffect("EnergySplash", data);
-			DispatchEffect("EnergySplash", data);
-			DispatchEffect("EnergySplash", data);
-			EmitSound("Grenade.ImpactHard");
-	
+			SetParent(this);
+
+			CRecipientFilter filter;
+			filter.AddRecipientsByPAS(vecDamagePos);
+			
+			EmitSound_t as;
+			as.m_nChannel = CHAN_BODY;
+			as.m_pSoundName = "SolidMetal.ImpactHard";
+			as.m_flVolume = SOUNDENT_VOLUME_PISTOL;
+			as.m_SoundLevel = SNDLVL_65dB;
+			EmitSound(filter, entindex(), as);
 		}
 	}
 	// fire global game event
@@ -3904,7 +3919,7 @@ void CBasePlayer::PlayerRunCommand(CUserCmd *ucmd, IMoveHelper *moveHelper)
 			}
 		}
 	}
-	
+
 	PlayerMove()->RunCommand(this, ucmd, moveHelper);
 }
 
@@ -5322,8 +5337,9 @@ void CBasePlayer::Activate( void )
 void CBasePlayer::Precache( void )
 {
 	BaseClass::Precache();
-
-
+	
+	PrecacheParticleSystem(mp_armor_effects.GetString());
+	PrecacheParticleSystem(mp_impact_effects.GetString());
 	PrecacheScriptSound( "Player.FallGib" );
 	PrecacheScriptSound( "Player.Death" );
 	PrecacheScriptSound( "Player.PlasmaDamage" );

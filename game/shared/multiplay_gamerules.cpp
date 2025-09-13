@@ -1887,20 +1887,21 @@ ConVarRef suitcharger( "sk_suitcharger" );
 	void CMultiplayRules::GetTaggedConVarList( KeyValues *pCvarTagList )
 	{
 		BaseClass::GetTaggedConVarList( pCvarTagList );
-
+		/*
 		// sv_gravity
 		KeyValues *pGravity = new KeyValues( "sv_gravity" );
 		pGravity->SetString( "convar", "sv_gravity" );
-		pGravity->SetString( "tag", "gravity" );
+		//pGravity->SetString( "tag", "gravity" );
 
 		pCvarTagList->AddSubKey( pGravity );
 
 		// sv_alltalk
 		KeyValues *pAllTalk = new KeyValues( "sv_alltalk" );
 		pAllTalk->SetString( "convar", "sv_alltalk" );
-		pAllTalk->SetString( "tag", "alltalk" );
+		//pAllTalk->SetString( "tag", "alltalk" );
 
 		pCvarTagList->AddSubKey( pAllTalk );
+		*/
 	}
 
 #else

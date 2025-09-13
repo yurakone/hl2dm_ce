@@ -7,6 +7,7 @@
 #include "cbase.h"
 #include "hl2mp_gamerules.h"
 #include "viewport_panel_names.h"
+#include "baseentity.h"
 #include "gameeventdefs.h"
 #include <KeyValues.h>
 #include "ammodef.h"
@@ -16,6 +17,9 @@
 #else
 
 	#include "nav_mesh.h"
+	#include "networkstringtabledefs.h"
+	#include <networkstringtable_gamedll.h>
+	#include "filesystem.h"
 	#include "eventqueue.h"
 	#include "player.h"
 	#include "gamerules.h"
@@ -36,12 +40,19 @@
 	#include "hl2_player.h"
 	#include "game.h"
 
+
+
+#define DOWNLOADABLE_FILE_TABLENAME "downloadables"
 extern void respawn(CBaseEntity *pEdict, bool fCopyCorpse);
 
 extern bool FindInList( const char **pStrings, const char *pToFind );
 extern ConVar sv_showplayermodel;
 extern ConVar sv_gamedesc;
 extern ConVar mp_noblock;
+extern ConVar mp_server_files;
+
+static bool m_bFirstInitialization = true;
+
 ConVar sv_hl2mp_weapon_respawn_time( "sv_hl2mp_weapon_respawn_time", "20", FCVAR_GAMEDLL | FCVAR_NOTIFY );
 ConVar sv_hl2mp_item_respawn_time( "sv_hl2mp_item_respawn_time", "30", FCVAR_GAMEDLL | FCVAR_NOTIFY );
 ConVar sv_report_client_settings("sv_report_client_settings", "0", FCVAR_GAMEDLL | FCVAR_NOTIFY );
@@ -167,6 +178,7 @@ extern CUtlDict<int, unsigned short> g_mapVotes;
 extern CUtlVector<CBasePlayer *> g_playersWhoVoted;
 extern CUtlVector<CUtlString> g_currentVoteMaps;
 extern CUtlDict<CUtlString, unsigned short> g_nominatedMaps;
+CUtlVector<CUtlString> directories;
 
 #ifdef CLIENT_DLL
 	void RecvProxy_HL2MPRules( const RecvProp *pProp, void **pOut, void *pData, int objectID )
@@ -242,9 +254,157 @@ void sv_equalizer_changed(IConVar* pConVar, const char* pOldString, float flOldV
 ConVar sv_equalizer("sv_equalizer", "0", 0, "If non-zero, increase player visibility with bright colors", sv_equalizer_changed);
 #endif
 
+CUtlVector<const char*> mExcludedUploadExts;
+
+// Example function to add extensions to the list
+void CHL2MPRules::InitExcludedExtensions()
+{
+	mExcludedUploadExts.AddToTail("bz2");
+	mExcludedUploadExts.AddToTail("ain");
+	mExcludedUploadExts.AddToTail("cache");
+	mExcludedUploadExts.AddToTail("ztmp");
+}
+
+// Checking if an extension is excluded
+bool IsExtensionExcluded(const char* ext)
+{
+	for (int i = 0; i < mExcludedUploadExts.Count(); ++i)
+	{
+		if (Q_stricmp(mExcludedUploadExts[i], ext) == 0)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+#ifndef CLIENT_DLL
+void CHL2MPRules::RegisterDownloadableFiles(char* path, FileFindHandle_t findHandle, INetworkStringTable* pDownloadables)
+{
+	int dirLen = strlen(path);
+
+	// Modify the path to include a wildcard for files (e.g., *.wav)
+	char searchPattern[MAX_PATH];
+	Q_snprintf(searchPattern, sizeof(searchPattern), "%s*.*", path);
+
+	// Iterate over files in the directory
+	for (const char* pNextFileName = filesystem->FindFirstEx(searchPattern, "GAME", &findHandle);
+		pNextFileName != NULL; pNextFileName = filesystem->FindNext(findHandle))
+	{
+		path[dirLen] = '\0';  // Reset path length to directory length
+
+		// Check if it's a directory
+		if (filesystem->FindIsDirectory(findHandle))
+		{
+			if (*pNextFileName != '.')
+			{
+				// Append the directory to the path
+				Q_snprintf(path + dirLen, MAX_PATH - dirLen, "%s%c", pNextFileName, CORRECT_PATH_SEPARATOR);
+
+				// Recursively search in subdirectories
+				RegisterDownloadableFiles(path, findHandle, pDownloadables);
+#ifdef _DEBUG
+				// Debug for directories
+				Msg("Entering directory: %s\n", path);
+#endif
+			}
+		}
+		else
+		{
+#ifdef _DEBUG
+			// Debug for found files
+			Msg("Found file: %s\n", pNextFileName);
+#endif
+			// Only add files that are not in the excluded list
+			const char* extension = Q_GetFileExtension(pNextFileName);
+			if (!IsExtensionExcluded(extension))
+			{
+				Q_snprintf(path + dirLen, MAX_PATH - dirLen, "%s", pNextFileName);
+
+				Msg("Registering file: %s\n", path);
+
+				if (pDownloadables->AddString(true, path) == INVALID_STRING_INDEX)
+				{
+					Msg("Failed to register file: %s\n", path);
+					break; // Stop if we can't register more files
+				}
+			}
+#ifdef _DEBUG
+			else
+			{
+				Msg("File extension excluded: %s\n", pNextFileName);
+			}
+#endif
+		}
+	}
+
+	filesystem->FindClose(findHandle);
+}
+#endif
+
+void ReadDownloadDirectoriesConfig(CUtlVector<CUtlString>& directories)
+{
+	KeyValues* pKV = new KeyValues("DownloadDirectories");
+	if (pKV->LoadFromFile(filesystem, "cfg/admin/downloadtables.cfg", "MOD"))
+	{
+		KeyValues* pDirectory = pKV->GetFirstSubKey();
+		while (pDirectory)
+		{
+			const char* dirPath = pDirectory->GetString("path", nullptr);
+			if (dirPath && dirPath[0] != '\0')
+			{
+				directories.AddToTail(CUtlString(dirPath));
+				Msg("Added download directory: %s\n", dirPath);
+			}
+			pDirectory = pDirectory->GetNextKey();
+		}
+	}
+	else
+	{
+		Warning("Could not load cfg/admin/downloadtables.cfg\n");
+	}
+
+	pKV->deleteThis();
+}
+
 CHL2MPRules::CHL2MPRules()
 {
 #ifndef CLIENT_DLL
+	if (m_bFirstInitialization)
+	{
+#if 0
+		ReadWhitelistFile();
+#endif
+		if (mp_server_files.GetBool())
+		{
+			InitExcludedExtensions();
+
+			// Get the downloadables string table
+			INetworkStringTable* pDownloadables = networkstringtable->FindTable(DOWNLOADABLE_FILE_TABLENAME);
+			if (pDownloadables)
+			{
+				// Читаем каталоги из конфиг файла
+				CUtlVector<CUtlString> downloadDirectories;
+				ReadDownloadDirectoriesConfig(downloadDirectories);
+				// Регистрируем файлы из всех указанных каталогов
+				for (int i = 0; i < downloadDirectories.Count(); i++)
+				{
+					char path[MAX_PATH];
+					Q_strncpy(path, downloadDirectories[i].Get(), sizeof(path));
+
+					// Убеждаемся, что путь заканчивается на /
+					int pathLen = Q_strlen(path);
+					if (pathLen > 0 && path[pathLen - 1] != '/')
+					{
+						Q_strncat(path, "/", sizeof(path), COPY_ALL_CHARACTERS);
+					}
+
+					Msg("Registering downloadable files from: %s\n", path);
+					RegisterDownloadableFiles(path, FILESYSTEM_INVALID_FIND_HANDLE, pDownloadables);
+				}
+			}
+		}
+	}
 	// Create the team managers
 	for ( int i = 0; i < ARRAYSIZE( sTeamNames ); i++ )
 	{
@@ -253,7 +413,7 @@ CHL2MPRules::CHL2MPRules()
 
 		g_Teams.AddToTail( pTeam );
 	}
-
+	m_bFirstInitialization = false;
 	#endif	
 	m_bTeamPlayEnabled = teamplay.GetBool();
 	m_flIntermissionEndTime = 0.0f;
@@ -376,7 +536,7 @@ CBaseEntity* FindEntityByName(const char* name)
 void CHL2MPRules::Think( void )
 {
 #ifndef CLIENT_DLL
-	
+
 	CGameRules::Think();
 
 	/*
@@ -517,14 +677,14 @@ void CHL2MPRules::Think( void )
 	HandlePlayerNetworkCheck();
 	HandleMapVotes();
 
-	if ( sv_rtv_enabled.GetBool() && ( mp_timelimit.GetFloat() > 0 ) && GetMapRemainingTime() <= 20 && !g_votebegun && !g_votehasended && !bAdminMapChange )
+	if ( sv_rtv_enabled.GetBool() && ( mp_timelimit.GetFloat() > 0 ) && GetMapRemainingTime() <= 45 && !g_votebegun && !g_votehasended && !bAdminMapChange )
 	{
 		g_votebegun = true;
 
 		UTIL_PrintToAllClients( CHAT_INFO "Voting for next map has started...\n" );
 		StartMapVote();
 	}
-
+	
 	if ( g_fGameOver )   // someone else quit the game already
 	{
 		// check to see if we should change levels now
@@ -626,7 +786,7 @@ void CHL2MPRules::HandleMapVotes()
 		g_timetortv = gpGlobals->curtime + sv_rtv_mintime.GetInt();
 		g_rtvbooted = true;
 	}
-
+	
 	if ( g_votebegun && !g_votehasended && ( gpGlobals->curtime >= g_votetime ) )
 	{
 		CUtlString winningMap;
@@ -687,7 +847,9 @@ void CHL2MPRules::HandleMapVotes()
 			GoToIntermission();
 		}
 
-		engine->ServerCommand( CFmtStr( "sa map %s\n", winningMap.Get() ) );
+		GoToIntermission();
+
+		engine->ServerCommand( CFmtStr( "nextlevel %s\n", winningMap.Get() ) );
 
 		g_votebegun = false;
 		g_votehasended = true;

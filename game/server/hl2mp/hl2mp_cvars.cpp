@@ -113,3 +113,28 @@ ConVar sv_join_spec_on_connect(
 	"0",
 	0,
 	"If non-zero, put connecting players to team spectators on fully joined");
+
+//freeze players
+ConVar mp_freeze_players(
+	"mp_freeze_players",
+	"0",
+	0,
+	"If non-zero, freeze players");
+
+ConVar mp_server_files(
+	"mp_server_files",
+	"1",
+	FCVAR_GAMEDLL ,
+	"If non-zero, allow clients to download custom files from server");
+
+ConVar mp_armor_effects(
+	"mp_spark_effects",
+	"blood_impact_synth_01_arc_parents",
+	FCVAR_GAMEDLL,
+	"Particle system name for armor effects");
+
+ConVar mp_impact_effects(
+	"mp_impact_effects",
+	"blood_impact_synth_01_droplets",
+	FCVAR_GAMEDLL,
+	"Particle system name for armor impact effects");

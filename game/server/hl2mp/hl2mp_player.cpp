@@ -33,6 +33,7 @@
 #include "ilagcompensationmanager.h"
 #include "filesystem.h"
 #include "admin/hl2mp_serveradmin.h"
+#include "chat_trigger.h"
 
 CHL2MP_Player::HitSoundConfig CHL2MP_Player::s_HitSounds;
 bool CHL2MP_Player::s_bHitSoundsLoaded = false;
@@ -408,14 +409,14 @@ void CHL2MP_Player::Spawn(void)
 {
 	// m_flNextModelChangeTime = 0.0f;
 	// m_flNextTeamChangeTime = 0.0f;
-	
+	/*
 	if (mp_lockteams.GetBool())
 	{
 		ChangeTeam(TEAM_SPECTATOR);
 		SetObserverMode(OBS_MODE_IN_EYE);
 		return;
 	}
-	
+	*/
 	PickDefaultSpawnTeam();
 
 	BaseClass::Spawn();
@@ -1496,7 +1497,7 @@ void CHL2MP_Player::Event_Killed( const CTakeDamageInfo &info )
 	DetonateTripmines();
 
 	// kill sounds before calling base Event_Killed
-	if (mp_hitsounds_enabled.GetBool())
+	if (mp_killsounds_enabled.GetBool())
 	{
 		CBaseEntity* pAttacker = info.GetAttacker();
 
@@ -1566,37 +1567,6 @@ int CHL2MP_Player::OnTakeDamage( const CTakeDamageInfo &inputInfo )
 	gamestats->Event_PlayerDamage( this, inputInfo );
 
 	return BaseClass::OnTakeDamage(inputInfo);
-
-	// Store hit group before damage processing
-	m_iLastHitGroup = LastHitGroup();
-
-	// Get attacker info before calling base class
-	//CBaseEntity* pInflictor = inputInfo.GetInflictor();
-	CBaseEntity* pAttacker = inputInfo.GetAttacker();
-	//float flDamage = inputInfo.GetDamage();
-
-	int ret = BaseClass::OnTakeDamage(inputInfo);
-
-			// Process hit sounds after damage is applied but before potential death
-	if (mp_hitsounds_enabled.GetBool() && pAttacker && pAttacker->IsPlayer() && IsAlive())
-	{
-		CHL2MP_Player* pAttackerPlayer = ToHL2MPPlayer(pAttacker);
-
-		// Don't play hit sounds for self-damage
-		if (pAttackerPlayer && pAttackerPlayer != this)
-		{
-			// Determine which sound to play based on hit group
-			if (m_iLastHitGroup == HITGROUP_HEAD)
-			{
-				pAttackerPlayer->PlayHitSound(s_HitSounds.szHitHeadSound, s_HitSounds.flHitVolume);
-			}
-			else
-			{
-					pAttackerPlayer->PlayHitSound(s_HitSounds.szHitBodySound, s_HitSounds.flHitVolume);
-			}
-		}
-	}
-	return ret;
 }
 
 void CHL2MP_Player::DeathSound(const CTakeDamageInfo& info)
@@ -1789,7 +1759,7 @@ void CHL2MP_Player::SetReady( bool bReady )
 
 void CHL2MP_Player::CheckChatText( char *p, int bufsize )
 {
-	CHL2MP_Admin::CheckChatText( p, bufsize );
+	CHL2MP_Chat::CheckChatText( p, bufsize );
 	//Look for escape sequences and replace
 
 	char *buf = new char[bufsize];
@@ -2147,7 +2117,7 @@ void CHL2MP_Player::PlayHitSound(const char* szSound, float flVolume)
 	EmitSound_t params;
 	params.m_pSoundName = szSound;
 	params.m_flVolume = flVolume;
-	params.m_nChannel = CHAN_AUTO;
+	params.m_nChannel = CHAN_VOICE;
 	params.m_SoundLevel = SNDLVL_50dB;
 	params.m_flSoundTime = 0.0f;
 	params.m_pOrigin = &GetAbsOrigin();
