@@ -1173,14 +1173,17 @@ bool CHL2_Player::HandleInteraction(int interactionType, void *data, CBaseCombat
 void CHL2_Player::PlayerRunCommand(CUserCmd *ucmd, IMoveHelper *moveHelper)
 {
 	float m_flcurrentTime = gpGlobals->curtime;
-	
-	if (mp_freeze_players.GetBool())
+
+	if (!g_fGameOver)
 	{
-		AddFlag(FL_FROZEN);
-	}
-	else
-	{
-		RemoveFlag(FL_FROZEN);
+		if (mp_freeze_players.GetBool())
+		{
+			AddFlag(FL_FROZEN);
+		}
+		else
+		{
+			RemoveFlag(FL_FROZEN);
+		}
 	}
 
 	if ( !IsPenetrationOngoing( m_flcurrentTime ) && CheckForPenetration() )
