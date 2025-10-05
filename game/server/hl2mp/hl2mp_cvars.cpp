@@ -162,3 +162,15 @@ ConVar mp_armor_impact_volume(
 	"0.5",
 	FCVAR_GAMEDLL,
 	"Volume of armor impact effect, 0.0 - 1.0, def 0.5");
+//ShotGun pump
+ConVar sv_shotgun_pump(
+	"sv_shotgun_pump",
+	"1",
+	0,
+	"Defines the shotgun pump when deploying the shotgun, 1 - Default, 2 - No pump, 3 - Always pump");
+//ShotgunCone
+ConVar sv_shotgun_cone(
+	"sv_shotgun_cone",
+	"1", 
+	0,
+	"Defines the shotgun pellets spread cone, 1 - Default 10 degrees, 0 - Wide 15 degrees");
