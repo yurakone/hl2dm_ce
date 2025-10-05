@@ -1784,6 +1784,7 @@ void CBaseEntity::FireBullets( const FireBulletsInfo_t &info )
 							if (pHitPlayer->ArmorValue() > 5 && mp_helmetsound_enabled.GetBool())
 							{
 								// Play helmet sound
+								pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHelmetSound, CHL2MP_Player::s_HitSounds.flHitVolume);
 								pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitHeadSound, CHL2MP_Player::s_HitSounds.flHitVolume);
 							}
 							else
