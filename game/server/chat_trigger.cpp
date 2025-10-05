@@ -7,7 +7,6 @@
 #include "admin/hl2mp_serveradmin.h"
 #include "filesystem.h"
 #include "utlvector.h"
-#include "motd_menu.cpp"
 #include "tier0/memdbgon.h"
 
 bool g_bAdminSystem = false;
@@ -258,12 +257,13 @@ void CHL2MP_Chat::CheckChatText(char* p, int bufsize)
 		engine->ClientCommand(pPlayer->edict(), "nominate");
 		return;
 	}
-
+	/*
 	if ((Q_strcmp(p, "tmotd") == 0) || (Q_strcmp(p, "!tmotd") == 0))
 	{
-		ShowCustomMOTD(static_cast<CHL2MP_Player*>(pPlayer));
+		CHL2MP_Player* ShowCustomMOTD(static_cast<CHL2MP_Player*>(pPlayer));
 		return;
 	}
+	*/
 	// Handle team commands
 	if (HandleTeamCommand(p, pPlayer))
 		return;
