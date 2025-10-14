@@ -107,6 +107,12 @@ ConVar mp_armor_sparks(
 	FCVAR_GAMEDLL,
 	"If non-zero, game will enable spark effect if suit get damage");
 
+ConVar mp_kevlar_sound_enabled(
+	"mp_kevlar_sound_enabled",
+	"1",
+	FCVAR_GAMEDLL,
+	"If non-zero, game will enable sound effect if suit get damage");
+
 //Spec on connect
 ConVar sv_join_spec_on_connect(
 	"sv_join_spec_on_connect",
@@ -130,17 +136,17 @@ ConVar mp_server_files(
 
 //Armor effects file
 ConVar mp_armor_effects(
-	"mp_spark_effects",
-	"blood_impact_synth_01_arc_parents",
-	FCVAR_GAMEDLL,
-	"Particle system name for armor effects");
-
-//Impact armor effects file
-ConVar mp_impact_effects(
-	"mp_impact_effects",
-	"blood_impact_synth_01_droplets",
+	"mp_armor_effects",
+	"blood_impact_synth_01",
 	FCVAR_GAMEDLL,
 	"Particle system name for armor impact effects");
+
+//Impact armor effects file
+ConVar mp_helmet_effects(
+	"mp_helmet_effects",
+	"blood_spurt_synth_01b",
+	FCVAR_GAMEDLL,
+	"Particle system name for helmet impact effects");
 
 //Helmet sound
 ConVar mp_helmetsound_enabled(

@@ -137,8 +137,9 @@ extern ConVar mp_ear_ringing;
 extern ConVar sv_maxunlag;
 extern ConVar sv_turbophysics;
 extern ConVar *sv_maxreplay;
-extern ConVar mp_impact_effects;
+extern ConVar mp_helmet_effects;
 extern ConVar mp_armor_effects;
+extern ConVar mp_kevlar_sound_enabled;
 extern ConVar mp_armor_impact_volume;
 extern CServerGameDLL g_ServerGameDLL;
 
@@ -1706,8 +1707,8 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 		ApplyAbsVelocityImpulse( force );
 	}
 
-	//armor spark
-	if (ArmorValue() > 5 && mp_armor_sparks.GetBool())
+	//kevlar sound
+	if (ArmorValue() > 5 && mp_kevlar_sound_enabled.GetBool())
 	{
 		Vector vecDamagePos = info.GetDamagePosition();
 
@@ -1715,11 +1716,6 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 		{
 			QAngle ang;
 			VectorAngles(Vector(0, 0, 1), ang);
-
-			if (mp_armor_effects.GetString()[0])
-				DispatchParticleEffect(mp_armor_effects.GetString(), vecDamagePos, ang);
-			if (mp_impact_effects.GetString()[0])
-				DispatchParticleEffect(mp_impact_effects.GetString(), vecDamagePos, ang);
 
 			CRecipientFilter filter;
 			filter.AddRecipientsByPAS(vecDamagePos);
@@ -5365,7 +5361,7 @@ void CBasePlayer::Precache( void )
 	BaseClass::Precache();
 	
 	PrecacheParticleSystem(mp_armor_effects.GetString());
-	PrecacheParticleSystem(mp_impact_effects.GetString());
+	PrecacheParticleSystem(mp_helmet_effects.GetString());
 	PrecacheScriptSound("SolidMetal.ImpactHard"); ///armorspark
 	PrecacheScriptSound( "Player.FallGib" );
 	PrecacheScriptSound( "Player.Death" );

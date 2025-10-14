@@ -83,6 +83,9 @@ ConVar	ai_debug_shoot_positions( "ai_debug_shoot_positions", "0", FCVAR_REPLICAT
 extern ConVar mp_hitsounds_enabled;
 extern ConVar mp_helmetsound_enabled;
 extern ConVar mp_server_files;
+extern ConVar mp_helmet_effects;
+extern ConVar mp_armor_effects;
+extern ConVar mp_armor_sparks;
 // Utility func to throttle rate at which the "reasonable position" spew goes out
 static double s_LastEntityReasonableEmitTime;
 bool CheckEmitReasonablePhysicsSpew()
@@ -1781,11 +1784,19 @@ void CBaseEntity::FireBullets( const FireBulletsInfo_t &info )
 					{
 						if (hitGroup == HITGROUP_HEAD)
 						{
+							
 							if (pHitPlayer->ArmorValue() > 5 && mp_helmetsound_enabled.GetBool())
 							{
+								Vector vecDamagePos = tr.endpos; // Position of the hit	
+
+								QAngle ang;
+								VectorAngles(Vector(0, 0, 1), ang);
 								// Play helmet sound
 								pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHelmetSound, CHL2MP_Player::s_HitSounds.flHitVolume);
 								pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitHeadSound, CHL2MP_Player::s_HitSounds.flHitVolume);
+								
+								if (mp_helmet_effects.GetString()[0])
+									DispatchParticleEffect(mp_helmet_effects.GetString(), vecDamagePos, ang);
 							}
 							else
 							{
@@ -1797,6 +1808,17 @@ void CBaseEntity::FireBullets( const FireBulletsInfo_t &info )
 						{
 							// Play body shot sound
 							pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitBodySound, CHL2MP_Player::s_HitSounds.flHitVolume);
+
+							if (pHitPlayer->ArmorValue() > 5 && mp_armor_sparks.GetBool())
+							{
+								Vector vecDamagePos = tr.endpos; // Position of the hit	
+
+								QAngle ang;
+								VectorAngles(Vector(0, 0, 1), ang);
+
+								if (mp_armor_effects.GetString()[0])
+									DispatchParticleEffect(mp_armor_effects.GetString(), vecDamagePos, ang);
+							}
 						}
 					}
 				}
