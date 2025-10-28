@@ -1733,6 +1733,27 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 			}
 		}
 	}
+	
+	//armor spark
+	
+	if (ArmorValue() > 5 && mp_armor_sparks.GetBool())
+	{
+		Vector vecDamagePos = info.GetDamagePosition();
+
+		if (vecDamagePos != vec3_origin)
+		{
+			CEffectData data;
+			data.m_vOrigin = vecDamagePos;
+			data.m_vNormal = Vector(0, 0, 1);
+			data.m_flScale = 2.0f;
+			data.m_fFlags = 0;
+
+			DispatchEffect(mp_armor_effects.GetString(), data);
+			DispatchEffect(mp_helmet_effects.GetString(), data);
+			//DispatchEffect("EnergySplash", data);
+		}
+	}
+	
 	// fire global game event
 	IGameEvent * event = gameeventmanager->CreateEvent( "player_hurt" );
 	if ( event )

@@ -1787,16 +1787,25 @@ void CBaseEntity::FireBullets( const FireBulletsInfo_t &info )
 							
 							if (pHitPlayer->ArmorValue() > 5 && mp_helmetsound_enabled.GetBool())
 							{
-								Vector vecDamagePos = tr.endpos; // Position of the hit	
-
-								QAngle ang;
-								VectorAngles(Vector(0, 0, 1), ang);
 								// Play helmet sound
 								pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHelmetSound, CHL2MP_Player::s_HitSounds.flHitVolume);
 								pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitHeadSound, CHL2MP_Player::s_HitSounds.flHitVolume);
+								/*
+								Vector vecDamagePos = tr.endpos; // Position of the hit	
+
+								if (vecDamagePos != vec3_origin && mp_armor_sparks.GetBool())
+								{
+									CEffectData data;
+									data.m_vOrigin = vecDamagePos;
+									data.m_vNormal = Vector(0, 0, 1);
+									data.m_flScale = 2.0f;
+									data.m_fFlags = 0;
 								
-								if (mp_helmet_effects.GetString()[0])
-									DispatchParticleEffect(mp_helmet_effects.GetString(), vecDamagePos, ang);
+									DispatchEffect(mp_helmet_effects.GetString(), data);
+									DispatchEffect(mp_helmet_effects.GetString(), data);
+									DispatchEffect(mp_helmet_effects.GetString(), data);
+								}
+								*/
 							}
 							else
 							{
@@ -1808,17 +1817,25 @@ void CBaseEntity::FireBullets( const FireBulletsInfo_t &info )
 						{
 							// Play body shot sound
 							pAttackerPlayer->PlayHitSound(CHL2MP_Player::s_HitSounds.szHitBodySound, CHL2MP_Player::s_HitSounds.flHitVolume);
-
+							/*
 							if (pHitPlayer->ArmorValue() > 5 && mp_armor_sparks.GetBool())
 							{
 								Vector vecDamagePos = tr.endpos; // Position of the hit	
 
-								QAngle ang;
-								VectorAngles(Vector(0, 0, 1), ang);
+								if (vecDamagePos != vec3_origin && mp_armor_sparks.GetBool())
+								{
+									CEffectData data;
+									data.m_vOrigin = vecDamagePos;
+									data.m_vNormal = Vector(0, 0, 1);
+									data.m_flScale = 2.0f;
+									data.m_fFlags = 0;
 
-								if (mp_armor_effects.GetString()[0])
-									DispatchParticleEffect(mp_armor_effects.GetString(), vecDamagePos, ang);
+									DispatchEffect(mp_armor_effects.GetString(), data);
+									DispatchEffect(mp_armor_effects.GetString(), data);
+									DispatchEffect(mp_armor_effects.GetString(), data);
+								}
 							}
+							*/
 						}
 					}
 				}

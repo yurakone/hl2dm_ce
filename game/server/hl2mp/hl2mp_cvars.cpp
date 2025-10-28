@@ -137,14 +137,14 @@ ConVar mp_server_files(
 //Armor effects file
 ConVar mp_armor_effects(
 	"mp_armor_effects",
-	"blood_impact_synth_01",
+	"GlassImpact",
 	FCVAR_GAMEDLL,
 	"Particle system name for armor impact effects");
 
 //Impact armor effects file
 ConVar mp_helmet_effects(
 	"mp_helmet_effects",
-	"blood_spurt_synth_01b",
+	"StunstickImpact",
 	FCVAR_GAMEDLL,
 	"Particle system name for helmet impact effects");
 
