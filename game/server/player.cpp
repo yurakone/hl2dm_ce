@@ -1720,17 +1720,13 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 			CRecipientFilter filter;
 			filter.AddRecipientsByPAS(vecDamagePos);
 
-			const int channels[] = { CHAN_VOICE_BASE, CHAN_VOICE2, CHAN_VOICE };
-
-			for (int i = 0; i < ARRAYSIZE(channels); i++)
-			{
 				EmitSound_t es;
-				es.m_nChannel = channels[i];
-				es.m_pSoundName = "SolidMetal.ImpactHard";
+				es.m_nChannel = CHAN_VOICE_BASE; // channels[i];
+				es.m_pSoundName = "FX_RicochetSound.Ricochet";
 				es.m_flVolume = mp_armor_impact_volume.GetFloat();
-				es.m_SoundLevel = SNDLVL_100dB;
+				es.m_SoundLevel = SNDLVL_NORM;
+				es.m_nPitch = RandomInt(90, 105);
 				EmitSound(filter, entindex(), es);
-			}
 		}
 	}
 	
@@ -2584,7 +2580,8 @@ void CBasePlayer::CheckObserverSettings()
 			int flagMask =	FL_ONGROUND | FL_DUCKING ;
 
 			int flags = target->GetFlags() & flagMask;
-
+			
+			
 			if ( (GetFlags() & flagMask) != flags )
 			{
 				flags |= GetFlags() & (~flagMask); // keep other flags
@@ -2596,8 +2593,9 @@ void CBasePlayer::CheckObserverSettings()
 			{
 				SetViewOffset( target->GetViewOffset() );
 			}
-		}
 
+		}
+		
 		// Update the fog.
 		if ( target )
 		{
@@ -5383,7 +5381,7 @@ void CBasePlayer::Precache( void )
 	
 	PrecacheParticleSystem(mp_armor_effects.GetString());
 	PrecacheParticleSystem(mp_helmet_effects.GetString());
-	PrecacheScriptSound("SolidMetal.ImpactHard"); ///armorspark
+	PrecacheScriptSound( "FX_RicochetSound.Ricochet" ); //Kevlar sound
 	PrecacheScriptSound( "Player.FallGib" );
 	PrecacheScriptSound( "Player.Death" );
 	PrecacheScriptSound( "Player.PlasmaDamage" );

@@ -2103,7 +2103,8 @@ void CHL2MP_Player::PlayHitSound(const char* szSound, float flVolume)
 		hs.m_pSoundName = szSound;
 		hs.m_flVolume = flVolume;
 		hs.m_nChannel = channels[i];
-		hs.m_SoundLevel = SNDLVL_100dB;
+		hs.m_SoundLevel = SNDLVL_NORM;
+		hs.m_nPitch = RandomInt(90, 105);
 		hs.m_pOrigin = &GetAbsOrigin();
 		EmitSound(filter, entindex(), hs);
 	}

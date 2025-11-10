@@ -93,7 +93,7 @@ ConVar mp_suitvoice(
 	"mp_suitvoice",
 	"0",
 	FCVAR_GAMEDLL,
-	"If non-zero, game will enable suit notifications");
+	"Suit notifications, 0 - Disabled, 1 - Enabled is audible for all, 2 - Enabled is audible only for player");
 //Lockteams
 ConVar mp_lockteams(
 	"mp_lockteams",
