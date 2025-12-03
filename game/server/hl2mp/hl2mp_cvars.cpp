@@ -180,3 +180,9 @@ ConVar sv_shotgun_cone(
 	"1", 
 	0,
 	"Defines the shotgun pellets spread cone, 1 - Default 10 degrees, 0 - Wide 15 degrees");
+//Damage numbers
+ConVar sv_damage_numbers(
+	"sv_damage_numbers",
+	"1",
+	0,
+	"If non-zero, show floating damage numbers above damaged players.");

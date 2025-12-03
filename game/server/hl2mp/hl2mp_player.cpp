@@ -22,6 +22,7 @@
 #include "gamestats.h"
 #include "ammodef.h"
 #include "NextBot.h"
+#include "point_worldtext.h"
 #include "hl2mp/weapon_physcannon.h"
 #include "convar.h"
 #include "gameinterface.h"
@@ -41,6 +42,7 @@ extern ConVar mp_hitsounds_enabled;
 extern ConVar mp_killsounds_enabled;
 extern ConVar mp_helmetsound_enabled;
 extern ConVar mp_lockteams;
+extern ConVar sv_damage_numbers;
 
 int g_iLastCitizenModel = 0;
 int g_iLastCombineModel = 0;
@@ -1406,6 +1408,7 @@ void CHL2MP_Player::CreateRagdollEntity( void )
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+
 int CHL2MP_Player::FlashlightIsOn( void )
 {
 	return IsEffectActive( EF_DIMLIGHT );
@@ -1530,8 +1533,107 @@ void CHL2MP_Player::Event_Killed( const CTakeDamageInfo &info )
 	StopZooming();
 }
 
+static void ShowDamageInfo(CBasePlayer* pVictim, int iDamage, CBasePlayer* pOnlyViewer)
+{
+	// Stop if disabled or no victim
+	if (!sv_damage_numbers.GetBool() || !pVictim || iDamage <= 0)
+		return;
+
+	CPointWorldText* pText = dynamic_cast<CPointWorldText*>(CreateEntityByName("point_worldtext"));
+	if (!pText)
+		return;
+
+	// Seen for all players by default
+	// Show to only one player if specified
+	if (pOnlyViewer)
+		pText->SetOnlyRecipient(pOnlyViewer->entindex());
+	else
+		pText->SetOnlyRecipient(-1); // Or handle as needed if no viewer
+
+	// Text position with some random offset
+	Vector pos = pVictim->EyePosition() + Vector(
+		RandomFloat(-8.0f, 8.0f),
+		RandomFloat(-8.0f, 8.0f),
+		RandomFloat(14.0f, 16.0f)
+	);
+	pText->SetAbsOrigin(pos);
+
+	DispatchSpawn(pText);
+
+	// Create the damage text
+	char buf[16];
+	Q_snprintf(buf, sizeof(buf), "%d", iDamage);
+
+	// Setup text properties
+	variant_t v;
+
+	v.SetString(MAKE_STRING(buf));
+	pText->AcceptInput("SetText", pVictim, pVictim, v, 0);
+
+	v.SetFloat(20.0f);
+	pText->AcceptInput("SetTextSize", pVictim, pVictim, v, 0);
+
+	v.SetInt(1);
+	pText->AcceptInput("SetOrientation", pVictim, pVictim, v, 0);
+
+	int fontIndex = clamp(sv_damage_numbers.GetInt(), 1, 12);
+	int fN = fontIndex - 1; // Font indices are from 0 to 11
+	v.SetInt(fN);
+	pText->AcceptInput("SetFont", pVictim, pVictim, v, 0);
+
+
+	// --- Color according to damage ---
+	// From Yellow (255,180,0) -> to Red (255,0,0)
+	float damageFactor = clamp((float)iDamage / 100.0f, 0.0f, 1.0f);
+	int r = 255;
+	int g = (int)(180.0f * (1.0f - damageFactor));  // More damage -> less green
+	int b = 0;
+
+	v.SetColor32(r, g, b, 255);
+	pText->AcceptInput("SetColor", pVictim, pVictim, v, 0);
+
+	// Flying 
+	pText->SetMoveType(MOVETYPE_FLY);
+
+	float sideX = RandomFloat(-18.0f, 18.0f);
+	float sideY = RandomFloat(-18.0f, 18.0f);
+	float upZ = RandomFloat(25.0f, 28.0f);
+
+	pText->SetAbsVelocity(Vector(sideX, sideY, upZ)); // Move up speed
+
+	// Disappear after some time
+	const int steps = 12;
+	const float step_dt = 0.10f;
+	const float alphaStep = 255.0f / steps;
+
+	// Dissolve effect
+	for (int i = 0; i < steps; ++i)
+	{
+		const int a = MAX(0, 255 - (int)(alphaStep * i));
+		//v.SetColor32(255, 0, 0, a);
+		v.SetColor32(r, g, b, a);
+		g_EventQueue.AddEvent(pText, "SetColor", v, i * step_dt, pVictim, pVictim);
+	}
+
+	// Kill the entity
+	g_EventQueue.AddEvent(pText, "Kill", variant_t(), steps * step_dt + 0.05f, pVictim, pVictim);
+}
+
 int CHL2MP_Player::OnTakeDamage( const CTakeDamageInfo &inputInfo )
 {
+	CBasePlayer* pViewer = ToBasePlayer(inputInfo.GetAttacker());
+
+	if (!pViewer && inputInfo.GetInflictor())
+		pViewer = ToBasePlayer(inputInfo.GetInflictor()->GetOwnerEntity());
+
+	if (pViewer != this)
+	{
+		const int iDmg = MAX(0, (int)inputInfo.GetDamage());
+		if (pViewer && iDmg > 0)
+		{
+			ShowDamageInfo(this, iDmg, pViewer);
+		}
+	}
 	//return here if the player is in the respawn grace period vs. slams.
 	if ( gpGlobals->curtime < m_flSlamProtectTime &&  (inputInfo.GetDamageType() == DMG_BLAST ) )
 		return 0;
@@ -1550,7 +1652,7 @@ void CHL2MP_Player::DeathSound(const CTakeDamageInfo& info)
 
 	const char* pModelName = STRING(GetModelName());
 
-	// Определяем префикс озвучки в зависимости от модели
+	// Prefix depends on model type
 	const char* szPrefix = "NPC_Citizen";
 
 	if (Q_stristr(pModelName, "police"))
@@ -1884,6 +1986,7 @@ void CHL2MP_Player::State_PreThink_ACTIVE()
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
+
 bool CHL2MP_Player::CanHearAndReadChatFrom( CBasePlayer *pPlayer )
 {
 	// can always hear the console unless we're ignoring all chat
@@ -2131,3 +2234,4 @@ CON_COMMAND(snd_reload_hitkillsounds, "Reload hit sounds configuration from cfg/
 
 	Msg("No players found. Configuration will be loaded on next player spawn.\n");
 }
+

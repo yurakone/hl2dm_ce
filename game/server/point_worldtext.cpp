@@ -25,7 +25,7 @@ BEGIN_DATADESC( CPointWorldText )
 	DEFINE_INPUTFUNC( FIELD_COLOR32, "SetColor", InputSetColor ),
 	DEFINE_INPUTFUNC( FIELD_INTEGER, "SetOrientation", InputSetOrientation ),
 	DEFINE_INPUTFUNC( FIELD_INTEGER, "SetFont", InputSetFont ),
-	DEFINE_INPUTFUNC( FIELD_BOOLEAN, "SetRainbow", InputSetRainbow ),
+	DEFINE_INPUTFUNC( FIELD_BOOLEAN, "SetRainbow", InputSetRainbow ),	
 END_DATADESC()
 
 IMPLEMENT_SERVERCLASS_ST( CPointWorldText, DT_PointWorldText )
@@ -62,7 +62,25 @@ CPointWorldText::~CPointWorldText()
 //------------------------------------------------------------------------------
 int CPointWorldText::UpdateTransmitState()
 {
-	return SetTransmitState( FL_EDICT_PVSCHECK );
+	//return SetTransmitState( FL_EDICT_PVSCHECK );
+
+	if (m_hOnlyRecipient.Get() != nullptr)
+		return SetTransmitState(FL_EDICT_FULLCHECK);
+	return SetTransmitState(FL_EDICT_PVSCHECK);
+}
+
+int CPointWorldText::ShouldTransmit(const CCheckTransmitInfo* pInfo)
+{
+	if (m_hOnlyRecipient.Get() == nullptr)
+		return BaseClass::ShouldTransmit(pInfo);
+
+	CBaseEntity* pOnly = m_hOnlyRecipient.Get();
+	if (!pOnly || !pOnly->edict())
+		return FL_EDICT_DONTSEND;
+
+	return (pInfo && pInfo->m_pClientEnt == pOnly->edict())
+		? FL_EDICT_PVSCHECK
+		: FL_EDICT_DONTSEND;
 }
 
 bool CPointWorldText::KeyValue( const char *szKeyName, const char *szValue )

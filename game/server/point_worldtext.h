@@ -15,6 +15,7 @@ public:
 
 	virtual bool KeyValue( const char *szKeyName, const char *szValue ) OVERRIDE;
 	virtual int  UpdateTransmitState() OVERRIDE;
+	virtual int  ShouldTransmit(const CCheckTransmitInfo* pInfo) OVERRIDE;
 
 	DECLARE_SERVERCLASS();
 	DECLARE_DATADESC();
@@ -62,6 +63,16 @@ public:
 		m_bRainbow = inputdata.value.Bool();
 	}
 
+	// Sets the only recipient for this world text (wrapper for CSendProxyRecipients::SetOnly)
+	
+	void CPointWorldText::SetOnlyRecipient(int iClient)
+	{
+		if (m_pRecipients)
+		{
+			m_pRecipients->SetOnly(iClient);
+		}
+	}
+
 private:
 	CNetworkString( m_szText, MAX_PATH );
 	CNetworkVar( float, m_flTextSize );
@@ -71,4 +82,6 @@ private:
 	CNetworkVar( int, m_nOrientation );
 	CNetworkVar( int, m_nFont );
 	CNetworkVar( bool, m_bRainbow );
+	CNetworkHandle(CBaseEntity, m_hOnlyRecipient);
+	CSendProxyRecipients* m_pRecipients;
 };

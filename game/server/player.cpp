@@ -2408,12 +2408,11 @@ bool CBasePlayer::StartObserverMode(int mode)
 
 	SetObserverMode( OBS_MODE_ROAMING );
 
-	/*
 	if ( gpGlobals->eLoadType != MapLoad_Background )
 	{
 		ShowViewPortPanel( "specgui" , ModeWantsSpectatorGUI(mode) );
 	}
-	*/
+	
 	if (!sv_specpanel_disable.GetBool()) 
 	{
 		ShowViewPortPanel("info", true);
